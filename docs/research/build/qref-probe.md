@@ -2,7 +2,7 @@
 
 **Verdict:** the referee core is very buildable (**buildability 5/5**). As a hackathon demo it is believable but narrow (**demo credibility 3/5**). The Claim Ledger is still the better primary. Keep QRef as the backup.
 
-On 3 legacy scripts, 4 Qiskit 2.x ports, and 6 extra variants, the referee got all 13 verdicts right. It caught the one deliberate silent bug in my ports and 4 more seeded bugs. It passed all 6 correct variants, including a structurally different but equivalent rewrite. Everything was run with `./run_all.sh` and the output was read back.
+On 3 legacy scripts and 11 port/variant comparisons, the referee agreed with all expected verdicts: 6 correct variants passed and 5 deliberately seeded failures were caught. One planted parameter-binding bug makes the ported QAOA appear better. The integration rerun of `./run_all.sh` confirmed these counts; the earlier “13 of 13” total was a counting error. No unseeded agent-migration error rate was measured.
 
 ## What I built (all in `/tmp/qref-probe`)
 
@@ -107,9 +107,9 @@ Two observations from these runs:
 |---|---|---|
 | Buildability in about 12 h | **5/5**: the core is done; the remaining work is a UI, an LLM porting agent, the Estimator hook, and about 10 cases | [INFERENCE] about 4/5: more moving parts (extraction, span checks, comparison gates, UI) |
 | Demo credibility | **3/5**: the "agent made a plausible migration that silently got better results and the referee caught it" moment is strong and live. But it is clearly toy scale, it is a terminal tool unless I add a UI, and the audience is narrow (Qiskit maintainers and quantum software teams) | [INFERENCE] higher: post-quantum risk feeds CISO budgets and decisions, which better fits Georgian investors and the Real-World Impact criterion |
-| Innovation evidence | Gap confirmed against 2 recent papers (abstract-level reading) | per the other research reports |
+| Innovation evidence | Abstract-level leads only; insufficient to establish novelty | per the other research reports |
 | Partner prizes | none apply naturally | SurrealDB (agent memory) could plausibly apply |
 
-[INFERENCE] QRef fits the "verification and open benchmarks" theme well and carries much less build risk. If time runs short, it could appear as a "same philosophy, second domain" slide or a 30-second clip inside the Claim Ledger pitch, rather than as its own submission.
+[INFERENCE] QRef fits the verification theme and already has a runnable small-circuit core. Keep it as a separate backup; do not dilute the Ledger demo with a second product. The remaining usability, generalization and real migration-error evidence is not demonstrated by the planted cases.
 
 **Commands:** `cd /tmp/qref-probe && ./run_all.sh`. Single comparison: `modern/bin/python qref/compare.py traces/s2_qaoa.legacy.json traces/s2_qaoa.port.json traces/s2_qaoa.legacy.replay.json traces/s2_qaoa.port.replay.json`.

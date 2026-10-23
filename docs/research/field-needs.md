@@ -121,6 +121,8 @@ I found no published critiques (the paper is 4 days old; the coverage I found is
 ---
 
 ## 4. User personas and evidence of demand
+**Deadline correction (2026-10-23):** the P2 row's original Oct 15 date is superseded by **Dec 30, 2026** for DARPA-PA-26-02-01; see the [official opportunity](https://www.darpa.mil/work-with-us/opportunities/darpa-pa-26-02-01), read in full during the ranking synthesis, and `resource-claims-verification.md`. This is a program lead, not demand for our proposed app.
+
 
 | # | Persona | What they need that is missing today | Evidence (read depth) |
 |---|---|---|---|

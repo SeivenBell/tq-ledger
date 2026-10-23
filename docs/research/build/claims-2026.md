@@ -58,8 +58,8 @@ Other arithmetic checks [RECOMPUTED]:
 | EF-874 | 874 q, 2,398,215 T (2026-10-14) | logical-circuit | subroutine | classical | average executed | 0/9,024 FS; 122/360,960 own test | as EF-893 |
 | EF-LEAD | current best 1,234 q, 742,470 T, S = 916,207,980 | logical-circuit | subroutine | classical | average executed | 0/9,024 FS | official evaluator |
 | PQ-IVEZIC | 893 within Google bound; "25% physical" fails under vendor scalings (Oratomic ≤16%, IonQ ~28% but slower) | commentary on logical + physical | subroutine → architecture | n/a | n/a | restates 111/360,960 | hand analysis |
-| PLDD-25 | "cuts the physical qubits … by 25%" | physical-architecture (claimed) | full attack (implied) | — | — | none | none; source tweet not read |
-| GU-DIV | 4.0M T, 935 q; certified 4,006,673 / 935 | logical-circuit | subroutine (point add) | classical | executed (statistic not stated as average or worst) | budget ≤20/100,000; union bound 1.599×10⁻⁴ | hash-seeded evaluator public (Apache-2.0) |
+| PLDD-25 | “physical qubits … by 25%” | physical-architecture (claimed) | full attack (implied) | — | — | none | primary post subsequently read in full via syndication APIs; see demo-fact-check.md |
+| GU-DIV | 4.0M T, 935 q; certified 4,006,673 / 935 | logical-circuit | subroutine (point add) | classical | executed (statistic not stated as average or worst) | at most a 2×10⁻⁴ fraction of inputs; union bound 1.599×10⁻⁴ | public evaluator (Apache-2.0); its input distribution matters |
 | SCHR | 1,192 q / 2^21.19 T; 1,446 q / 2^20.83 T (excludes window) | logical-circuit | subroutine; Eq. 1 extends to full | coherent window excluded (+16 q, +3·2¹⁶ T) | not stated | ≤2^−13.3; 0/10,000 | not found |
 | GOOG-ZK | PA ≤1,175 q / ≤2.7M T and ≤1,425 q / ≤2.1M T; full ECDLP ≤1,200 q / ≤90M T, ≤1,450 q / ≤70M T; <500k physical | logical-circuit (ZK) + logical-algorithm + physical | subroutine + full | window-indexed per ECDSA.Fail; lookup billed separately per Eq. 1 | average executed over 9,024 | 0/9,024 FS (proved in ZK) | Groth16/SP1 proof; Trail of Bits forged v1 proof (patched in v2) |
 | LUO | full ECDLP 1,333 q; 5n+4⌊log₂n⌋+O(1) q; 976n³ T | logical-algorithm | full attack | controlled affine add | asymptotic / leading-order | "exactly correct" (claimed) | Gu reconstruction: 69,529,757 T / 838 q |
@@ -199,7 +199,7 @@ Other arithmetic checks [RECOMPUTED]:
 - **notes**: this is the best existing human version of what the ledger automates. Every check he does by hand is a gate in the tool.
 
 ### PLDD-25 — "25% fewer physical qubits"
-- **source**: Pierre-Luc Dallaire-Demers (Pauli Group; ECDSA.Fail co-author), X post https://x.com/dallairedemers/status/2110068442330234929, 2026-10-13. **Not read** (X not fetchable). Captured **second-hand** from Ivezic: "On October 13 he called the result a breakthrough on X and wrote that it cuts the physical qubits required by recent attack proposals from IonQ, Oratomic and Google by 25%."
+- **source**: Pierre-Luc Dallaire-Demers (Pauli Group; ECDSA.Fail co-author), [X post](https://x.com/dallairedemers/status/2110068442330234929), 2026-10-13. Initially second-hand; subsequently **full** post read through fxtwitter/syndication APIs in `demo-fact-check.md`. Exact claim: “This shaves down the required number of physical qubits of recent proposals of @IonQ_Inc , @TeamOratomic and @GoogleQuantumAI by 25%!” The post also states 893 qubits × 2.2M Toffolis versus Google's 1,175 × 2.7M.
 - **layer**: physical-architecture (claimed), derived from a logical-circuit change.
 - **basis**: not found. [INFERENCE] It matches 1 − 893/1,175 = 24.0%, a one-for-one logical-to-physical scaling.
 - **failure / independent verification**: none. Ivezic's check gives Google ≈24% only "if every component shrank with width", Oratomic ≤16%, IonQ ≈28% fewer ions but longer runs.
@@ -348,7 +348,7 @@ Other arithmetic checks [RECOMPUTED]:
 - **matches source?**
   - **Headline: no.** The source is a subroutine Q×T proxy with a classical addend, not an attack estimate.
   - The body is accurate.
-  - The paper's own coherent variant is 1.961 B, which is 34.5% below 2.9925 B, not 50% [RECOMPUTED].
+  - The authors' coherent variant has retry-adjusted Q×T/p̂ ≈1.961 B: 1,162×1,684,161/0.99809. Our arithmetic puts this about 34.5% below Google's **low-gate upper-bound product**, 1,425×2.1M=2.9925 B. This is not a proven like-for-like improvement: lookup inclusions, success estimates and bound-vs-observation remain caveats.
   - The 50% compares 1.496 B with 2.993 B, the low-gate bound. Against the low-qubit bound (3.17 B) it would be 52.8%.
 
 ### IONQ-PR — IonQ press release (Sep 2026)
@@ -370,17 +370,17 @@ Other arithmetic checks [RECOMPUTED]:
 2. **Headline: "Crypto researchers cut Bitcoin and Ethereum quantum attack estimate by 50%"** (CoinDesk, 2026-09-10), echoed by the leaderboard's "68.5% ahead of Google's classified circuit" (homepage, snippet-only). Problems:
    - It compares a *measured average* Q×T of a **classical-addend** kernel (1.496 B) with the *upper bounds* of Google's **window-indexed** circuit (2.99 B).
    - It labels that a cut to the "attack estimate".
-   - The paper's like-for-like coherent variant is 1.961 B (−34.5%).
+   - The authors also supply a coherent variant, Q×T/p̂≈1.961 B. The arithmetic 34.5% reduction relative to Google's low-gate bound is contextual, not a demonstrated attack-cost or physical-resource reduction. The 50% originated in the authors' abstract, not independently in the press.
    - The paper itself says "contextual rather than claims of formal dominance".
    - The leaderboard percentage is already stale: 69.4% on 2026-10-23 [RECOMPUTED].
 3. **"893 qubits, 2.2M Toffolis, passed all 9,024 inputs" placed next to Gu et al.'s "4.0M Toffolis, 935 qubits" (and Gu's own 893-qubit j9 at 7.87M) as if on one frontier.**
    - The failure gates differ. ECDSA.Fail requires 0/9,024 on a hash-seeded set that the submitter can re-roll: "Submitters can search these nonces for an error-free test set". Long's GPU filter returned 196 candidates in 4,096 nonces.
-   - Long's own 360,960-shot test gives p̂ = 3.08×10⁻⁴, 95% CP [2.53, 3.70]×10⁻⁴. That **exceeds** Gu's grader budget of "at most 20 failed tests out of 100,000" (2×10⁻⁴).
-   - So the lower-T circuit is not admissible under the other benchmark's rule. Ivezic: read "passed all 9,024 inputs" as "an approximate circuit with a chosen test set".
+   - Long's self-reported 360,960-shot test gives p̂=3.08×10⁻⁴ and a binomial 95% CP interval [2.53,3.70]×10⁻⁴ (independence model). Numerically above Gu's stated “at most a 2×10⁻⁴ fraction of inputs” budget, but the sampled input distributions differ.
+   - Therefore these data do **not** establish that this circuit would fail Gu's benchmark. No “20 failures out of 100,000” acceptance test is stated in Gu. Different distributions and nonce selection preclude equating the experiments.
    - Runner-up: Schrottenloher's "≤2^−13.3" from 0/10,000 holds only at ≈63% confidence (95%: ≈2^−11.7). His numbers also appear unwindowed in Gu (1.9M / 1,446) and windowed in ECDSA.Fail (2.59M / 1,208; 2.06M / 1,462).
 
 ## 4. Gaps / not done
-- X post (PLDD-25) and the Zenodo ZK record were not opened.
+- The X post was subsequently read in full via syndication APIs (`demo-fact-check.md`); the Zenodo ZK record remains unopened in this corpus.
 - IonQ arXiv 2609.05625 and Oratomic 2603.28627 were not read; their numbers are second-hand via Ivezic.
 - ECDSA.Fail Supplemental Notes and the GitHub repo NOTICE file were not read.
 - The ECDSA.Fail homepage figure is snippet-only.

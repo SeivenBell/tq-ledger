@@ -1,189 +1,246 @@
-# Q-Day Ledger: architecture, verification, and evaluation
+# Q-Day Ledger: architecture, checks, and evaluation
 
-Status: build-ready draft, 2026-10-23. Read `CONTEXT.md` for the vocabulary and `docs/build/PRODUCT.md` for scope.
+Status: implementation contract, 2026-10-23. The product is not implemented by this planning deliverable. Read `CONTEXT.md`, `PRODUCT.md`, and `PLAN.md` together.
 
-## 1. Shape
+## 1. Shape and implementation choices
 
-One Python service on Render. Cards live as JSON in the repo, so the deployed ledger is exactly the reviewed, versioned data. Model calls happen only when adding a claim or checking a headline.
-
-```mermaid
-flowchart LR
-  subgraph Ingest["Add a claim (reviewer, signed in)"]
-    A[arXiv ID] --> B[sources.fetch: HTML to plain text, sha256, licence]
-    B --> C[extract: Claude structured output, verbatim quote per field]
-    M[(SurrealDB Agent Memory: prior cards, conventions)] -. recall .-> C
-    C --> D[verify: span check, number check, recompute]
-    D --> E[draft card: field status verified or rejected]
-    E --> F{reviewer approves fields}
-    F --> G[(data/cards/*.json, git)]
-    G -. remember .-> M
-  end
-  subgraph Read["Public, no login"]
-    G --> H[ledger table]
-    G --> I[card page + quote panel]
-    G --> J[compare: gates to verdict]
-    K[headline] --> L[headline.parse: LLM to structured assertion] --> J
-  end
-  G --> N[make verify + eval in CI]
-```
-
-The trust boundary: **the model never writes a number that reaches a published card without passing code checks and a human approval.**
-
-## 2. Stack
-
-| Layer | Choice | Why |
-|---|---|---|
-| Language and env | Python 3.12, `uv` | Severyn's daily stack |
-| Web | FastAPI + Jinja2 templates + HTMX + one hand-written CSS file | One process; full control of the card design judges see; Clerk works through the same-origin `__session` cookie |
-| Models | `claude-sonnet-5-5` via `client.messages.parse(output_format=PydanticModel)` for extraction and headline parsing; `claude-haiku-5-5` for repeated eval runs | Structured outputs return valid JSON. Citations cannot be combined with structured outputs (HTTP 400), so quotes are verified by our own code, which is the product's point (`build-feasibility.md` §1) |
-| Source text | arXiv HTML (`arxiv.org/html/<id>`) converted to plain text; PDF text as fallback | Character offsets need plain text |
-| Statistics | SciPy (`scipy.stats.beta`) | Clopper–Pearson intervals |
-| Data | `data/cards/*.json`, `data/sources/*.json` in git | Render's disk is ephemeral; git gives versioning and review history |
-| Memory (should) | SurrealDB Agent Memory, Python SDK `pip install --pre 'surrealdb[memory]'`, `infer="triples"` | Provenance graph and recall before extraction; matches SurrealDB's prize brief ("facts that supersede rather than overwrite", "retrieval you can trace back to its source") |
-| Auth (should) | Clerk Hobby, `clerk-backend-api` | Reviewer sign-in; approval records `user_id` |
-| Hosting | Render web service, `0.5c-512mb` paid plan ($7/month, covered by the $50 credit) | Free instances spin down after 15 minutes and take about a minute to wake; judges click cold links |
-
-## 3. Data model
-
-Pydantic models in `ledger/schema.py`. JSON on disk mirrors them.
+Use Python 3.12 with `uv`, FastAPI, Jinja2, one stylesheet, and repository JSON. The public process only reads committed artefacts. No database, account system, browser model calls, writable review route, or persistent Render disk is required.
 
 ```text
-Source
-  id                 "arXiv:2505.15917v1"
-  title, authors[], date, url
-  licence            "CC-BY-4.0" | "arXiv-nonexclusive" | "CC-BY-NC-SA-4.0" | "web-terms"
-  text_sha256        hash of the plain text we checked against
-  text_stored        true only if the licence allows redistribution
-
-Quote
-  text               verbatim span
-  location           "p.12, Sec. 4.2" | "Table 5" | "line 1206"
-  char_start, char_end   offsets into the source plain text (null for non-text sources)
-
-Value
-  number             float
-  unit               "logical_qubits" | "physical_qubits" | "toffoli" | "t" | "toffoli_plus_half_t" | "hours" | "days" | "probability" | ...
-  statistic          "worst_case" | "average_executed" | "expected" | "upper_bound" | "not_stated"
-  kind               "observed" (read from a quote) | "derived" (computed from other fields)
-  quote              Quote          (required when kind = observed)
-  formula            str            (required when kind = derived, e.g. "toffoli * logical_qubits")
-
-ClaimCard
-  id                 "G25-RSA2048"
-  source_id
-  one_liner          plain-English summary
-  target             { problem: "RSA-2048" | "ECDLP-secp256k1" | "ECDLP-P256" | "ECDLP-256-generic",
-                       scope: "full_attack" | "point_addition" | "modular_inversion" | ... }
-  layer              "logical_circuit" | "logical_algorithm" | "physical_architecture"
-  metrics            { name: Value }      # logical_qubits, toffoli, physical_qubits, runtime, ...
-  addend_interface   "classical" | "coherent" | "not_applicable" | "not_stated"
-  amortization       "single_key" | "many_keys" | "not_stated"
-  inclusions         [ "windowed_lookup", "coherent_addend_preparation", ... ]   # what the count includes; empty = not stated
-  failure            { budget: Value?, observed_failures: int?, tests: int?, test_support: str, quote }
-  hardware_assumptions [ { name, value: Value } ]   # physical layer only: error rate, cycle time, reaction time, code, runtime target
-  counting_conventions [ Quote ]
-  independent_verification { by, how, url } | null
-  review             { status: "machine_extracted" | "human_reviewed" | "reproduced",
-                       reviewer, reviewed_at, notes }
-  checks             (written by the verifier, never by hand)
-
-Headline                                   # a third-party restatement, not a claim
-  id, text (verbatim), author, outlet, url, date
-  asserted           { subject_card_ids[], metric, number, implied_layer, implied_scope, comparison }   # filled by headline.parse, confirmed by a human
-  verdict            (written by compare, never by hand)
+pinned local source -> canonical text + manifest -> extractor -> list of drafts
+                                                        -> strict checks
+                                                        -> local human review
+                                                        -> export -> git/redeploy
+committed cards + recorded runs + eval results -> read-only public pages
 ```
 
-`checks` is regenerated by `make verify`; it is never edited by hand.
+Canonicalization, provenance, comparison, and extraction are separate modules. Callers use the interfaces below. Do not add a provider abstraction for a single model adapter.
 
-## 4. Verification: what "verifiable" means here
+The extractor uses the installed provider SDK's supported structured-output method. Configure an actually available model through `LEDGER_MODEL`. Do not hard-code a model or SDK method merely because a planning report named one. Record the resolved model ID and SDK version. A funded `ANTHROPIC_API_KEY` is a prerequisite for genuine model runs. Structured output constrains shape, not truth.
 
-Each check is a pure function with unit tests. `make verify` runs all of them over every card and fails CI on any regression.
+Use an always-on Render instance if funded. Check current pricing and service availability during setup. The plan does not promise a fixed price or that unapproved credits will arrive. Preserve the working repository outside `/tmp` before implementation, or maintain an external backup after each accepted change.
 
-| Check | Rule | Example that must pass or fail |
-|---|---|---|
-| **Span check** | `quote.text` occurs in the source plain text (after whitespace normalisation); offsets match | Fails if the model paraphrases |
-| **Number check** | The field's number can be parsed from its quote: handles `897,864`, `1.26e11`, `1.26 × 10^11`, `2^21.19`, `50 million`, `~1,200`, `under 1M` (flags inequality) | "50 million" in Litinski's title passes as a quote of the *title claim*; the single-key card must quote the (44 + 65/k)M formula |
-| **Recompute** | Derived values recomputed from observed inputs; mismatch beyond tolerance → `source_inconsistency` flag (does not block publication; shown on the card) | Gidney 2025: 12.07 × 9.1 / 24 = 4.58 ≠ printed 4.63; 12.07 × 9.2 / 24 = 4.63 matches Table 5's 9.2 runs |
-| **Failure statistics** | From `observed_failures / tests`: point estimate, 95 % Clopper–Pearson interval, P(clean run of n inputs) = (1 − p̂)^n, labelled "assumes independent, identically distributed trials; not a certificate" | 111 / 360,960 → p̂ = 3.075 × 10⁻⁴, CI [2.530, 3.703] × 10⁻⁴, (1 − p̂)^9024 = 0.062 |
-| **Budget check** | Interval vs another benchmark's stated failure budget | The 893-qubit circuit's whole interval is above 2 × 10⁻⁴ (Gu et al.'s ≤ 20 per 100,000) |
-| **Schema check** | Every observed value has a quote; every derived value has a formula; physical-layer cards list hardware assumptions | Blocks publication otherwise |
+## 2. Files and data contracts
 
-All key numbers above were recomputed independently with SciPy on 2026-10-23 and match `docs/research/build/claims-2026.md`.
-
-**Tested on real papers (2026-10-23, `docs/research/build/span-check-feasibility.md`)**: 89 % of the classic corpus quotes match freshly extracted text (65 exact, 2 fuzzy, 8 misses); misses are table rows, Unicode formulas, and flattened superscripts. Therefore: one canonical text per source (normalised `pdftotext` or clean HTML, with sha256) that the extractor quotes from; a tiered span check (exact, then fuzzy where every digit must match in order; the card shows the tier and the source's own text); table values verified with a table locator against `pdftotext -layout` lines; and a number parser that recognises flattened exponents (`1.26 · 1011` means 1.26 × 10^11).
-
-## 5. Comparability engine
-
-`ledger/compare.py`: `compare(card_a, metric_a, card_b, metric_b) -> Verdict(level, gates[], sentence)`. Deterministic; no model.
-
-| Gate | Passes when | On failure |
-|---|---|---|
-| G1 Problem | Same target problem | RSA vs ECC → **not comparable**. secp256k1 vs P-256 vs generic 256-bit → **caveat** ("different curve; secp256k1 admits cheaper formulas") |
-| G2 Scope | Same scope (point addition vs full attack, etc.) and same inclusions (for example whether the windowed lookup is counted) | **not comparable** ("one excludes the windowed lookup") |
-| G3 Layer | Same layer | **not comparable**, always. The engine never converts logical to physical |
-| G4 Unit | Same gate unit | Toffoli vs T vs Toffoli + T/2 → **not comparable** ("no exact conversion; 4 to 7 T per Toffoli depending on construction") |
-| G5 Statistic | Same statistic | Average executed vs worst case → **not comparable**. A measured value vs another claim's **upper bound** → **caveat**, one-sided ("at least X % below the stated bound; the bounded circuit may be smaller"). `not_stated` on either side → **caveat** |
-| G6 Addend | Same addend interface (point addition only) | Classical vs coherent → **not comparable** ("coherent costs about 11 more qubits and about 30 % more Toffolis", ECDSA.Fail paper) |
-| G7 Failure | Both exact, or failure budgets within 10× | **caveat**, naming both budgets |
-| G8 Amortization | Same (single key vs many keys) | **not comparable** (Litinski's 50M is a many-key limit) |
-| G9 Hardware | Physical layer only: same physical error rate, cycle time, reaction time, and runtime target | Same noise model but different error-correction construction → **caveat** (this is how Gidney compares his own 2019 and 2025 RSA estimates). Different error rate, cycle time, or runtime target → **not comparable**, listing the differing assumptions |
-
-Verdict = **not comparable** if any gate fails hard; **comparable with caveat** if any caveat; **comparable** otherwise, in which case the page shows the ratio.
-
-Labelled pairs live in `data/eval/pairs.json`; Severyn approves the labels **before** the engine is written. The 14 proposed pairs are listed in the T3 ticket (verdicts derived from the corpus files), for example: EF-893 vs EF-874 Toffolis (comparable); RNSL17 vs HJNRS20 logical qubits (comparable, both P-256); G25 vs GE19 physical qubits (caveat: same noise model, different construction); EF-BENCH coherent variant vs GOOG-ZK point-addition Toffolis (caveat, one-sided: 34.5 % below Google's bound); EF-893 vs GOOG-ZK (not comparable: classical vs window-indexed addend); PLDD-25 headline vs EF-893 (not comparable: layer and scope); LIT23 "50M" vs LIT23 single-key (not comparable: amortization); G25 vs GOOG-ZK logical qubits (not comparable: RSA vs ECC, the tracker confusion).
-
-## 6. Extraction
-
-`ledger/extract.py`:
-
-1. `sources.fetch(arxiv_id)`: download HTML, convert to plain text, store `text_sha256`; cache text locally (gitignored) and commit it only if the licence allows.
-2. Prompt: the schema, the counting-convention checklist (from `CONTEXT.md`), and, if memory is on, recalled conventions for the same source family. Instruction: every field needs a verbatim quote; write `not_stated` instead of guessing.
-3. `client.messages.parse(model="claude-sonnet-5-5", output_format=CandidateCard, temperature=0)`.
-4. Verifier runs; fields that fail span or number checks are marked `rejected` with the reason and never auto-filled.
-5. Draft saved under `data/drafts/`; the reviewer page shows each field with its quote and status; approved fields are copied into a card with `review.status = human_reviewed`.
-
-Logging: model id, prompt sha256, input/output tokens, cost, and latency per run in `data/runs/*.jsonl`.
-
-Cost: about $0.08 input + $0.02 output per 40k-token paper on Sonnet 5.5 (`build-feasibility.md` §1); the whole hackathon needs well under $10 of model spend.
-
-## 7. Headline check
-
-`ledger/headline.py`: the model only **parses** the sentence into a structured assertion (subjects, metric, number, implied layer and scope, comparison direction). Mapping to cards is deterministic (identifier and alias table) and shown to the user for confirmation. The compare engine produces the verdict; the page quotes the cards. If no card matches, it says so.
-
-## 8. Evaluation design
-
-Purpose: answer Deval Pandya's question ("how do you know it is right?") with numbers, and show the gap to a plain chatbot.
-
-**Gold data.** The two corpus files (`claims-classic.md`, `claims-2026.md`) were written by research agents with verbatim quotes and locations. Severyn reviews each card before it becomes gold. Gold is frozen in `data/eval/gold/` with a commit hash **before** prompt iteration starts.
-
-**Split.**
-- Dev (prompt iteration allowed): GE19-RSA2048, HJNRS20-P256, EF-BENCH.
-- Held-out (run once, report as is): G25-RSA2048, SCHR, GOOG-ZK (all CC BY, so text can be cached for reproducibility).
-
-**Metrics per held-out paper.**
-- Field accuracy: exact match after normalisation for each numeric value + unit + statistic; categorical match for problem, scope, layer, addend, amortization.
-- Quote validity: share of model quotes that pass the span check.
-- Unsupported-number rate before the verifier (model output) and after (published draft); the second must be 0.
-
-**Comparison baseline.** Twelve labelled comparison questions built from `pairs.json` ("Does the 893-qubit circuit need fewer qubits than Google's?", "Is Litinski's attack 50 million Toffolis?"). Ask the same model **without** the ledger (no tools, no documents), grade answers against the labels by a fixed rubric, and report how many conflate layer, scope, statistic, or amortization. Then run the ledger's engine on the same pairs. Report both, including any ledger failures.
-
-**Reproducibility.** `scripts/run_eval.py --split heldout` writes `data/eval/results.json` with model id, prompt hash, date, scores, and every disagreement. The eval page renders that file; nothing on it is typed by hand.
-
-## 9. Security and safety
-
-- API keys only on the server; extraction and headline endpoints rate-limited; extraction requires sign-in; daily spend cap in code (`MAX_RUNS_PER_DAY`).
-- Ingestion only from an allowlist (arXiv IDs, listed domains); no arbitrary URL fetching; no code execution from sources.
-- No user data stored beyond reviewer ID on approvals.
-- Content guardrails: public claims only, no circuits, no logical-to-physical conversion, "not independently verified" labels, corrections link.
-
-## 10. Repository layout
+T1 owns `pyproject.toml`, `uv.lock`, and the initial `Makefile`, schema/manifests and draft seeds. T1b owns human approval of the six records after T2 checks exist; it is a separate issue so closing T1 can unblock T2 without a review/check dependency cycle. Other tickets request dependency changes through the integration owner. This prevents concurrent lockfile edits.
 
 ```text
-ledger/            schema.py  sources.py  verify.py  compare.py  extract.py  headline.py  memory.py
-app/               main.py  templates/  static/
-data/              sources/  cards/  drafts/  eval/{gold,pairs.json,questions.json,results.json}  runs/
-scripts/           extract_card.py  run_eval.py  build_seed_cards.py
-tests/             test_verify.py  test_compare.py  test_schema.py  test_cards.py
-Makefile           verify, test, eval, run
-render.yaml        service definition
+ledger/schema.py                typed records and schema validation
+ledger/sources.py               pinned fetch/canonicalization and hash checks
+ledger/verify.py                exact span/token checks and fixed derivation
+ledger/compare.py               deterministic nine-rule comparison
+ledger/extract.py               source-grounded model proposal
+ledger/review.py                local decision validation and card export
+app/main.py                     read-only routes and health route
+app/templates/ app/static/      rendered pages and CSS
+data/sources/*.json             manifests, not unrestricted source mirrors
+data/text/*.txt                 only redistributable canonical texts
+.cache/sources/                 private canonical texts, gitignored
+data/cards/*.json               six reviewed published records
+data/drafts/*.json              publishable recorded drafts
+data/runs/*.json                sanitized run metadata
+data/eval/dev-pairs.json        three public development examples
+data/eval/results.json          actual results rendered by the site
+eval-private/                  gitignored gold, held-back inputs and labels until run freeze
+scripts/extract_cards.py        source/excerpt -> draft list and run record
+scripts/review_cards.py         decision file -> checked export
+scripts/run_eval.py             fixed comparisons/extraction -> results
+scripts/check_cards.py          offline checks over committed records
+tests/                         interface-level regression tests
+render.yaml                     read-only service configuration
+README.md                       run, verify, provenance and limitations
 ```
+
+Create files only when their ticket needs them. No scaffolding for T9–T12 belongs in the core.
+
+### Source and evidence
+
+`SourceManifest` contains:
+
+- `id`, title, authors, source date, URL, and pinned version or capture timestamp.
+- Licence/terms URL, redistribution decision, reviewer, and decision note.
+- Acquisition URL, acquisition timestamp, raw-content hash, and canonical-text SHA-256.
+- Canonicalizer ID/version, tool version, text encoding, and transformation description.
+- Local cache key and optional repository text path. Public manifests must not expose private absolute paths.
+- Canonical-text availability: `committed`, `local_only`, or `unavailable`.
+
+`EvidenceAnchor` contains `source_id`, `text_sha256`, `quote`, `start`, `end`, and `locator`. All offsets are half-open Unicode code-point offsets into the complete canonical text, not byte offsets. Require `canonical_text[start:end] == quote`.
+
+A numeric anchor adds `token_text`, `token_start`, `token_end`, and optional table row/column labels. Token offsets use the same complete canonical text. The token must be complete, inside the quote, and uniquely selected. Table labels aid human review but do not replace token checks.
+
+### Fields, cards, and metrics
+
+`EvidenceField[T]` contains either a stated `value` with evidence anchors, or `state=not_stated` with a review note. Do not encode unknown as an empty string, zero, false, or an empty inclusion list.
+
+Each `ClaimCard` contains:
+
+- `id`, `source_id`, `operating_point_id`, title, and plain-language summary.
+- `metrics: dict[str, Metric]`, with stable metric IDs.
+- `correctness_evidence`, separating budgets, observed tests, reporter, input procedure, selection, and independent checks.
+- `review`, with status, reviewer, time, field decisions, and reviewed-content hash.
+- `checks`, generated by code and tied to current content and source hashes.
+
+Each card is one operating point. Each `Metric` contains:
+
+| Field | Meaning |
+|---|---|
+| `value` | Decimal string. Never use binary floating-point equality for source numbers. |
+| `unit` | Closed vocabulary including logical/physical qubits, Toffolis, CCX+CCZ, T gates, hours, days, count, probability. |
+| `layer` | EvidenceField of `logical_circuit`, `logical_algorithm`, or `physical_architecture`. Never infer solely from unit or card title. |
+| `bound` | `exact`, `upper_inclusive`, `upper_exclusive`, `lower_inclusive`, `lower_exclusive`, `approximate`, `not_stated`. |
+| `statistic` | `peak`, `fixed_count`, `average_executed`, `expected`, `not_stated`. Bound and statistic are independent. |
+| `kind` | `observed` or `derived`. Observed requires a numeric anchor. Derived requires a derivation record. |
+| `context` | Evidence-backed target, scope, inclusions, counting convention, input distribution, addend interface, amortization, hardware assumptions, and runtime role. |
+| `reporting` | Reporter and whether the quantity is the source's own estimate or a third-party quotation. |
+
+Every categorical field in `context` uses `EvidenceField`. Context is explicit per metric. A helper can copy shared reviewed context during drafting, but the persisted metric must be self-contained. Metrics from Table 5 and a layout paragraph must not silently inherit equal inclusions.
+
+Inclusions map relevant cost names to `included`, `excluded`, `not_applicable`, or `not_stated`. State the vocabulary needed by each scope: lookup, addend preparation, uncomputation, retries, classical key recovery, and factories where relevant. Completeness is a human decision, not equality of two empty maps.
+
+Input distribution identifies sampling, exclusions, circuit-dependent generation, and selection. Amortization records `basis=total|per_key`, `instances`, and reuse conditions. Runtime role is `constraint`, `outcome`, or `not_applicable`. Required but unstated details use `not_stated`.
+
+`Derivation` contains a fixed `formula_id`, input field references, selected parameters, Decimal precision, and display rounding. The only required formula is `litinski_per_key_v1`: `(44 + 65/k) * 1000000`. Coefficients have source anchors. k=11 is a labelled ledger choice. Preserve the unrounded result and display approximately 49.9 million. Do not mix this pre-adjustment count with later `10/9` adjustments or physical throughput estimates.
+
+For `G25-RSA2048`, use separate metrics such as `physical_qubits`, `runtime_expected`, `logical_table5`, `logical_active_text`, and `logical_layout_text`. Keep 1,399 / 1,409 / 1,537 with their distinct context and an unresolved-source note. No default scalar `logical_qubits` may erase the distinction.
+
+### States and publication
+
+Review states: `research_draft`, `machine_extracted`, `human_reviewed`, `rejected`.
+
+Check states: `pass`, `fail`, `not_run`, each with a code and explanation. Relevant codes include `source_unavailable`, `hash_mismatch`, `span_mismatch`, `token_mismatch`, `ambiguous_number`, `unsupported_number_format`, and `derivation_mismatch`.
+
+A published card requires complete human decisions, current passing observed-number provenance checks, and valid derived metrics. A changed field, canonical hash, or evidence anchor invalidates its review. Explicit semantic unknowns are permitted after review, but cannot certify comparison. A recorded rejected draft can be public with its draft status and permitted evidence. There is no `reproduced` state or automatic approval.
+
+## 3. Source and strict-check interfaces
+
+```python
+fetch_source(pinned_spec: SourceSpec) -> CanonicalSource
+load_source(manifest: SourceManifest, cache_root: Path) -> CanonicalSource
+verify_card(card: ClaimCard, sources: Mapping[str, CanonicalSource]) -> CheckReport
+```
+
+`CanonicalSource` holds the manifest and exact text. Fetch only allowlisted pinned arXiv versions or explicitly configured seed-record URLs. Do not accept arbitrary user URLs. Limit response size and time. Never execute source content.
+
+Canonicalization decodes text, uses NFC Unicode and LF line endings, and removes HTML scaffolding before hashing. Select one textual representation for mathematical markup. Record that procedure. Do not concatenate duplicate MathML representations. For PDF-only material, record the `pdftotext -layout` version. Any manual repair creates a separately identified canonicalization revision, not a silent check-time substitution.
+
+A missing exponent, an ambiguous table layout, or a broken conversion requires a better source representation or an explicit failed check. It does not permit guessing `1011` means `10^11`.
+
+Numeric grammar is deliberately small:
+
+- Complete signed integer or decimal tokens, with valid comma grouping.
+- Explicit scientific notation, such as `6.5e+09`, or `1.26 × 10^11` with an explicit exponent marker.
+- Explicit scale words/suffixes: thousand, million, billion, k, M, B. Support the exact documented phrases `a million` and `half a million` if used.
+- Approximation and inequality markers remain separate bound metadata. The numeric magnitude must still match.
+
+The parser must reject partial matches: 893 inside 1893, 1,399 inside 13,990, and a detached exponent digit are failures. Do not collect digits and compare subsequences. Do not fuzzy-match to certify spans. Do not evaluate free-form source expressions. A format outside the grammar returns `unsupported_number_format`.
+
+The selected numeric token must parse to the proposed value under the documented scale convention. A numeric anchor without explicit token offsets fails when multiple candidates exist. Duplicate numbers need distinct token offsets. Do not choose the first matching number automatically. A syntactically valid token can still map to the wrong metric or design. The human checks this, and evaluation scores that error.
+
+`verify_card` has no network or model side effects. It reports unavailable sources as `not_run`. It never turns them into passes. `scripts/check_cards.py` distinguishes a publication-blocking failure from an unavailable optional source. Public reproducibility notes must list local-only evidence.
+
+## 4. Comparison interface and rules
+
+```python
+compare(left: MetricRef, right: MetricRef, cards: Mapping[str, ClaimCard]) -> Comparison
+# MetricRef = (card_id, operating_point_id, metric_id)
+# Comparison = verdict, rules[9], explanation, ratio_or_none
+```
+
+An invalid reference returns an explicit input error, not a scientific verdict. All valid references produce all applicable rule results. Each result has `status=pass|caveat|conflict|unknown|not_applicable`, reason code, explanation, and evidence references.
+
+| Rule | Known agreement or limitation | Known conflict | Unknown evidence |
+|---|---|---|---|
+| R1 Target | Same problem and parameters | RSA vs ECDLP, or distinct named curves | Generic 256-bit ECDLP vs a specific curve without justified mapping |
+| R2 Scope/inclusions | Same operation and reviewed relevant inclusions | Subroutine vs full attack, included vs excluded lookup/classical work | Omission or ambiguous coverage |
+| R3 Layer | Same per-metric layer | Logical vs physical, or circuit vs full algorithm | Unstated layer |
+| R4 Unit/convention | Same unit and evidenced counting convention | T vs Toffoli without a supported exact mapping | Unstated counting convention |
+| R5 Statistic/distribution/bound | Same statistic and compatible input distribution. Different documented bounds yield a caveat only after other requirements pass. | Average vs fixed/worst-case count, or known materially different input distributions | Statistic, bound, or required distribution unspecified |
+| R6 Addend | Same relevant interface. Non-point-addition scopes can be not applicable. | Classical vs coherent vs window-indexed | Required interface unstated |
+| R7 Correctness | Same documented requirement and equivalent evidence basis | Explicitly different required correctness criteria | Budget vs observations alone, absent requirements, or incompatible/unknown test support |
+| R8 Amortization | Same total/per-key basis, instance count, and reuse conditions | Single-key vs per-key k=11, or incompatible reuse | Instance count or basis missing |
+| R9 Hardware/runtime | Same required assumptions. Documented architectural differences with otherwise aligned assumptions can be a caveat. Different runtime outcomes can be a caveat. | Different binding runtime constraints or materially conflicting hardware assumptions | Required physical assumption missing |
+
+R9 is not applicable to logical metrics without physical claims. Compare runtime outcomes as metrics in their own right when selected, but do not confuse an outcome with a resource-selection deadline. No arbitrary 10× failure-budget rule exists.
+
+Aggregate precedence: any `conflict` -> `not_comparable`. Otherwise any required `unknown` -> `insufficient_evidence`. Otherwise any `caveat` -> `caveat`. Otherwise -> `comparable`. Preserve unknown rows even when another rule establishes a conflict. Missing facts alone must never produce `not_comparable`.
+
+The core permits a ratio only for `comparable`, exact unbounded numeric values, identical units, and nonzero denominator. It still labels the scope and operating points. No ratios for caveats, upper bounds, or incomplete evidence. In particular, comparing Google's two upper bounds cannot prove superiority of either hidden circuit.
+
+The three development examples are:
+
+1. **Primary useful comparison:** `EF-893:submission-457ccb7a:logical_qubits` versus `GOOG-ZK-PA-LOW-Q:low_qubit:logical_qubits`. Both concern logical point addition, not different cryptographic targets. Review classical versus window-indexed addend interfaces, separately billed lookup, tested input distributions, and measured values versus bounds. Show only source-backed conflicts. If required evidence remains unresolved without a known conflict, return `insufficient_evidence`. Never fabricate a reduction ratio.
+2. `LIT23-SINGLE:single_key:toffoli_per_key` versus `LIT23-K11:parallel_k11:toffoli_per_key`: known amortization conflict. Other unknowns remain visible.
+3. The two Google point-addition operating points, selecting their gate metrics: show upper bounds and any source-supported limitation. If required distribution or correctness equivalence is missing, use `insufficient_evidence`, not an invented comparable result. Severyn freezes the expected rule rows after source review, before implementation.
+
+Development labels are regression requirements, not measured engine accuracy. No forced positive comparison is necessary for the demo.
+
+EF-893 versus G25 physical qubits is only a basic target/scope/layer boundary example, not the hero comparison or an additional scored development pair. The main demonstration should emphasize the harder EF-893/Google comparison and Litinski amortization.
+
+## 5. Extraction and local review interfaces
+
+```python
+extract(source: CanonicalSource, selection: ExcerptSelection, config: ExtractionConfig) -> ExtractionRun
+# ExtractionRun contains list[DraftCard], raw structured response, checks, and run metadata.
+review_export(drafts: list[DraftCard], decisions: ReviewDecisions,
+              sources: Mapping[str, CanonicalSource]) -> ExportResult
+```
+
+`ExcerptSelection` uses full-text offsets. Returned quote/token offsets remain relative to the complete canonical text. A source can produce zero, one, or several drafts. Require separate operating points. Do not merge alternative rows or assume one paper means one card.
+
+The prompt contains the schema, canonical source excerpt, and explicit instructions to quote evidence or mark unknown. It contains no gold cards, held-back labels, prior runs, or memory. Treat source text as untrusted data, not model instructions. A known source hash and approved source selection are required before a paid call.
+
+`ExtractionConfig` names the actual model, token limit, timeout, and maximum allowed spend. The CLI requires an explicit per-run spending limit. No unbounded retry loop. A failed provider call records failure and publishes no synthetic output.
+
+Each run records source/excerpt hashes, prompt hash, model ID, SDK version, timestamp, output and check hashes, input/output tokens if returned, latency, and cost basis. Use provider-reported or documented-price-calculated cost and label which. If unknown, record `not_available`, not zero. Remove secrets and restricted text from public logs.
+
+`ReviewDecisions` identifies the reviewer and timestamp. It has approve/reject decisions for every populated field and acknowledgement of unknown fields. Approval re-runs strict checks against current source text. Any missing decision, rejected required field, failed check, or content/hash mismatch blocks card export. Rejected drafts remain drafts. Write the export to a local output path for normal git review. The deployed process never writes approvals to Render's filesystem.
+
+## 6. Evaluation interface and result schema
+
+`scripts/run_eval.py` consumes frozen gold, excerpt selections, held-back pair labels, the engine, and optional real model credentials. It writes actual results and an input-manifest hash. Do not calculate a headline percentage over development examples.
+
+### Freeze and alignment
+
+1. Review the six seed cards from primary evidence.
+2. Use one excerpt for extraction prompt development.
+3. A human prepares two held-back source excerpts, about 12–20 numeric fields total. Each excerpt targets one or two operating points.
+4. The human labels each gold field with `(source_id, target, scope, operating_point_id, metric_id)` and evidence. Include categorical context.
+5. Freeze prompt, schema, rules, gold, selections, and hashes before the held-back run.
+6. After the engine freezes, the human independently labels three held-back pairs. Keep labels outside the implementation agent's context until the first run.
+7. Run each held-back exercise once with that frozen configuration. If fixes require another run, report both attempts and mark the second as a rerun.
+
+Independence means the human labels from source evidence without copying engine answers. It does not mean external expert validation. Papers may already occur in research notes or pretraining. Disclose that exposure. This is held-back task data, not evidence of unseen-paper generalization.
+
+Match draft operating points by the frozen alignment tuple, not list order or a fuzzy title match. Ambiguous matches are errors. List extra claims separately. Report omissions over gold fields and extras over proposed fields. An extra supported field is not automatically false, but requires separate human review and must not improve the scored denominator.
+
+### Required measurements
+
+- Gold fields, proposed fields, aligned fields, missing fields, extras, and unmatched drafts.
+- Numeric value/unit/bound/statistic correctness.
+- Categorical context correctness and field-mapping errors, including swapped operating points, wrong row/column, and correct number assigned to wrong metric.
+- Exact span pass/fail/not-run counts and numeric-token pass/fail/not-run counts.
+- False accepts: human-incorrect proposed fields with passing span and token checks, divided by all human-incorrect proposed fields checked.
+- False rejects: human-correct proposed fields rejected by those checks, divided by all human-correct proposed fields checked.
+- Held-back pair verdict matches and every rule-level disagreement. Development results remain separate.
+
+Also report errors among accepted fields so readers can see the publication risk. Do not score omission as a verifier false reject: the verifier cannot reject an unproposed field.
+
+For each rate with denominator >0, report numerator, denominator, and a descriptive 95% Wilson interval. Implement this short fixed calculation with the standard library. No SciPy dependency is needed for the core. A zero denominator is `not_applicable`. State that source-clustered fields and three pairs do not justify strong statistical or market claims.
+
+### Model baseline and saved results
+
+If funded credentials exist, run the same available model on all three held-back pairs. Supply both selected records and the same pinned source excerpts used by the comparison exercise. Do not supply gold labels or engine verdicts. Require structured `verdict`, rule statuses, and cited evidence. Grade by the frozen human rubric. Report unknown/invalid responses as such. Use the same context budget, and disclose input or truncation differences.
+
+If the funded key is unavailable, set `extraction.status` and `baseline.status` to `not_run`, with `funded_key_unavailable`. The deterministic core can still deploy, but the model workflow acceptance remains unmet. Do not substitute fabricated drafts or a knowledge-only chatbot test.
+
+`data/eval/results.json` contains schema version, commit/input hashes, frozen configuration, dataset counts, exposure notes, actual run IDs, per-field results, comparison results, baseline status/results, uncertainty notes, and every disagreement. The site renders this file. Presentation numbers must come from the file, not hand-edited copy.
+
+## 7. Public routes and operations
+
+Required read-only routes: `/`, `/cards/{id}`, `/compare`, `/method`, `/drafts/{id}`, `/eval`, `/healthz`, and JSON downloads. The compare form accepts stable metric references, never arbitrary code or source URLs. Unknown IDs return a normal not-found or input error. Escape source quotations and model text in templates.
+
+Render loads committed artefacts at startup. It does not fetch papers, need a model key, or run extraction. Use a funded always-on plan if available. Deploy the minimal shell early, then redeploy accepted data and pages. Do not advertise an unavailable live workflow.
+
+`Makefile` interfaces: `run`, `test`, `verify`. `verify` invokes offline card validation and recorded-data checks. A separate explicit source-fetch command may fill the local cache. Missing nonredistributable texts must produce an availability report, not a false claim of universal public verification. Detailed CI is T12 optional.
+
+Main integration owner runs the final checks after all ticket changes land. No ticket runs concurrent builds, tests, lint, or formatters during shared edits. The README states the commands and which checks require local-only source access.

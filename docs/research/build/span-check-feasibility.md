@@ -26,13 +26,15 @@ Question: can the ledger's core promise ("every number tied to a verbatim quote,
 4. **Misattributed quotes.** "Luo et al.'s recent 835-qubit result" appears in the ECDSA.Fail paper, not in Luo's paper. The check correctly fails it, which matches the corpus note that the 835 figure is not in Luo's paper.
 5. **Paraphrase drift.** A few prose quotes were lightly edited by the corpus agents.
 
-## Design changes adopted (ARCHITECTURE §4 and §6, tickets T1, T2, T6)
+## Design decision after red-team review
 
-1. **One canonical text per source**: `pdftotext` output (or HTML text for sources that have clean HTML), normalised as above; store its sha256. The extractor receives exactly this text and must quote from it, so model quotes and the verifier see the same characters.
-2. **Tiered span check**: exact, then fuzzy (digits must match in order), then miss. The card shows the tier; for fuzzy matches, the card stores and displays the source's own text, not the model's.
-3. **Table values** use a table locator (table id, row label, column) and are verified against `pdftotext -layout` output: the row label and the value token must appear on the same line.
-4. **Number parser** recognises flattened exponents (`m · 10dd` → m × 10^dd, `2 dd` after a "·" → 2^dd) and marks ambiguous cases for review.
-5. **T1 re-anchors every corpus quote** against canonical text: replace each quote with the matched canonical span; list misses for Severyn. Expect roughly 10 to 40 % of quotes to need a quick manual fix, mostly table rows and formulas.
+The fuzzy experiment above is **not** a safe certification procedure. Digit subsequences and character similarity can accept the wrong number, unit or table column. Its reported rates are exploratory search diagnostics, not extraction accuracy or publication readiness.
+
+1. Use one versioned, hashed canonical text per source; give the extractor exactly that text.
+2. Certification requires an exact span in that canonical text (after documented deterministic normalization), with offsets and the source's own text. Fuzzy search may help a human locate a passage but never passes verification.
+3. A number needs an unambiguous token and unit/column binding. Multiple candidates or flattened exponents are `ambiguous`, not guessed. A reviewer may anchor a table cell to a visible row/column with a separate evidence record; string proximity alone does not prove the mapping.
+4. Re-anchor only the small reviewed demo corpus. Existing research quotations are candidates, not certified card data.
+5. Literal provenance is not semantic correctness. Scope, inclusions, statistic, layer and hardware assumptions require human review; report false accepts/rejects against independently reviewed labels.
 
 ## Licences verified on the arXiv abstract pages (2026-10-23)
 

@@ -174,6 +174,7 @@ source:
   title: "The Impact of Hardware Specifications on Reaching Quantum Advantage in the Fault Tolerant Regime"
   arxiv: 2108.12371v3
   date: 2021-11-11 (v3). Journal version AVS Quantum Science 2022, not verified in this pass; the arXiv abs page shows no journal-ref.
+  version_note: "The 317M/13M figures require v2 or v3. The v1 abstract instead stated approximately 35M physical qubits for one hour; never silently mix versions."
   url: https://arxiv.org/abs/2108.12371
   license: arXiv non-exclusive distribution 1.0
   read_depth: full for Abstract, §1.2 Breaking Bitcoin's encryption, §2.1–2.2, §3 ECC results (Fig. 2 caption and text p12–14); partial for the FeMoco sections
@@ -471,7 +472,7 @@ checks:
   - "[CHECK] E(shots) = 9/(1−0.0125)/0.99 = 9.206 ✓ (9.2)"
   - "[CHECK] exp(−1e-15 · 6.9e13) = 0.933 ✓"
   - "[CHECK] DISCREPANCY: the text says '12.07 · 9.1/24 = 4.63 days', but 12.07·9.1/24 = 4.577. 4.63 matches E(shots)=9.2 (12.07·9.2/24 = 4.627). Typo '9.1'; the conclusion is unaffected."
-  - "[CHECK] DISCREPANCY: '3f + 2ℓ + len m = 131' with f=33 and ℓ=21 gives 3f+2ℓ = 141 > 131 before adding len m. Also 1280 + 131 = 1411 ≠ 1409, and Table 5 says 1399. The definition of 'len m' (Table 2) was not resolved in this pass, so the 131 / 1409 / 1399 values are not reproducible from quoted parameters. Flag for human review."
+  - "[REVIEW] Width definitions differ: Table 5 reports 1399; prose reports 1409; hot+cold counts sum to 1280+131=1411; the explicit physical-layout construction includes idle hot patches, 1280+131+7*18=1537<1600. Do not call all of these the same logical-width metric or label 1537 a tracker error. The 131/1409/Table5 arithmetic remains unresolved; display a definition/location with every value and require reviewer approval."
 not_comparable_with:
   - "GE19 runtime: G25 is ~5 days vs GE19 ~7.4 h expected. The qubit reduction is bought with time, Toffolis and newer assumptions (yoked codes, cultivation) that GE19 did not use."
   - "ECC cards: different problem."

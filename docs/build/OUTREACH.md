@@ -1,43 +1,67 @@
-# Outreach drafts (send Friday evening; follow up Sunday with the live link)
+# Outreach drafts — not sent
 
-Goal: one honest reply from a target user before submission ("useful / not useful / this is wrong"). Never present anyone as a customer. Log replies on [Choose the project to build](https://github.com/SeivenBell/tq-ledger/issues/14).
+**Drafts only. Do not send automatically.** Final project choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). Product demand is unvalidated. One useful correction, rejection or concrete next-week use case is more informative than praise. Neither a draft, a sent message nor a reply makes someone a customer.
 
-Contact details come from `docs/research/build/competitors-users.md`; handles marked there as search-snippet only should be checked on the profile before sending.
+## Contact and evidence handling
 
-## Sample card to paste (plain text, until the site is live)
+Contact leads below come from [competitors-users.md](../research/build/competitors-users.md); confirm the recipient/profile before any manual send. That report marks some handles as search-snippet-only. [practitioner-pain.md §7](../research/practitioner-pain.md#7-sources) records source reading depth: Ivezic analysis full; Jaques relevant updates partial in its final audit; tracker and CSV full. These are research leads, not interviews or adoption proof.
 
-```
-Claim: 893-qubit secp256k1 point-addition circuit (ECDSA.Fail submission 457ccb7a, 2026-10-13)
-Counts: 893 logical qubits; 2,218,127 average executed Toffolis; one point addition; classical addend
-Tests: passed 9,024 hash-seeded inputs after nonce filtering; 111 failures in 360,960 in the submitter's own test
-Recomputed: p = 3.08e-4, 95% CI [2.53e-4, 3.70e-4] (assumes independent trials)
-Not comparable with: physical-qubit counts, full-attack totals, coherent-addend circuits
-Comparable with caveat: Gu et al. 2026 modinv-point-add (their failure budget is 2e-4; this interval is above it)
-Every number links to the sentence it came from.
-```
+Sam/Samuel Jaques is a relevant lead, but the source reports consulted provide no address. **Do not invent an email or contact route.** A conditional draft is below; no send until a public address is documented in a source report. No contacts have been sent by this task.
 
-## 1. Marin Ivezic (postquantum.com) · LinkedIn `/in/marinivezic` or `marin@ivezic.com`
+Record any actual manual sends and replies separately with date, channel, exact question and permission to quote. Log only truthful summaries on issue #14; do not publish private contact details or imply endorsement. Build independently, with no employer data/code; no employer restriction, permission or endorsement is presumed.
 
-> Hi Marin, your Oct 14 piece on the 893-qubit circuit is the clearest comparison I've read, especially reading "passed all 9,024 inputs" next to the failure rate in the notes. I'm building a small open tool that does the bookkeeping part of that: one card per published claim, every number linked to its sentence, and a rule set that refuses to compare logical with physical, one step with the full attack, or classical with coherent addends. Sample card below. Would a ledger like this be useful in your workflow, and what's the first thing you'd fix? Live version by Sunday. — Severyn (Waterloo, MSc quantum information)
+## Sample card to attach after human source review
 
-## 2. Gautham Anant (Eigen Labs, ECDSA.Fail) · X `@bbuddha_xyz`, LinkedIn `/in/gautham-anant`
+Until reviewed, label this **research draft, not published product output**:
 
-> Hi Gautham, I've been reading ECDSA.Fail and the HashSmash design doc. I'm building something complementary for the published-paper side: claim cards for ECC and RSA cost estimates (Google, Schrottenloher, Gu et al., Litinski, Gidney), each field quoted, with gates that refuse cross-convention comparisons. It doesn't verify circuits; it links to your records. Would you want the cards in your claim-sheet format, and is there anything in how I describe leaderboard entries that you'd correct? Sample below.
+> EF-893: ECDSA.Fail submission 457ccb7a, October 13, 2026. 893 logical qubits; 2,218,127 average executed Toffolis; one secp256k1 point addition; classical addend. The submitter reports 111 failures across 360,960 wider test shots; nonce-filtered evaluator tests are a separate result. These are not independent circuit verification. This card does not support a physical-qubit reduction or a full-key attack estimate. Please correct the source interpretation before reuse.
+>
+> Primary record: https://api.ecdsa.fail/api/submissions/457ccb7a-4436-4e8c-8e8c-f7d22c3c81b5
 
-## 3. Jieyi Long (ECDSA.Fail paper, first author) · X `@jieyilong`
+Do not append a failure-budget “comparable” verdict without reviewing distributions, interfaces and inclusions. Do not promise a live date, finished UI, successful extraction or unrun confidence calculation.
 
-> Hi Jieyi, your paper's line that "differing interfaces, accounting conventions, and validation scope preclude formal dominance" is the rule my open tool encodes: it puts each published ECC claim on a card with quotes and refuses comparisons across those conventions. I've modelled the benchmark and the coherent-addend variant; could you sanity-check how I describe them (sample below)?
+## 1. Marin Ivezic — `marin@ivezic.com` / LinkedIn `/in/marinivezic`
 
-## 4. Pierre-Luc Dallaire-Demers (Pauli Group) · X `@dallairedemers`, `contact@pauli.group`
+> Hi Marin, your analysis of the 893-logical-qubit circuit and the physical-resource claims around it is the workflow I'm trying to understand. I'm considering a small open tool: source-linked claim cards and explicit reasons two resource numbers cannot be compared. It would not verify circuits or estimate new hardware costs. I've attached one research draft. What would you correct? Would an artifact like this help with a specific article or review next week, or is your existing process already sufficient? — Severyn
 
-Neutral tone: his 25 % post is one of the demo cards.
+Demand test: ask for a concrete artifact/use date, not “does this sound useful?” Accept “not useful” as evidence. Do not claim the application is built.
 
-> Hi Pierre-Luc, I'm building an open ledger of published quantum cost claims for ECC and RSA, where each number links to its source and the tool states which comparisons are like for like. The 893-qubit result and the discussion of physical-qubit savings around it are in it. I want to represent your position accurately: is there a write-up of the 25 % physical-qubit estimate and its assumptions that I should cite? Corrections very welcome.
+## 2. Gautham Anant — X `@bbuddha_xyz` / LinkedIn `/in/gautham-anant`
 
-## 5. evolutionQ / Global Risk Institute (Waterloo) · contact form, X `@evolutionQinc`
+Both profile leads need confirmation before sending.
 
-> Hello, I'm a Waterloo quantum-information graduate building an open, cited ledger of quantum cryptanalysis cost claims (one card per published estimate, with rules that block comparisons across logical/physical, subroutine/full attack, and other conventions). Your June briefing on the new resource estimates is exactly the kind of reader I'm building for. Would your team be open to a 10-minute look next week? Happy to share the live link Sunday.
+> Hi Gautham, I'm exploring a small source-linked comparison tool for published ECC/RSA resource claims, complementary to ECDSA.Fail rather than a circuit verifier. It would distinguish logical subroutines, logical full attacks and physical estimates, and refuse unsupported comparisons. Your claim-sheet/review work may already cover this. Is there a concrete missing artifact you would use, or would extending an existing format be better? The attached draft labels the 893 record's wider tests as submitter-reported. Corrections welcome. — Severyn
 
-## Follow-up (Sunday, with link)
+## 3. Jieyi Long — X `@jieyilong`
 
-> Thanks again. It's live: [URL]. The card for [their item] is here: [link]. Anything wrong, I'll fix it before judging on Monday.
+> Hi Jieyi, your paper's warning that interfaces, accounting conventions and validation scope preclude formal dominance is central to a small claim-comparison tool I'm considering. I want to credit the authors' own “more than 50%” abstract comparison, without treating it as a physical-resource reduction. Could you correct the attached 893-record description, especially its interface and testing scope? Is a source-linked comparison card something you would actually reuse, or redundant with your paper/leaderboard? — Severyn
+
+Do not imply the approximately 34.5% retry-adjusted Q×T calculation against Google's low-gate upper bound is a clean physical saving or contradicts the authors without accounting for inclusions and interfaces.
+
+## 4. Pierre-Luc Dallaire-Demers — X `@dallairedemers` / Pauli Group `contact@pauli.group`
+
+> Hi Pierre-Luc, I'm exploring an open, cited comparison of published quantum resource claims. I want to represent the October 13 discussion around 893 logical qubits and physical-resource savings accurately. Is there a write-up of the physical-qubit estimate, architecture and runtime assumptions that I should cite? My draft separates subroutine counts from complete physical attacks; it does not independently cost hardware. Corrections or a reason this artifact would not help are equally welcome. — Severyn
+
+Neutral request, not an accusation. Do not assert that no physical saving is possible; the public logical count alone does not establish it.
+
+## 5. evolutionQ / Global Risk Institute — evolutionQ public contact form
+
+> Hello, I'm exploring a small open artifact for reviewing published quantum cryptanalysis estimates: source-linked cards and explicit reasons not to compare different resource layers or attack scopes. The intended user is a PQC analyst or security writer; demand is not yet validated. Would two reviewed cards and a cited refusal help with a concrete briefing your team is preparing, or are existing sources sufficient? I can share the research draft without asking for a meeting. — Severyn
+
+No personal handle for Piani/Mosca is established by the source report. Do not invent one or imply local affiliation/endorsement.
+
+## 6. Samuel (Sam) Jaques — conditional draft, no verified address
+
+**Not sendable yet:** source report identifies the Quantum Landscape work, but no contact address. Retain only as draft text until a report supplies a public route.
+
+> Hi Sam, your Quantum Landscape discussion asks for a more precise taxonomy of the physical assumptions needed for each estimate. I'm exploring a narrower artifact: source-linked operating-point cards that separate logical subroutines, logical full attacks and physical architectures, with a reasoned refusal for incompatible comparisons. Would that help maintain your chart, or is quote-level bookkeeping not the bottleneck? If helpful, what single comparison or correction feed would you want next week? — Severyn
+
+## Competition question and optional maintainer approach
+
+The free [PostQuantumSecurity.org tracker](https://www.postquantumsecurity.org/trackers/qubit-estimates.html) already supplies sourced estimates, assumptions and CSV. It launched October 21; do not pitch another table as novel. No maintainer contact was established in the research pages. If a public route is later documented, ask whether quote-level evidence or a refusal explanation could be contributed to the existing tracker rather than launching a duplicate. Do not guess an address.
+
+## Follow-up only after an actual send or reply
+
+> Following up on my earlier note: I have a reviewed artifact available now. Would you like the link? No meeting needed; a correction or “this doesn't fit my workflow” is useful.
+
+Use “available now” only when true. If sharing a real deployed link, name the actual card and its review status. Do not write “thanks again” as though a reply arrived, promise fixes before judging, publish private replies without permission, or describe outreach as validation without evidence of use.

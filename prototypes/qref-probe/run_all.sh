@@ -2,8 +2,8 @@
 # Reproduce the QRef probe end to end.
 set -u
 cd "$(dirname "$0")"
-[ -d legacy ] || { uv venv -p 3.11 legacy && uv pip install -p legacy "qiskit==0.46.3" "qiskit-aer==0.14.2" "qiskit-algorithms"; }
-[ -d modern ] || { uv venv -p 3.13 modern && uv pip install -p modern "qiskit>=2,<3" "qiskit-aer"; }
+[ -d legacy ] || { uv venv -p 3.11 legacy && uv pip install -p legacy "qiskit==0.46.3" "qiskit-aer==0.14.2" "qiskit-algorithms==0.3.1"; }
+[ -d modern ] || { uv venv -p 3.13 modern && uv pip install -p modern "qiskit==2.6.1" "qiskit-aer==0.18.0"; }
 mkdir -p traces
 ports() {
   case $1 in

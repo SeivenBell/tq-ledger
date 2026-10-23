@@ -12,7 +12,7 @@ Compiled 2026-10-19. Read-depth labels: `full`, `partial (sections …)`, `abstr
 - **Evaluator:** a "kickmix" circuit model (Babbush et al.). Allowed operations are X/CNOT/Toffoli/swap, Z/CZ/CCZ and destructive X-basis measurement (measurement-based uncomputation). The simulator tracks only a bit string and a sign, so it is classically cheap. Each check verifies the output, that inputs are unchanged, that every ancilla returns to |0⟩, and the **exact phase**. If k random trajectories all pass, then ε ≤ ln(1/δ)/k, and state fidelity ≥ (1−2ε)². Tasks used 10⁵ tests (9·10³ for the numerical tasks, 2·10⁷ for Fe2S2). Some tasks allow a failure budget of ≤10⁻³ or ≤2·10⁻⁴.
 - **Metric:** TQ = Toffoli count × peak qubit count. The paper states that this choice is arbitrary: Q^κ·T with κ = 1–3, Toffoli depth or active volume are all reasonable alternatives.
 - **Results (Table 1):** RS-DQI decoder (5.1e6 T, 1938 Q) → (4.4e5, 1837), G_TQ = 12. HHL angle G = 32. Coulomb G = 9.9. Gaussian G = 39. Fe2S2 G = 4.1. Lattice gauge G = 7.7. Hermitian DQI: 1.0e8 → 9.3e5 Toffolis, but the baseline is a naïve reversible implementation. Modular inversion: a new divstep architecture at (4.0e6, 935), with no comparable baseline.
-- **Compute/cost:** not reported in the sections I read. **Code:** no code-availability statement found in the main text or Methods, and the search found no repo → treat as **not released**.
+- **Compute/cost:** not reported in the sections I read. **Correction (2026-10-23):** the evaluator, tasks and circuit artifacts **are released** at [andigu/uncompute](https://github.com/andigu/uncompute), Apache-2.0. The earlier “not released” conclusion was a failed search, not evidence. The search harness/prompts and complete compute accounting remain unavailable; see `field-needs.md` and `ai-circuit-discovery.md` for read-depth limits.
 - **Stated limits:** the objective is hand-chosen. The interface uses a fixed computational basis, so it excludes changes of encoding such as coset representations. Task boundaries and input distributions are fixed by hand.
 - **Unstated limits [INFERENCE]:** the evaluator checks correctness only statistically on large domains. The paper offers no human-hour or API-cost comparison and no ablation of the LLM against non-LLM search. The objective ignores routing, connectivity and magic-state factory throughput, although the paper raises this in its discussion.
 
@@ -271,13 +271,13 @@ Not found despite targeted searches: any LLM/agent paper on syndrome-extraction 
   - **Differentiator:** let the user choose the objective (TQ, Q^κ·T with κ ∈ {1, 2, 3}, Toffoli depth) and show how the Pareto frontier and the winning circuit change. 2610.22367 itself says TQ is arbitrary and that κ = 1–3 is used in factoring estimates.
   - Leaderboard: model × task × objective × $ spent.
 - **Evidence it is open:**
-  - No code or evaluator was released for 2610.22367.
+  - **Retracted premise:** code/evaluator are public in `andigu/uncompute`; ECDSA.Fail and Yukon already occupy the arena lane. Niche A is historical exploration, **not the current recommendation**.
   - Existing quantum LLM benchmarks (QuanBench+, QC-Stark) test codegen correctness, not resource-optimal discovery.
   - IBM's ablation shows the LLM-vs-GA question is unresolved and budget-confounded, so the arena can run a matched-budget GA arm.
 - **Feasibility:** the simulator is a few hundred lines of Python. Tasks are small enough for 10³–10⁴ tests per candidate in seconds. Budget: IBM got results for $15/campaign; VarTODD used Flash/mini-class models.
 - **Fit for Severyn:** it is his RL-env and harness skill set, turned into a deployable product.
 - **Hackathon fit:**
-  - Eon Era (agent benchmarking) is the natural partner prize.
+  - **Correction:** Eon Era does not support this custom quantum dataset (see `build/build-feasibility.md`); no partner-prize fit established.
   - SurrealDB can hold program lineage, a MAP-Elites archive as graph + documents, and insight notes as vectors. This mirrors the paper's cross-session notes.
   - Clerk for API keys and submissions.
 - **Risk:** on tiny tasks, the best-known baselines (e.g. Gidney's adder) may be hard to beat. Frame the demo around *verified reproduction* plus objective-dependent trade-offs, not new state of the art.

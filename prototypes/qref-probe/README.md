@@ -7,4 +7,6 @@ A feasibility probe written on 2026-10-23 for the backup project: a behavioural 
 - `cases/`: three legacy scripts, their ports, seeded bugs (`mut_*`), and equivalent rewrites (`ok_*`).
 - `./run_all.sh` builds both environments with `uv` if missing and runs everything (about 20 seconds once installed).
 
-Result: 13 of 13 verdicts correct, including a silent parameter-binding bug that made the ported QAOA look better than the original. Full report: `docs/research/build/qref-probe.md`.
+Result: 11 comparisons agreed with their expected verdicts (6 pass, 5 deliberately seeded failures), including a planted parameter-binding bug that made QAOA look better. This is a feasibility demonstration, not a measured real-world migration error rate. Full report: `../../docs/research/build/qref-probe.md`.
+
+Run only trusted local scripts. The tracer executes Python in-process; it is not a sandbox or a safe public upload endpoint. Dynamic-circuit sampling can miss small effects, and unhooked APIs are outside this probe's coverage.

@@ -1,26 +1,37 @@
-# Demo video script (2:00 or less)
+# Demo recording plan — conditional on a real build
 
-Round 1 judging (Oct 26) happens without you: judges watch this video, read the Devpost page, and click the live link (`docs/research/build/judge-panel.md`). The video is the pitch.
+**Planning document, not evidence of implemented functionality.** Final project choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). Product demand is unvalidated. Follow the reduced scope in [PLAN.md](PLAN.md); do not build extra features to satisfy this script.
 
-**Recording rules**: record the deployed app, not localhost, with the address bar visible; 1280×720; pre-warm the service; demo data frozen with a visible date badge; no jargon in narration (jargon lives in the UI tooltips). Fill every `[RESULT]` with the real number from `data/eval/results.json`; never round up.
+## Recording prerequisites
 
-| Time | Screen | Narration (about 250 words total) |
+Record only working, deployed screens, with the address bar visible. Deploy early; freeze and date the reviewed dataset. The six operating-point cards are EF-893; GOOG-ZK-PA low-qubit and low-gate separately; LIT23 single-key and amortized k=11 separately; and G25 physical full attack. G25 must distinguish its Table 5 logical count from layout logical qubits and physical resources; never merge those counts. A source can yield several draft cards.
+
+Before recording, save an actual source-grounded CLI extraction and review/export output, source/version/hash, model/prompt identifiers, timestamp and check outcomes. Publish a static evidence view or open the real exported artifact in the recording; do not imply that a writable web reviewer exists. Render's filesystem is not durable storage. If no funded key/run exists, omit the extraction segment and explicitly say extraction was not demonstrated; do not simulate it.
+
+## Spoken script (under 240 words; approximately two minutes)
+
+| Time | Real screen/action required | Narration |
 |---|---|---|
-| 0:00–0:15 | Home page: the "numbers in circulation disagree" strip | "Every few weeks someone says breaking Bitcoin or RSA got cheaper: one million qubits, twenty-six thousand, eleven hundred, eight hundred ninety-three. Last week a co-author of a new circuit said it cuts the hardware needed by a quarter. The paper never measured hardware." |
-| 0:15–0:25 | Same page, scroll to the ledger table | "Banks are being told to monitor these breakthroughs and adjust their migration timelines. Today an analyst does that by hand. Q-Day Ledger turns each claim into a cited card, and refuses to compare numbers that measure different things." |
-| 0:25–0:50 | Headline check: paste the 25 % sentence → verdict "not comparable"; gates turn red; click "893" → quote panel highlights the sentence with the arXiv link | "Here's that claim. Three gates fail: the paper counts logical qubits, not physical ones; for one step of the attack, not the whole attack; with an easier kind of input. Every number opens the exact sentence it came from." |
-| 0:50–1:05 | Compare page: ECDSA.Fail coherent variant vs Google's bound → "comparable with caveat: 34.5 % below Google's upper bound" | "It doesn't just say no. When two claims can be compared, it does the comparison and says how far it goes: a headline said fifty percent; like for like, it's thirty-four and a half, against an upper bound." |
-| 1:05–1:20 | Card EF-893: failure statistics box | "It also recomputes what it can. This circuit failed 111 times in 360,960 tests. Its whole confidence interval sits above the failure budget another benchmark requires. That assumes independent trials; it's a flag, not a verdict." |
-| 1:20–1:40 | Reviewer page: enter a held-out arXiv ID → draft card appears; one field marked "rejected: quote not found"; approve the rest | "Adding a new paper: the model drafts every field with a quote. Code checks that each quote really is in the paper and that the number is in the quote. This one wasn't, so it's rejected, not published. A person approves the rest." |
-| 1:40–1:52 | Eval page | "On three papers held out from development, [RESULT] of numeric fields came out right and no unsupported number was published. A plain chatbot got [RESULT] of fourteen comparisons wrong." |
-| 1:52–2:00 | Method page: one-line architecture + "what we do not do" + URL | "The model proposes, code verifies, a human approves. Public claims only, no new attack estimates. Built for the people planning post-quantum migration." |
+| 0:00–0:20 | Reviewed cards with prominent scope/layer labels | “Eight hundred ninety-three logical qubits for one point addition is not a physical machine that breaks a key. Quantum cost claims describe different layers: a logical circuit, a logical full attack, or a physical architecture.” |
+| 0:20–0:45 | Compare EF-893 with GOOG-ZK-PA low-qubit; click evidence for interface, inclusions and statistic/bound | “Q-Day Ledger makes those distinctions visible. Even these two point-addition records do not justify a clean savings ratio: input interfaces, lookup accounting and measured versus bounded costs need checking. Each reason links to its source. The 893 circuit's wider tests are submitter-reported, not independently reproduced.” |
+| 0:45–1:00 | LIT23 single-key and k=11 operating points with formula source | “Even one paper has several operating points. Litinski reports 109 million Toffolis for one key. At eleven parallel instances, the formula gives about 49.9 million per key. Neither is a physical-qubit count.” |
+| 1:00–1:30 | Actual recorded CLI output/export or deployed static run evidence; show the actual outcome | “Here is a recorded extraction from a pinned source. The model proposes a list of drafts. Code checks strict source spans and unambiguous numbers. Those checks do not prove the interpretation: a person must review scope, assumptions and counting conventions before export.” |
+| 1:30–1:45 | Static run evidence and limitations | “We report actual check outcomes, including disagreements. Three development examples and three independently human-labelled held-back pairs are a small demonstration, not a statistically strong benchmark.” |
+| 1:45–2:00 | Method/user panel and live URL | “The intended user is a post-quantum analyst or security writer; a possible buyer is their research or security team. Demand is unvalidated. We test whether cited refusals save review work, not predict Q-Day.” |
 
-## Fallbacks
+## Truth and cut rules
 
-- If the live extraction is slow, cut from "submit" to the finished draft, and say "about a minute later". Do not fake the result: the rules ban faking a demo.
-- If the headline check is cut (PLAN cut order), use the compare page for 0:25–0:50 with preset pair 14.
-- If held-out accuracy is poor, say the real number and show the rejected fields; the verifier stopping bad numbers is the point.
+- Show the extraction's actual accepted, rejected, ambiguous or missing fields. Never preordain a rejection, successful export, correctness score or model failure. Human review/export may be CLI plus a reviewed Git change, not live web approval.
+- Show cost and latency only from the actual run log, with model, date, units and measurement boundary. If unmeasured, label “not measured”; never say “a minute later” without a measurement.
+- Strict span/number checks certify literal support only. Fuzzy search may help find text but never certifies it. No claim of semantic truth, independent circuit verification, or exhaustive source coverage.
+- Optional baseline: same source access and tasks for the LLM; record model/prompt, raw answers, independent labels and n. If no funded key, state not run; never invent a result.
+- Do not put the 34.5% calculation in the core demo. If asked: it is a limited retry-adjusted Q×T calculation against Google's low-gate upper bound, with unresolved inclusion/interface comparability; not physical savings. The “more than 50%” figure originates in the ECDSA.Fail authors' abstract, not only the press.
+- No headline parser, authentication, memory, CI sophistication or live writable review is required. Cut narration about missing screens instead of staging them.
 
-## Live-round version (Oct 29, top 10)
+## Evidence depth and competitive context
 
-Same flow, plus 15 seconds on any reply from the people in `docs/build/OUTREACH.md`, and 20-second answers rehearsed for: "Who pays?" (Wu), "Show me the model failing" (Mihailescu), "Cost per run and security model?" (Coupez), "Eval size, labelling, dual use?" (Pandya).
+This plan relies on [claims-classic.md](../research/build/claims-classic.md), [claims-2026.md](../research/build/claims-2026.md) and [span-check-feasibility.md](../research/build/span-check-feasibility.md), not independently reproduced circuits. [practitioner-pain.md §7](../research/practitioner-pain.md#7-sources) records full/partial reading depth and limitations. The fact-check and red-team findings are incorporated into these recording constraints; source spans still require builder/human re-anchoring.
+
+The free [PostQuantumSecurity.org tracker](https://www.postquantumsecurity.org/trackers/qubit-estimates.html) already lists sourced estimates and assumptions. Do not claim the first or only ledger. The proposed distinction—precise evidence plus reasoned refusal—remains an unvalidated usefulness hypothesis.
+
+Contract detail: the card IDs are `EF-893`, `GOOG-ZK-PA-LOW-Q`, `GOOG-ZK-PA-LOW-G`, `LIT23-SINGLE`, `LIT23-K11` and `G25-RSA2048`. Show ratios only for fully comparable, exact, unbounded values; caveats/bounds get no ratio. A missing funded key means extraction is `not_run` and full AI-workflow acceptance is unmet—not a substitute success. The shortened recording above must disclose that limitation.

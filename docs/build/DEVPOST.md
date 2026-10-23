@@ -1,73 +1,58 @@
-# Devpost page draft
+# Devpost preparation — UNPUBLISHED DRAFT
 
-Fill `[RESULT]`, `[URL]`, and `[VIDEO]` after the build. Keep every claim true on submission day; anything not built gets deleted, not softened.
+**Not submission-ready copy; no product implementation or measured result is asserted here.** Final selection remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). Convert only completed, evidenced items into past/present tense before publication; delete unbuilt features. Do not publish this planning document as the submission.
 
----
+## Proposed title
 
-## Q-Day Ledger: quantum code-breaking claims, with receipts
+Q-Day Ledger: quantum code-breaking claims, with receipts
 
-### Inspiration
+## Inspiration — source-grounded draft
 
-Every few weeks a new paper, leaderboard record, or headline says that breaking RSA or Bitcoin's cryptography takes fewer qubits: one million, 26,000, 1,151, 893. Banks are told to "monitor these breakthroughs and adjust their timelines" (HKMA, July 2026), and 73 % of surveyed Hong Kong banks say they lack the tools to quantify this risk. But the numbers count different things: logical vs physical qubits, one step vs the whole attack, average vs worst-case gate counts, one key vs many. Even careful readers get caught: a co-author announced that a new circuit "cuts the physical qubits by 25 %", from a paper that never measured hardware. Analysts sort this out by hand, one article at a time.
+Quantum cost numbers can describe a logical subroutine, a logical full attack or a physical architecture under hardware assumptions. Comparing their headline counts directly can mislead. The proposed tool makes the distinctions and supporting quotes visible, rather than estimating a new attack or predicting Q-Day.
 
-### What it does
+HKMA's July 2026 survey says 73% of respondents ranked a lack of established models, tools or industry-standard frameworks for quantifying quantum-related risk among their top three concerns. This is a ranked concern, not objective proof that banks lack tools, and not evidence that they want this product. Intended early users are PQC analysts, resource-estimate reviewers and security writers; a possible buyer is their research/security team. **Demand and willingness to pay are unvalidated.**
 
-Q-Day Ledger turns each public claim into a **claim card** where every number links to the exact sentence it came from.
+The free [PostQuantumSecurity.org tracker](https://www.postquantumsecurity.org/trackers/qubit-estimates.html), launched October 21, already provides sourced RSA/ECC estimates, assumptions and a downloadable CSV. ECDSA.Fail, Jaques's Quantum Landscape and Ivezic's analysis cover adjacent jobs. Do not claim a first, unique or validated market. The hypothesis to test is whether quote-level evidence and a reasoned refusal save expert review work.
 
-- **Compare** two claims: the ledger checks nine comparability gates (problem, scope, layer, gate unit, statistic, input type, failure budget, amortization, hardware assumptions). It compares them, or **refuses and names the gate**.
-- **Check a headline**: paste a sentence; see what the sources actually support.
-- **Recompute**: failure-rate intervals, totals, and arithmetic re-derived from quoted inputs; inconsistencies inside sources are flagged.
-- **Add a paper**: a model drafts the card; code verifies every quote and number; a reviewer approves field by field. Nothing unverified is published.
+## Intended build — replace with actual shipped behavior
 
-### How we built it
+- Static source-linked cards and a deterministic comparison view. Recommend six human-reviewed operating-point cards: EF-893 logical point addition; GOOG-ZK-PA low-qubit and low-gate separately; LIT23 single-key and amortized k=11 separately; G25 physical full attack. Distinguish G25 Table 5 counts from layout qubits; never combine them as one operating point.
+- Comparison outcomes: comparable, caveat, not comparable, or insufficient evidence. Unknown required evidence must not silently pass. Suppress ratios for incompatible scopes, resource layers or inclusions; show the reasons and sources.
+- Source-grounded CLI extraction returns a **list of draft cards**, followed by strict span and unambiguous number checks, human categorical review and local review/export. Static draft/run evidence can be deployed; a live writable reviewer is not promised.
+- A model proposes; code checks literal evidence; a human reviews semantics. A quote's existence does not prove the field's meaning, scientific validity or circuit correctness. Fuzzy matching cannot certify support.
 
-FastAPI + Jinja + HTMX on Render; cards as versioned JSON in Git; Claude Sonnet 5.5 with structured outputs for extraction and headline parsing; a deterministic verifier (span check, number parser, recompute registry, Clopper–Pearson intervals with SciPy); a deterministic comparability engine. [If built: Clerk for reviewer sign-in and audit trail; SurrealDB Agent Memory for the source → claim → assumption provenance graph and for recalling counting conventions before each extraction.]
+Authentication, memory, headline parsing and sophisticated CI are optional, not submission claims. Describe the actual implementation and model only after inspecting the shipped artifacts; do not name a speculative model version or partner integration.
 
-**Trust boundary**: the model proposes, code verifies, a human approves.
+## Scientific copy constraints
 
-### How we know it works
+- EF-893 is 893 **logical** qubits for one point addition with a classical addend; 111 failures in 360,960 wider tests are **submitter-reported**. Link the [submission record](https://api.ecdsa.fail/api/submissions/457ccb7a-4436-4e8c-8e8c-f7d22c3c81b5), not an arXiv paper for that number. Do not equate nonce-filtered tests with an independent correctness proof.
+- [Litinski](https://arxiv.org/abs/2306.08585) gives (44 + 65/k) million Toffolis per key: 109M at k=1 and approximately 49.9M at k=11. The asymptote is 44M, not 50M. The title's 50M is amortized, not a single-key cost or a misleading claim by itself.
+- The ECDSA.Fail authors' abstract states “more than 50% below” for its stated Q×T comparison. The approximately 34.5% figure is a limited, retry-adjusted Q×T calculation against Google's **low-gate upper bound**, not a headline result, physical-resource reduction or proof of like-for-like superiority. Interface/lookup inclusions and the paper's optimistic external-row success convention constrain interpretation; leave it out of the core pitch.
+- If a pre-identified printed arithmetic slip is encoded as a recompute check, describe it as a check of a known example, not autonomous discovery. Do not imply an unaffected conclusion was invalidated.
 
-- [RESULT] human-reviewed cards from [RESULT] sources (2017 to 2026); 100 % of published numbers pass the span and number checks (`make verify`, run in CI).
-- 14 labelled comparison pairs, labels frozen before the engine was written: the engine matches [RESULT] / 14.
-- Extraction on 3 papers held out from development: [RESULT] of numeric fields correct; [RESULT] of quotes found verbatim; 0 unsupported numbers reached a published card. Every disagreement is listed on the eval page.
-- Baseline: the same model without the ledger answered the 14 comparison questions; it got [RESULT] wrong, mostly by mixing logical and physical counts.
+## Evidence required before writing “how it works” or results
 
-### Challenges
+- [ ] Record actual implemented architecture, dependency/model versions, deployment URL, code revision and video URL. Confirm each claimed feature works; remove others.
+- [ ] Review all six cards against pinned/versioned sources; record reviewer, date, source hashes, locations, licensing and unresolved fields. Do not label a draft human-reviewed.
+- [ ] Save real CLI extraction inputs, list-of-drafts output, strict check outcomes, ambiguities, human corrections and review/export artifact. Attach raw run evidence, not a staged rejection or fabricated UI.
+- [ ] Record three development comparison examples separately from three held-back pairs independently labelled by a human. Freeze held-back labels before scoring and exclude them from prompt/engine tuning. Report counts and disagreements, not a statistically strong benchmark or broad accuracy claim.
+- [ ] If extraction is evaluated, state source/claim/field denominators, human gold procedure, false accepts and false rejects, and missing/extra drafts. “All published fields pass checks” is a publishing property, not independent accuracy evidence.
+- [ ] If a funded key exists, run an LLM baseline on the same tasks with the same source access; preserve raw answers and grading rules. Otherwise say not run, without a baseline superiority claim.
+- [ ] Include model cost/latency only if measured; give units, run boundary, date and n. No invented throughput, savings, customer quotes or success odds.
+- [ ] Replace this checklist with evidence-backed prose; do not turn unfilled items into asserted placeholder results. If extraction was not run, say so explicitly.
 
-Counting conventions are buried in prose and footnotes; the same paper can state three different qubit counts; titles round (a "50 million" in one title is a many-keys limit; the single-key figure is 109 million). Citations and structured outputs can't be combined in one API call, so we verify quotes in our own code, which turned out to be the product's core.
+## Security, licensing and independence — verify before publication
 
-### Accomplishments
+Use public published claims only: no new attack estimates, circuit construction or logical-to-physical conversion. Pin licensed sources; show licence and provenance. Do not redistribute full source texts or proprietary API records without permission. A source fetch or text hash does not verify scientific truth. Report inaccessible or unchecked evidence explicitly.
 
-The verifier found a real inconsistency in a well-known paper (a printed 12.07 · 9.1 / 24 = 4.63; the product is 4.58, and 4.63 corresponds to the 9.2 runs stated in the same sentence) and showed that a much-shared 893-qubit circuit's failure rate sits above another benchmark's budget.
+Keep any API key server-side/local and out of static exports. The core is read-only hosting with locally reviewed/versioned exports; Render filesystem writes are not durable approvals. Claim authentication, spend controls or ingestion restrictions only if implemented.
 
-### What's next (path to production)
+Build independently, with no employer data or code. No employer-specific restrictions, permission or endorsement are presumed. Before submission, describe actual authorship, dates, prior work and AI assistance from the repository history; do not assert that all work was written during Build Week without evidence. List only dependencies/platforms genuinely used and distinguish research assistance from human source review.
 
-1. More sources, including hardware claims (logical-qubit records), with change alerts when a new paper supersedes a card in the same comparable class.
-2. Evidence packs for CISOs, custodians, and insurers who must justify migration timelines to boards and regulators.
-3. A read-only API and claim-sheet export for trackers, standards groups, and benchmark operators.
+## Research depth
 
-Target users we contacted: [list replies honestly, or "outreach sent; no reply yet"].
+[practitioner-pain.md §7](../research/practitioner-pain.md#7-sources) distinguishes full/partial readings, secondary evidence and competition. [competitors-users.md](../research/build/competitors-users.md) and [market-story.md](../research/build/market-story.md) supply leads, not validated demand; use the corrected HKMA wording above over their older pitch copy. The [classic](../research/build/claims-classic.md) and [2026](../research/build/claims-2026.md) corpora supply draft evidence; [span-check-feasibility.md](../research/build/span-check-feasibility.md) explains why quotes must be re-anchored. None constitutes independent circuit reproduction.
 
-### Security and ethics
+Repository: https://github.com/SeivenBell/tq-ledger. No live/video link is asserted until an actual deployed build and recording exist. Outreach status must be taken from actual sent/reply records; drafts are not contact or adoption evidence.
 
-- Public, published claims only. No circuits, no new attack estimates, no logical-to-physical conversion.
-- Every card shows its review status; nothing is labelled independently verified unless it is.
-- API keys server-side; extraction requires sign-in and has a daily spend cap; ingestion only from an allowlist.
-- Short attributed quotes; full text stored only for CC BY papers; the licence is shown on every card.
-- Aimed at defenders planning post-quantum migration.
-
-### Partner platforms
-
-[Only list what is genuinely used. Clerk: reviewer sign-in; every approval records the reviewer. SurrealDB Agent Memory: provenance graph and recall of counting conventions before extraction. Render: hosting.]
-
-### Prior work and AI tools (disclosure)
-
-All code was written during Build Week (Oct 16 to 25, 2026). Research notes in `docs/research/` were produced with AI research agents and reviewed by Severyn. Code was written with Claude Code. Open-source dependencies: FastAPI (MIT), SciPy (BSD-3), Jinja2 (BSD-3), HTMX (BSD-2), Anthropic SDK (MIT) [update to the final list]. Quoted sources are credited on each card. Not affiliated with any company whose claims appear in the ledger. Unrelated to the author's employment.
-
-### Built with
-
-python, fastapi, htmx, claude, anthropic, scipy, render [, clerk, surrealdb]
-
-### Links
-
-Live: [URL] · Code: https://github.com/SeivenBell/tq-ledger · Video: [VIDEO]
+Acceptance boundary: absent a funded key, extraction is `not_run` and the full AI-workflow acceptance criterion remains unmet. An honest static demo is not evidence that extraction worked. Core ratios require fully comparable, exact, unbounded values; caveats/bounds receive no ratio.

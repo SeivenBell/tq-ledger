@@ -1,138 +1,117 @@
-# Q-Day Ledger: product spec
+# Q-Day Ledger: product contract
 
-Status: build-ready draft, 2026-10-23. Owner: Severyn Balaniuk. Pick recommended by `docs/decision/ranked-memo.md`; final choice is Severyn's ([Choose the project to build](https://github.com/SeivenBell/tq-ledger/issues/14)).
+Status: recommended build, 2026-10-23. No product implementation or evaluation result is claimed here. Severyn's final choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14).
 
-Working name **Q-Day Ledger**. Tagline: *Quantum code-breaking claims, with receipts.*
+Working name: **Q-Day Ledger**. Tagline: *Quantum code-breaking claims, with receipts.*
 
-## 1. The problem, in plain English
+## 1. Problem and intended user
 
-Every few weeks a new paper, leaderboard record, or headline says that breaking RSA or Bitcoin's cryptography takes fewer qubits than we thought. The numbers in circulation contradict each other:
+Quantum cryptanalysis claims describe different computations. Logical qubits for one point addition are not physical qubits for a full attack. Upper bounds, measured averages, amortized per-key costs, and runtime-constrained estimates also differ.
 
-- Public trackers say RSA-2048 needs **1,399**, **~2,314**, or **~4,000** logical qubits, and give today's best machines **8**, **48**, **~96**, or **~100** logical qubits (`docs/research/build/competitors-users.md`, table "Evidence that numbers in circulation are incomparable or wrong").
-- A co-author announced that a new elliptic-curve circuit "cuts … physical qubits … by 25%". The paper never measured hardware; the field's most careful analyst re-derived "16% at most" for one architecture and "about 28% fewer ions but run longer" for another (Ivezic, postquantum.com, 2026-10-14).
-- Litinski's title promises "only 50 million Toffoli gates"; the paper's single-key figure is **109 million**. The 50 million is a many-keys limit the paper never derives (`docs/research/build/claims-classic.md`, card LIT23).
-- A widely cited "Bitcoin in one hour needs 317M physical qubits" result is built on a circuit for a NIST curve, not Bitcoin's secp256k1 (card WEB22).
+The primary user is a PQC analyst preparing a cited assessment. The buyer hypothesis is an analyst firm or an internal risk team. Neither willingness to pay nor time saved is established. The ledger supports evidence review, not prediction of a quantum-break date or a migration recommendation.
 
-**Why this happens.** Claims count different things: logical vs physical qubits, one subroutine vs a full attack, average vs worst-case gate counts, classical vs coherent inputs, Toffoli vs T vs "Toffoli + T/2", different failure rates, one key vs many keys. Titles and posts round and relabel. Nobody makes the conventions explicit side by side.
+Two source-grounded examples motivate the core:
 
-**Who pays the cost.**
+- ECDSA.Fail submission 457ccb7a reports 893 logical qubits for a point-addition subroutine. Its 111 failures in 360,960 population-test shots are submitter-reported, not an independent correctness certificate. The source is a public submission record, not an arXiv paper.
+- Litinski's title says 50 million Toffolis. The paper explicitly explains reuse across parallel instances. Its single-key count is 109 million, while `(44 + 65/k)` million per key gives about 49.9 million at k=11. The limit is 44 million, not 50 million. This is an amortization distinction, not evidence of misconduct.
 
-| Person | What they must decide | What they do today |
+Source leads: `docs/research/build/claims-classic.md`, `claims-2026.md`, and the primary URLs below. Corpus quotations are research drafts. They need fresh anchors and human review before publication.
+
+## 2. Core deliverable
+
+Build a small public, read-only ledger. A local command-line workflow produces extraction drafts and review exports. The deployed site shows committed cards and recorded run artefacts. It does not accept live extraction or persist reviewer edits.
+
+1. Read six reviewed operating-point cards.
+2. Select two metrics and inspect nine comparison rules.
+3. Open each number's source quote, locator, version, hash, and check result.
+4. Inspect one genuine model extraction run, including its actual successes, mistakes or ambiguities; no rejection is preordained.
+5. Download the reviewed JSON and the recorded evaluation results.
+
+The promise is limited: **a model proposes fields, deterministic code checks provenance, and a person reviews meaning before publication.** Neither provenance checks nor human approval prove that a scientific claim is true.
+
+### Exact seed scope
+
+| Card ID | Operating point | Required content and qualification |
 |---|---|---|
-| PQC risk analyst or advisor (e.g. Marin Ivezic, Applied Quantum; evolutionQ) | Does this new claim change the threat timeline I give clients? | Reads a 30 to 60 page paper and writes a prose comparison by hand. Applied Quantum sells due diligence because "timelines and claims are hard to compare". |
-| CISO, crypto custodian, bank risk team | When to migrate, what to disclose to a board or regulator | Relies on trackers and headlines that disagree |
-| Standards and policy groups (Quantum Alliance, NIST/CCCS-facing teams) | What evidence a "quantum-safe" or "quantum-threat" claim needs | No shared claim format |
-| Journalists and tracker sites | What number to print | Copy headline figures; errors propagate |
+| `EF-893` | `submission-457ccb7a` | 893 logical qubits and the reported integer average-executed Toffoli metric 2,218,127. Keep the measured mean and its rounding distinct. Record classical-addend scope, test procedure, nonce selection, and submitter-reported 111/360,960 population results. Do not call the submission a leaderboard winner. |
+| `GOOG-ZK-PA-LOW-Q` | `low_qubit` | Point addition: ≤1,175 logical qubits and ≤2,700,000 CCX+CCZ under the source's stated convention. Preserve average-executed statistic separately from upper bounds. |
+| `GOOG-ZK-PA-LOW-G` | `low_gate` | Point addition: ≤1,425 logical qubits and ≤2,100,000 CCX+CCZ. This is a different design, not interchangeable metrics from the low-qubit point. |
+| `LIT23-SINGLE` | `single_key` | Generic 256-bit ECDLP, full-attack logical count: 109 million Toffolis per key. Record relevant classical recovery and counting conventions. Do not relabel the curve as secp256k1. |
+| `LIT23-K11` | `parallel_k11` | Ledger-derived `(44 + 65/11)` million Toffolis per key, displayed as approximately 49.9 million. Cite formula coefficients and label k=11 as a selected parameter. Preserve the paper's convention and distinguish any later adjustment factors. |
+| `G25-RSA2048` | `physical_layout` | One physical full-attack record with source-stated 897,864 physical qubits and 4.96-day expected runtime, subject to review of the source's assumptions. Keep Table 5's 1,399 logical qubits, text's 1,409 active logical qubits, and 1,537 layout/hot-patch/factory accounting as distinct labelled entries. Do not resolve their discrepancy by choosing one universal width. |
 
-Deadlines make this concrete: NSA CNSA 2.0 applies to new National Security System purchases from 2027-01-01; NIST IR 8547 deprecates RSA/ECC by 2030 and disallows them by 2035; Canada's federal roadmap requires high-priority systems migrated by end of 2031 (`docs/research/pqc-migration.md`).
+These six cards cover four sources. They are not six independent research results. The two Litinski cards share a formula family. The two Google cards share a paper but represent alternative designs.
 
-## 2. What the product does
+Primary links:
+- [EF submission](https://api.ecdsa.fail/api/submissions/457ccb7a-4436-4e8c-8e8c-f7d22c3c81b5).
+- [Google paper](https://arxiv.org/abs/2603.28846). T1 must pin the inspected version, rather than trust an unversioned URL.
+- [Litinski v1](https://arxiv.org/abs/2306.08585v1).
+- [Gidney v1](https://arxiv.org/abs/2505.15917v1).
 
-A public ledger of **claim cards**: one card per published claim, every number tied to the exact sentence it came from. On top of the cards:
+For Google, record window-indexed interface and the separately billed lookup from Equation (1). Hidden circuit details remain unknown. Source statements about proof support must identify their version and tested statement. The build does not independently rerun that proof.
 
-1. **Compare**: pick two claims; the ledger runs **comparability gates** (same problem, scope, layer, cost statistic, addend interface, failure budget, gate unit, amortization) and either compares them or **refuses**, naming the gate that fails.
-2. **Check a headline**: paste a sentence ("New circuit cuts Bitcoin-breaking hardware by 25%"); the ledger maps it to the underlying cards and says what the sources actually support.
-3. **Add a claim**: give an arXiv ID; a model drafts a card where every field carries a verbatim quote; code verifies each quote and number; a signed-in reviewer approves field by field.
-4. **Recompute**: the ledger re-derives what can be derived from quoted inputs (products, run-time arithmetic, failure-rate intervals) and flags inconsistencies inside a source.
+## 3. User-visible behaviour and acceptance
 
-The product's core promise: **an LLM proposes, code verifies, a human approves, and nothing unverified is published.**
-
-### What it deliberately does not do
-
-- No new attack circuits, no new resource estimates.
-- No conversion from logical to physical resources. Physical numbers appear only as quoted from their source, with their hardware assumptions.
-- No grading of companies or hardware vendors.
-- No live monitoring claims; the demo dataset is frozen and dated.
-- No redistribution of full paper text unless the paper's licence allows it (CC BY); otherwise short attributed quotes and character offsets only.
-
-## 3. Users, jobs, and stories
-
-Primary user: **the PQC risk analyst** (writes threat assessments for clients or an employer). Buyer path: analyst firms and in-house risk teams first, then CISOs needing evidence for migration timelines.
-
-| # | Story | Acceptance |
-|---|---|---|
-| U1 | As an analyst, I see every published ECC-256 and RSA-2048 estimate, grouped so only like-for-like numbers sit together. | Ledger table with filters (problem, scope, layer); each row links to its card. |
-| U2 | As an analyst, I click any number and see the exact sentence, its location, and the source link. | Every numeric field opens its quote, location, source version, licence. |
-| U3 | As an analyst, I compare two claims and get a verdict with the reason. | Compare page shows a gate table and one of: comparable, comparable with a stated caveat, not comparable. |
-| U4 | As a CISO, I paste a headline and learn whether its sources support it. | Headline page returns matched cards and a verdict with quotes. |
-| U5 | As a reviewer, I add a new paper and approve or reject each extracted field. | Draft card shows per-field check status; approval records reviewer identity and time. |
-| U6 | As a sceptic, I can reproduce every check. | `make verify` re-runs span, number, recompute, gate, and eval checks; results match the site. |
-
-## 4. Why it is useful (value case)
-
-| Value | Evidence | Strength |
-|---|---|---|
-| Prevents repeating wrong or incomparable numbers | Conflicting tracker figures; the 25% physical-qubit claim; Litinski title vs body; Webber curve label; a GRI survey misquote on a tracker (`competitors-users.md`) | Strong, documented |
-| Saves analyst time per new claim | Ivezic's 2026-10-14 article is exactly this job done by hand. Time per comparison is not published. [INFERENCE] a few hours manually vs minutes plus a review with the ledger | Plausible, unmeasured; do not quote a number |
-| Gives decision-makers a citation trail | Deadlines (CNSA 2.0, NIST IR 8547, Canada 2031) force migration decisions that boards and regulators review | Strong need; buyer not yet confirmed |
-| Catches inconsistencies inside sources | Gidney 2025 prints "12.07 · 9.1/24 = 4.63 days"; the product is 4.58 (the 4.63 matches Table 5's 9.2 runs, so likely a typo with no effect on the conclusion) (`claims-classic.md`) | Strong demo; frame respectfully |
-| Fits a funded direction | DARPA QBI IV&V topic open to 2026-12-30; DOE $45M V&V testbed (LAB 26-3603) includes resource estimation (`quantum-demand-map.md`) | Context for the path to production, not a hackathon user |
-
-Honest weaknesses: no user has committed yet; the paying market is small today; Eigen Labs (Yukon) could add a claims lane. Mitigations are in section 8.
-
-## 5. How usable it is (design principles)
-
-- **Zero friction to read.** No login for the ledger, cards, compare, and headline check. Every card has a permalink.
-- **Receipts on click.** Numbers are links. The quote panel highlights the cited sentence and shows section/page, arXiv version, and licence.
-- **Plain-English verdicts.** "Not comparable: one counts logical qubits for a single point addition; the other counts physical qubits for a full key recovery."
-- **Jargon behind tooltips.** Logical vs physical, Toffoli, addend interface, average vs worst case, each with a one-line explanation.
-- **Visible trust status.** Badges: machine-extracted, human-reviewed, reproduced; observed vs derived values in different colours; "not independently verified" where true.
-- **Exportable.** JSON per card, CSV for the table, a read-only JSON API.
-- **Corrections welcome.** Each card links to a prefilled GitHub issue.
-
-## 6. Scope
-
-**Must (the demo depends on it)**
-1. Card schema and 8 to 12 human-reviewed seed cards (ECC and RSA, 2017 to 2026).
-2. Verifier: span check, number check, recompute checks, failure-rate statistics.
-3. Comparability engine with named gates and labelled test pairs.
-4. Web app: ledger table, card page with quote panel, compare page, method page with "what we do not do".
-5. Extraction pipeline: arXiv text to a draft card with per-field quotes, verified by code.
-6. Evaluation: held-out extraction accuracy and a plain-LLM baseline on labelled comparison questions; results page.
-7. Deployed on Render (always-on instance), public repo, README, Devpost page, video of 2 minutes or less.
-
-**Should (add in this order if time allows)**
-8. Headline check.
-9. Clerk sign-in for reviewers; approvals record the Clerk user ID.
-10. SurrealDB Agent Memory: provenance graph (source, claim, assumption), "current best estimate" per comparable class via supersession, recall of prior cards and counting conventions before each extraction.
-
-**Won't (this week)**
-Physical estimation or logical-to-physical conversion; new circuits; live feeds; company grading; Eon Era and Expo integrations (no honest fit, see `docs/research/build/build-feasibility.md` §5).
-
-## 7. Success metrics
-
-**By submission (Oct 25, 11:59 PM ET)**
-
-| Metric | Target | How measured |
-|---|---|---|
-| Live URL works logged-out on a cold browser | Yes, page under 2 s | Manual check from another network on Oct 25 and Oct 26 |
-| Human-reviewed cards | ≥ 8, spanning ≥ 6 sources | `data/cards/*.json` with `review.status = human-reviewed` |
-| Published numeric fields that pass span and number checks | 100 % | `make verify` |
-| Labelled comparison pairs where the engine's verdict matches the label | 100 % on ≥ 12 pairs, labels frozen before coding | `tests/test_compare.py` |
-| Held-out extraction accuracy (numeric fields, after normalisation) | Report the true figure; target ≥ 80 %; zero unsupported numbers reach a published card | `scripts/run_eval.py` → `data/eval/results.json` |
-| Plain-LLM baseline on the same comparison questions | Report how many it gets wrong | Same harness, model without the ledger |
-| External reply from a target user | ≥ 1 (stretch) | Outreach log |
-
-**30 days after**: 25+ cards; 3 external corrections or pull requests; one analyst using it weekly; a conversation with Eigen Labs about linking or hosting.
-
-## 8. Risks and mitigations
-
-| Risk | Mitigation |
+| Surface | Core acceptance |
 |---|---|
-| A wrong physics statement on a card destroys credibility | Every published card human-reviewed by Severyn; derived values labelled; correction link; neutral wording |
-| "Niche, who pays?" | Show user → buyer path: analyst firms (already sell this as manual due diligence) → CISOs and custodians needing evidence packs → API for trackers and standards groups |
-| Eigen Labs (Yukon) adds a claims lane | Position as complementary: Yukon verifies submitted circuits; the ledger reads published papers and posts. Offer cards in Yukon's claim-sheet format |
-| Build overruns | Deterministic core first; cut order in `docs/build/PLAN.md` |
-| Demo fails during online judging (Oct 26) | Paid always-on Render instance, frozen data, smoke test, video recorded against the live URL |
-| Licensing of paper text | CC BY papers for full-text demos; short attributed quotes and offsets for others; licence shown on every card |
-| Read as an attack tool or as fear-mongering | Only public claims, no circuits, defensive framing (migration planning), "what we do not do" box |
-| Overlap with Severyn's employer (1QBit, TopQAD) | Logical-layer only; no physical resource estimation, magic-state factories, or compilation. This is also the product's thesis (refuse logical-to-physical conversion) |
+| Ledger `/` | Exactly six published cards, grouped by scope and metric layer. Alternative operating points are clearly named. No unlabelled qubit leaderboard. |
+| Card `/cards/{id}` | Every observed number opens its exact span and complete numeric token. Show source version/capture, licence, review identity/time, code-check state, and semantic unknowns. Derived values show formula and inputs instead. |
+| Compare `/compare` | Both selections specify card, operating point, and metric. Show each rule's status and evidence. Unknown evidence returns `insufficient_evidence` unless a documented conflict already establishes `not_comparable`. |
+| Method `/method` | Explain canonical text, strict checks, human semantic review, limited evaluation, licence constraints, and excluded features. |
+| Recorded draft `/drafts/{id}` | Render an actual saved extraction output and per-field checks. Identify it as a recorded run. No promise of a specific rejection or live review action. |
+| Results `/eval` | Render saved counts, disagreements, field-mapping errors, uncertainty, model/run metadata, and baseline availability. Separate development examples from held-back results. |
+| Local review/export | CLI accepts field decisions from a local decision file. It exports an approved card only after current checks and complete review. The export reaches the site through a normal git change and redeploy. |
 
-## 9. Positioning against what exists
+The primary walkthrough compares EF-893 with Google's low-qubit point-addition record. It explains source-backed interface and inclusion differences, bounds, and unresolved evidence without a reduction ratio. Litinski single-key versus k=11 shows amortization. EF-893 versus G25 is only a basic target/scope/layer boundary example, not the hero comparison.
 
-| Alternative | What it lacks |
-|---|---|
-| Ivezic's analyses (postquantum.com) | Prose; not reusable; one claim at a time |
-| Tracker sites (qdayiscoming, Quantum Doom Clock, BlueQubit, Qoronex) | Headline numbers without conventions; documented inconsistencies |
-| Eigen Labs ECDSA.Fail and Yukon | Verify circuits submitted to their own checker; no cards for published papers; no logical-vs-physical gate |
-| Asking a chatbot | No per-number receipts; conflates layers (measured by the baseline eval) |
+Basic accessibility is required: labelled form controls, keyboard navigation, readable contrast, and text labels for check states. A performance score or sub-two-second response target is not a submission claim without measurement.
+
+## 4. Checks and their limits
+
+- Pin canonical text and its hash before selecting spans. Check exact offsets without fuzzy repair.
+- Select a complete numeric token inside the exact span. Reject ambiguous tokens, digit-subsequence matches, and flattened-exponent guesses.
+- Keep layer, statistic, bounds, scope, inclusions, input distribution, addend interface, amortization, and hardware assumptions explicit. A human reviews categorical mappings.
+- Return uncertainty when required evidence is missing. Never treat two `not_stated` values as evidence of compatibility.
+- Show no ratio for mismatched scopes, unknown evidence, caveats, or bounded quantities in the core. The 34.5% calculation is not a core path.
+- Provide only the fixed Litinski per-key derivation needed by the six cards. A generic formula evaluator, G25 typo detector, confidence calculator for circuit failures, and physical resource estimator are not core requirements.
+
+Review and provenance states follow `CONTEXT.md`. A draft can pass code checks and still be semantically wrong. Published records can state unknown facts, but must not fill those facts by inference.
+
+## 5. Small evaluation, not a benchmark claim
+
+The core evaluation has three development comparison examples and three independently human-labelled held-back comparison pairs. Development examples are regression tests, not accuracy evidence. Severyn labels held-back pairs from source evidence after the engine and rules freeze. The implementation agent must not receive those labels before the first run.
+
+For extraction, use one development excerpt and two held-back excerpts from different pinned sources. Each excerpt targets one or two operating points, with approximately 12–20 numeric fields across the held-back excerpts. This is an excerpt-level extraction exercise, not general full-paper accuracy. The reviewer freezes exact gold fields, meanings, and alignment identifiers before extraction runs. Existing corpus exposure and possible model pretraining contamination must be disclosed. Do not call the papers unseen.
+
+Report raw counts and denominators for:
+
+- Extracted values, omissions, extra fields, and ambiguous or unmatched operating points.
+- Numeric correctness and semantic field-mapping correctness against human gold.
+- Exact span/token check outcomes.
+- False accepts: incorrect proposed fields that pass deterministic provenance checks.
+- False rejects: correct proposed fields that deterministic checks reject.
+- Held-back comparison verdicts and rule-level disagreements.
+
+Show descriptive 95% Wilson intervals for rates with nonzero denominators. State that fields are clustered by source and these intervals do not establish generalization. Zero denominator means `not_applicable`, not zero error. Three held-back pairs are a demonstration, not a statistically strong benchmark.
+
+If a funded model key is available, give the same model both comparison inputs and their source excerpts for a structured-output LLM baseline. Give neither method the human gold labels. Report the actual outcome, not an assumed chatbot failure. If funding is unavailable, report extraction and model baseline as `not_run: funded_key_unavailable`. Do not manufacture a run or claim the full AI workflow is complete.
+
+## 6. Scope and resources
+
+**Core, T1–T8 plus human review T1b:** schema and six reviewed cards, pinned sources, strict provenance checks, deterministic comparison, read-only pages, CLI extraction/review/export, small evaluation, early deploy, actual recorded run evidence, README, video, and submission.
+
+**Optional, disabled by default:** T9 headline parsing, T10 authentication, T11 memory, T12 automated CI. Authentication without durable approvals does not create a review workflow. Memory must never enter held-back prompts. No optional item can consume review, deployment, recording, or submission buffer.
+
+**Excluded:** new circuits, new attack estimates, logical-to-physical conversion, T-to-Toffoli conversion, live source monitoring, live writable review on Render, arbitrary URL ingestion, and a forecast of quantum-breaking dates.
+
+Budget about 12 focused solo hours, including human review, integration, deployment, and recording. Coding agents can reduce typing, not remove reviewer responsibility. `PLAN.md` allocates these hours and states failure decisions. A funded model key and deployment funding are prerequisites, not assumed benefits of a pending credit request.
+
+## 7. Licensing, independence, and risk
+
+Only redistribute complete canonical text where the source licence permits it. The research corpus identifies Google and Gidney as CC BY, Litinski as arXiv nonexclusive, and the ECDSA.Fail hosted platform as proprietary. Recheck the exact source versions and terms before publication. Public visibility is not permission to mirror.
+
+For restricted sources, retain private local canonical text and hashes. Publish only permitted short attributed excerpts and links after review. Any unavailable or prohibited evidence must remain unverified and unpublished until resolved. Full public reproducibility is limited when canonical text cannot be redistributed or recovered identically.
+
+This project organizes public claims. It does not reproduce circuits or validate physical architectures. Source-grounded physical records are allowed. New physical estimation, employer code, employer data, and proprietary methods are excluded.
+
+Evidence of usefulness remains a hypothesis until an analyst tries the workflow. Ask whether the comparison saves review effort and whether the exported evidence fits an existing assessment. Do not claim measured time savings, guaranteed correctness, or a probability of winning.
