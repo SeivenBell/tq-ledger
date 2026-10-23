@@ -1,6 +1,6 @@
 # Demo recording plan — conditional on a real build
 
-**Planning document, not evidence of implemented functionality.** Final project choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). Product demand is unvalidated. Follow the reduced scope in [PLAN.md](PLAN.md); do not build extra features to satisfy this script.
+Archived script for the unbuilt Ledger proposal. The [current decision memo](../decision/ranked-memo.md) supersedes that recommendation. This is not the recording plan for a selected project. Use it only if Ledger is explicitly approved in [the project-choice issue](https://github.com/SeivenBell/tq-ledger/issues/14).
 
 ## Recording prerequisites
 

@@ -2,6 +2,10 @@
 
 Ticket #11; researched 2026-10-23. This is a decision input, **not** a representative poll of every quantum-worker role. `[INFERENCE]` marks my synthesis; quotations and counts are attributed to their first-party artifacts. Read depth and dates are in §7. Existing repo reports were skimmed rather than reproduced.
 
+**Original recovered, 2026-10-23:** the complete Fable report is now preserved separately at [originals/practitioner-pain-fable.md](originals/practitioner-pain-fable.md), from user-supplied chat text claiming commit `21d086a`. This local re-research is a distinct analysis, not that original. The Fable report recommends verified SDK migration; this report conditionally recommends a claim-comparison tool. Round2 explicitly reopens that disagreement rather than treating them as consensus.
+
+**Current decision:** the [new memo](../decision/ranked-memo.md) withdraws this report's earlier Ledger recommendation. The evidence below remains an audit trail, not the active product pick. [Quantum workflow review](round2/quantum-workflows.md) corrects survey denominators and incumbent capabilities; [claim workflow review](round2/claim-workflows.md) tests the supposed Ledger gap.
+
 ## 1. Bottom line
 
 - **Yes, but narrow the user.** The Q-Day Ledger has a repeatable job for *PQC/security explainers and resource-estimate reviewers*, not for the average quantum programmer: Marin Ivezic reworked a physical-qubit headline against three architectures; Samuel Jaques is updating a public crypto-resource chart and explicitly wants a taxonomy of physical assumptions; Scott Aaronson says inquiries about a 100,000-qubit claim warranted a post. None has agreed to use Severyn's product.

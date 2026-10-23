@@ -1,6 +1,6 @@
 # Q-Day Ledger: domain contract
 
-Status: recommended build, not implemented. Severyn's project choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). `docs/build/PRODUCT.md` defines scope; `docs/build/ARCHITECTURE.md` defines interfaces; `docs/build/PLAN.md` defines T1–T12 plus human review T1b.
+Status: archived Ledger proposal, not the selected project. Consult `docs/decision/ranked-memo.md` for the current comparison. These terms and the files in `docs/build/` apply only if Severyn explicitly selects Ledger in [the project-choice issue](https://github.com/SeivenBell/tq-ledger/issues/14).
 
 ## Claims and evidence
 

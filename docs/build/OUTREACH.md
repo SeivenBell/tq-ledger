@@ -1,6 +1,6 @@
 # Outreach drafts — not sent
 
-**Drafts only. Do not send automatically.** Final project choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). Product demand is unvalidated. One useful correction, rejection or concrete next-week use case is more informative than praise. Neither a draft, a sent message nor a reply makes someone a customer.
+Outreach is paused at the user's request. These archived Ledger drafts are not authorized for sending. Consult the [current decision memo](../decision/ranked-memo.md) before reusing them. A draft, a sent message or a polite reply is not evidence that someone will use the proposed tool.
 
 ## Contact and evidence handling
 

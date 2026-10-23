@@ -1,6 +1,6 @@
 # Planning integration evidence (2026-10-23)
 
-This record verifies the research handoff and backup probe, **not** a built Ledger application. Fact-check and red-team source reading are recorded separately in [demo-fact-check](demo-fact-check.md) and [plan-red-team](plan-red-team.md); their historical proposed fixes are superseded by current build docs.
+This records the earlier research handoff and planted-case probe, not a built Ledger application. The [current decision memo](../../decision/ranked-memo.md) withdraws the Ledger recommendation; its old build specifications are archived. Subsequent real-workflow experiments are recorded separately in [Round2 checks](../round2/workflow-checks.md). The fact-check and red-team remain the audit trail for the earlier proposal.
 
 ## Actual smoke run
 
@@ -55,5 +55,5 @@ Parent read the complete PostQuantumSecurity.org tracker page and Jaques' main e
 
 - Ledger application, reviewed seed JSON, extractor API execution, comparison accuracy, UI, public deployment, live cost/latency and submission: **not implemented/exercised in this planning task**.
 - User adoption, time savings, willingness to pay and contest odds: **not established**.
-- Original cloud-session full reports: not recovered. Practitioner report is an independent local replacement; circuit-discovery file preserves the user-supplied bottom line only.
-- Original cloud GitHub write authorization: still blocked in those sessions. Local authenticated publishing works and is distinct from cloud proxy authorization.
+- Both full original report texts have since been supplied in chat and preserved under `docs/research/originals/`. Their claimed original commits and reported experiments were not independently recovered; current reconciliations are in `docs/research/round2/`.
+- Cloud GitHub write authorization was blocked in the original sessions and has not been retested here. Authenticated local publishing works independently of that proxy.

@@ -1,6 +1,6 @@
 # Q-Day Ledger: architecture, checks, and evaluation
 
-Status: implementation contract, 2026-10-23. The product is not implemented by this planning deliverable. Read `CONTEXT.md`, `PRODUCT.md`, and `PLAN.md` together.
+Status: architecture for the archived Ledger proposal. Read this only if Ledger is explicitly selected in the [project-choice issue](https://github.com/SeivenBell/tq-ledger/issues/14). The [current decision memo](../decision/ranked-memo.md) supersedes the previous recommendation. This file does not authorize implementation.
 
 ## 1. Shape and implementation choices
 

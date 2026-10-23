@@ -1,6 +1,6 @@
 # Q-Day Ledger: bounded build plan
 
-Status: planning deliverable, 2026-10-23. Product implementation has not started under this contract. Severyn's final choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14).
+Status: archived Ledger plan, not an active build queue. The [current decision memo](../decision/ranked-memo.md) supersedes the previous recommendation. Severyn's [project choice](https://github.com/SeivenBell/tq-ledger/issues/14) remains open. Use these tasks only if Ledger is explicitly selected.
 
 Submission deadline: **Oct 25, 11:59 PM ET**. Target submission: **Sunday 8:00 PM ET**. Preserve Sunday recording and submission time. Do not assume optional integrations will fit.
 

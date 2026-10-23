@@ -1,6 +1,6 @@
 # Devpost preparation — UNPUBLISHED DRAFT
 
-**Not submission-ready copy; no product implementation or measured result is asserted here.** Final selection remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14). Convert only completed, evidenced items into past/present tense before publication; delete unbuilt features. Do not publish this planning document as the submission.
+Archived, unpublished copy for the unbuilt Ledger proposal. The [current decision memo](../decision/ranked-memo.md) supersedes that recommendation. This is not submission-ready text. Use it only if Ledger is explicitly selected; describe only functionality and results that were actually demonstrated.
 
 ## Proposed title
 

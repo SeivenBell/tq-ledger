@@ -1,23 +1,25 @@
 # tq-ledger
 
-Severyn Balaniuk's Build North 2026 hackathon project (submission Oct 25, 2026, 11:59 PM ET).
+Severyn's Build North research repository. The main product is not implemented.
 
-**Conditional recommendation: Q-Day Ledger**, a source-linked comparison/refusal workbench for public quantum cryptanalysis claims. This is planning, not an implemented app. Severyn's final choice remains open on issue #14 ("Choose the project to build"); do not start product implementation until that choice is recorded.
+## Project selection
 
-## Start here
+For project choice, read `docs/decision/ranked-memo.md`. The Ledger recommendation is withdrawn; the provisional alternative is a bounded quantum-code upgrade reviewer. Implementation starts only after Severyn records his choice in GitHub issue #14, “Choose the project to build.”
 
-- `docs/BRIEFING-2026-10-24.md`: the state of everything and the plan.
-- `CONTEXT.md`: domain vocabulary. Use these terms exactly.
-- `docs/build/PRODUCT.md`, `docs/build/ARCHITECTURE.md`, `docs/build/PLAN.md`: what to build, how, and in what order.
-- Implementation tickets: GitHub issues labelled `build` (T1 to T12 plus human review T1b). Read PLAN before starting a ticket; it distinguishes core from deferred extensions. Old issue comments are historical.
-
-## Rules for coding agents
-
-- Work one ticket at a time; touch only the files it names; open a PR linked to the issue.
-- Never invent a number or copy a research quote as certified data. Re-anchor candidate evidence from `docs/research/build/claims-classic.md` and `claims-2026.md` to pinned canonical source text.
-- Never convert logical resources to physical ones; never add attack circuits or physical-estimation features. Strict spans establish provenance, not scientific truth; categorical semantics need human review.
-- `make test` and `make verify` are required acceptance interfaces for the future build, not currently implemented commands. Once implemented, exercise the actual UI/CLI changed path before delivery.
+For current accounts and dated event information, read `docs/BRIEFING-2026-10-24.md`. Recheck time-sensitive facts before acting.
 
 ## Research
 
-Planning ran as a Wayfinder map (issue labelled `wayfinder:map`). Research reports live in `docs/research/`; research tickets follow `docs/wayfinder/research-brief.md`.
+For a research ticket, read `docs/wayfinder/research-brief.md`, then the relevant reports in `docs/research/`. The latest comparison uses `docs/research/round2/`; original Fable texts are preserved separately in `docs/research/originals/`.
+
+For experimental results, read `docs/research/round2/workflow-checks.md`. It separates real execution, recorded-trace analysis and simple arithmetic. The notebook experiment lives on branch `research/round2-qaoa-probe`; it is not production code.
+
+Source claims need dates, reading depth and limits. Paper recommendations require method and experimental-setup reading. Keep observed results separate from proposals and attributed agent reports.
+
+## Implementation and communication
+
+After selection, update the chosen domain contract and build tickets before coding. `CONTEXT.md`, `docs/build/` and T1–T12/T1b describe the archived Ledger proposal; use them only if Ledger is explicitly selected. Their future acceptance commands are not implemented interfaces.
+
+Exercise the changed runtime path before delivery. Report unsupported cases rather than implying scientific certification.
+
+Outreach is paused. Keep messages unsent unless Severyn explicitly reauthorizes sending. For text intended for third parties, read the Humanizer and ASD-STE100 skills. Use readable subjects, short spaced paragraphs and one clear question in an inquiry.

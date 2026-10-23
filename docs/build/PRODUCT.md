@@ -1,6 +1,6 @@
 # Q-Day Ledger: product contract
 
-Status: recommended build, 2026-10-23. No product implementation or evaluation result is claimed here. Severyn's final choice remains open in [issue #14](https://github.com/SeivenBell/tq-ledger/issues/14).
+Status: archived Ledger proposal, not the current recommendation or an implementation authorization. The [current decision memo](../decision/ranked-memo.md) compares the alternatives. Severyn's [project choice](https://github.com/SeivenBell/tq-ledger/issues/14) remains open; no product implementation or evaluation result is claimed here.
 
 Working name: **Q-Day Ledger**. Tagline: *Quantum code-breaking claims, with receipts.*
 

@@ -1,81 +1,126 @@
-# Build North decision memo: a narrow claim-comparison tool, conditionally
+# Which project should we build?
 
-Status: research synthesis, updated 2026-10-23. **Recommendation, not Severyn's final decision.** [Choose the project to build](https://github.com/SeivenBell/tq-ledger/issues/14) remains open. The build contract is in [PRODUCT](../build/PRODUCT.md), [ARCHITECTURE](../build/ARCHITECTURE.md) and [PLAN](../build/PLAN.md).
+Updated October 23, 2026, after four parallel source investigations and a real notebook-upgrade experiment.
+
+This file compares different jobs we could help people do. It is not a list of app names. The previous Ledger recommendation is withdrawn. No final project has been selected; that remains [Severyn's decision](https://github.com/SeivenBell/tq-ledger/issues/14).
+
+Recommendations, relative priorities and proposed build scopes below are `[INFERENCE]`. They are not observed adoption or delivery results.
 
 ## Bottom line
 
-- **Recommend Q-Day Ledger only as a source-linked comparison/refusal workbench, not another qubit tracker.** Target user: a PQC analyst or resource-estimate curator explaining what a new claim actually counts. Ivezic performs this work publicly; Jaques asks for a more precise taxonomy of physical assumptions. Neither has agreed to use our tool.
-- The [new free PostQuantumSecurity.org tracker](https://www.postquantumsecurity.org/trackers/qubit-estimates.html) already has 11 sourced RSA/ECC rows, assumptions, runtimes and a CC BY CSV. This weakens the original recommendation: ledger **32 → 30/45**, down one competition and one adoption point. Quotes, operating points and explicit reasons not to compare are the incremental hypothesis; demand is not validated.
-- **QRef is a credible separate backup**, with a runnable two-runtime referee. Integration rerun: 11 comparisons, 6 expected passes and 5 planted failures, all matched. No unseeded migration-error rate or real maintainer adoption was measured. Its screen score is 31, so the Ledger is not an arithmetic runaway winner.
-- **Do not build an arena or generic investor-research agent.** ECDSA.Fail/Yukon and public `uncompute` already cover discovery evaluation; diligence/intelligence is crowded. The interesting paper is an input, not a product requirement.
-- The earlier 20-card, 14-pair, live-extraction/auth/memory plan was too large. Recommend six reviewed operating-point cards, three development examples, three human-labelled held-back comparisons, one source-grounded extraction run and a deployed read-only evidence UI. No inferred physical savings, arbitrary paper ingestion or autonomous scientific verdicts.
-- There is no defensible numerical probability of winning. The controllable acceptance criteria are a useful comparison, correct source labels, actual run evidence, a stable live link and a comprehensible two-minute video.
+**For the AI × quantum hackathon, my provisional pick is a small quantum-code upgrade reviewer, built around existing QCEC checks.** It would show what an AI-generated port preserved, what changed and what was not checked. It should be an open-source review aid, not a new circuit verifier or a claim that we certify scientific correctness.
 
-## Evidence and what it does not establish
+That is the strongest technical fit we have exercised, not a validated market. No practitioner has agreed to use it. Our normal coding-agent baseline already explained the change in the real example; the additional value is confirming that explanation by execution and making the evidence easy to review.
 
-| Evidence | Read depth / record | Decision implication |
-|---|---|---|
-| [Ivezic's 893-qubit analysis](https://postquantum.com/security-pqc/ecdsa-fail-low-qubit-circuit/), Oct 14/17 | Full; [practitioner report](../research/practitioner-pain.md), [fact check](../research/build/demo-fact-check.md) | A named analyst manually separates subroutine, input-interface and architecture assumptions. No measured time saving or commitment to our app. |
-| [Jaques, Quantum Landscape](https://sam-jaques.appspot.com/quantum_landscape), 2025/2026 updates | Partial: main explanation and both updates; practitioner report §7 | Wants a precise assumption taxonomy; also an incumbent and possible collaborator. No address or consent invented. |
-| [PQS tracker](https://www.postquantumsecurity.org/trackers/qubit-estimates.html), launched Oct 21 | Full page and CSV; practitioner report §7 | Static catalogue is already served. Prefer complementary, exportable evidence/refusals. |
-| Unitary Foundation 2025 survey | Partial aggregate CSV sections; full summary, practitioner report §7 | Price/docs/tools/compatibility dominate broad practitioner responses. Claim comparison is specialist pain, not the field's biggest daily problem. |
-| [ECDSA.Fail paper v2](https://arxiv.org/html/2609.09582v2), Sept 19 | Full in fact-check audit; earlier synthesis read benchmark/results partially | Q×T, coherent/classical inputs, success treatment and bound conventions matter. Quotes alone do not certify correctness. |
-| [Gu et al.](https://arxiv.org/pdf/2610.22367), Oct 2026 | Methods/results and SI read in source audits; [field report](../research/field-needs.md) and fact check | Public evaluator/artifacts exist; search compute and complete harness accounting are not reproduced here. Do not equate input-distribution-specific failure experiments. |
-| [QRef probe](../research/build/qref-probe.md) | Code executed locally; 11 comparisons observed | Small-core feasibility, not evidence that real agent migrations frequently fail or that novelty is established. Abstract-only prior-art leads cannot establish novelty. |
+Under our usefulness-first priority, BDF has the strongest explicit request in this shortlist. The quantum reviewer ranks first on the AI/quantum fit we have exercised, not on demonstrated user demand. None currently satisfies every criterion. CODECHECK has an existing review workflow, but we need a real task from a reviewer before choosing a product scope.
 
-## Screening scores, not probabilities
+We should not build another claim tracker, circuit arena or general reproduction platform. The existing alternatives cover substantially more than the earlier memo acknowledged. There is no defensible probability of winning, and none of these options is established as the optimal solution.
 
-Nine 1–5 criteria: U observed user pain for this artifact; A AI contribution; S Severyn's advantage; B complete weekend build; J judge appeal; P adoption path; C competitive openness; G credibility in AI and quantum; R low risk. These are subjective screening judgments [INFERENCE], not measured outcomes. User value and credibility outrank competition odds per the research brief. No user commitment means U≤4. Historical scores below were not all rerun after the small feasibility probes.
+## What changed the decision
 
-| Numeric order | Narrow candidate | U | A | S | B | J | P | C | G | R | Total |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| 1 | QRef migration referee | 3 | 3 | 4 | 2 | 3 | 3 | 4 | 4 | 5 | 31 |
-| 2= | Q-Day comparison/refusal workbench | 4 | 4 | 4 | 3 | 3 | 3 | 2 | 4 | 3 | 30 |
-| 2= | SRQC readiness map | 3 | 4 | 4 | 3 | 3 | 3 | 3 | 4 | 3 | 30 |
-| 4 | Not Yet use-case triage | 3 | 4 | 4 | 3 | 3 | 2 | 2 | 4 | 4 | 29 |
-| 5 | Independent reversible-circuit re-grader | 2 | 2 | 4 | 4 | 2 | 2 | 3 | 4 | 5 | 28 |
-| 6= | Calibration-agent benchmark | 2 | 3 | 3 | 3 | 3 | 2 | 2 | 4 | 5 | 27 |
-| 6= | Verified QEC lab agent | 2 | 3 | 4 | 4 | 2 | 2 | 2 | 4 | 4 | 27 |
-| 8= | PQC evidence pack | 3 | 3 | 2 | 3 | 4 | 3 | 2 | 2 | 4 | 26 |
-| 8= | General subroutine-cost registry | 2 | 3 | 4 | 3 | 2 | 2 | 2 | 4 | 4 | 26 |
-| 10= | Reproducible circuit-search service | 2 | 4 | 4 | 2 | 2 | 2 | 1 | 4 | 3 | 24 |
-| 10= | TQ arena (superseded premise) | 1 | 4 | 4 | 3 | 2 | 1 | 1 | 4 | 4 | 24 |
-| 12 | Materials-novelty audit | 3 | 2 | 2 | 2 | 3 | 2 | 2 | 2 | 5 | 23 |
-| 13= | Investor diligence agent | 2 | 2 | 2 | 3 | 2 | 1 | 1 | 1 | 3 | 17 |
-| 13= | Quantum diligence portal | 2 | 2 | 2 | 3 | 2 | 1 | 1 | 1 | 3 | 17 |
+| New finding | Consequence |
+|---|---|
+| The complete original practitioner report recommends verified SDK migration, not Ledger | The two original reports were not joint support for our previous pick. Both texts are now preserved; their original commits and reported experiments are not independently recovered. |
+| The free PQS tracker already has sourced resource estimates, assumptions, runtimes and CSV export | A catalogue is not an opening. We found no inspected request for our proposed two-card refusal website. |
+| HashSmash already documents typed claims, evidence and paired reviews; the ECDSA paper already regrades 42 circuits on 50,000 common inputs | “Nobody does evidence review or independent regrading” is not a valid premise. Published code, configured checks and live operation still need separate labels. |
+| QCEC already checks circuit equivalence, including cases our earlier account omitted | We should reuse it. The narrower question is how to review the surrounding experiment and execution settings. |
+| A real QAOA port preserves all nine checked circuits but changes effective shot counts | There is a concrete review example. It is one setting change, not a measured agent error rate. The agent disclosed it. |
+| CODECHECK has a funded, ongoing checking workflow; BDF has a recent explicit feature request | Contributing to existing work may be more useful than attracting users to another website. Funding and requests are not purchase commitments. |
 
-QRef's B=2 was a pre-probe caution about the entire product, not its now-runnable referee. Do not silently raise its total from a planted-case demonstration. Ledger is the conditional recommendation because U and A are stronger under the agreed priority, not because 30 exceeds 31. A maintainer asking for QRef on an actual migration could reverse the recommendation. SRQC has funding-program relevance but no applicant asking for this dashboard; a program call is not a customer.
+The earlier 1–5 scores were subjective screens. They are removed from the current decision rather than adjusted until a preferred option wins.
 
-## Red team and deciding tests
+## The distinct options
 
-| Option | Strongest reason not to build it | Cheap deciding evidence |
-|---|---|---|
-| Ledger | Free tracker and expert prose already suffice; semantic review dominates extraction savings | Send one source-linked refusal to Ivezic/Jaques or the tracker maintainer. Ask for the next actual comparison and whether they would reuse/export it. No reply means unvalidated, not rejected. |
-| QRef | Planted bugs are easy; real ports may work, and application-specific observables defeat generality | Run one genuine agent migration outside the planted suite; compare independent observables and ask a maintainer whether the evidence helps review. Do not claim a rate from one example. |
-| SRQC | DOE/DARPA need full-stack work and institutional teams, not a stand-alone literature map | Show one accurately scoped target/estimate card to an applicant; ask whether it enters an existing workflow. No procurement claim without a user. |
+These alternatives serve different users and accept different inputs. They are not variations of a name or pitch.
 
-## Recommended one-page build contract
+| Option | User and concrete output | Existing solution and remaining gap | Decision |
+|---|---|---|---|
+| Quantum-code upgrade review | A researcher or reviewer gets a reproducible before/after report for a trusted local Qiskit program | IBM migration skills, ordinary coding agents and MQT QCEC already do much of the work. A combined circuit, sampling and decoded-result report may reduce manual review; that saving is unmeasured. | Best provisional hackathon fit; test usefulness before claiming a product gap. |
+| CODECHECK report helper | A codechecker records a failed attempt and links it to the relevant manuscript result | codecheck-py already provides manifests, hashes, previews and certificates. We need to identify a missing recording step, not duplicate these features. | Best broader research-workflow lead, conditional on a real reviewer task. |
+| Calculated battery-data columns | A BDF user adds power, capacity or energy using documented units and precedence | Maintainers/users explicitly request this; PyProBE already supplies recipes. Correct integration is useful, but a new AI app is unnecessary. | Clearest small contribution; weak fit if the challenge requires material runtime AI and quantum relevance. |
+| Circuit-baseline failure disclosure | An existing benchmark shows known counterexamples separately from its official sampled result | Participants explicitly request regression retention and clearer approximation evidence. Regrading infrastructure already exists; the remaining issue may be documentation and policy. | Contribute only with organizer direction and clear reuse terms. Weak AI role; do not start a new arena. |
 
-**Job:** select two curated resource claims; show what each counts, its quote/version and operating point; answer whether a specific numerical comparison is supported. If units, scope or input interfaces conflict, explain the conflict. If assumptions are missing, return **insufficient evidence**, not a made-up incompatibility or ratio.
+An unanswered question is not rejection. But it is also not evidence of adoption. Outreach is paused; no practitioner inquiry has been sent.
 
-**Corpus:** six reviewed operating-point records: EF-893; Google point-addition low-qubit and low-gate; Litinski single-key and amortized k=11; one Gidney full-attack physical record. Logical and physical numbers remain separately typed. Gidney's Table5 logical width and layout width must not be merged. EF holdout failures are submitter-reported, not independently reproduced.
+## What the quantum reviewer would do
 
-**AI:** a model drafts a list of typed claims from allowlisted, pinned text. Code checks exact canonical spans, unambiguous number tokens and explicitly encoded arithmetic. A person reviews semantic labels. Source content is untrusted data; no arbitrary URL fetch, tool instructions or circuit execution. Output is a read-only draft plus downloadable review/export; no ephemeral-server approval database.
+### The practical problem
 
-**Proof:** three development comparisons plus three independently human-labelled held-back comparisons. Show counts and individual disagreements. Extraction evaluation checks field/value/operating-point mapping, false accepts and false rejects; provenance success is not truth. A same-model, same-source-access JSON baseline is fairer than a knowledge-cutoff quiz. If a funded API key is unavailable, record that missing prerequisite; do not advertise an unrun AI workflow.
+A program can run after an upgrade while the experiment changes. A circuit-equivalence check cannot establish that shot counts, parameter selection, result decoding and surrounding Python behavior stayed the same.
 
-**Usability:** two cards, plain-language reasons, clickable source evidence, unknowns visible, no jargon-first home strip or unsupported headline percentages. Show actual extraction run metadata and cost/latency only after execution. Deploy early; record by Sunday afternoon; preserve a submission buffer.
+Our real example makes the distinction visible. The old QAOA helper runs 1,024 simulated measurements even when the caller asks for 512 or 17. The Sonnet port honors the caller's requested setting. QCEC reports equivalent circuits in all nine checked cases. Both facts can be true.
 
-**Deliberate exclusions:** general search/arena, physical-resource conversion, attack circuits, arbitrary PDFs, ongoing news monitoring, writable auth, memory and partner integrations until the core is complete. Clerk/SurrealDB can be honest extensions only when exercised. **Eon Era is not a fit** for the custom dataset; Expo is unnecessary.
+The port may be correcting the old program. The reviewer must choose between preserving the historical experiment and accepting that correction. The tool should expose the decision, not label every difference an AI mistake.
 
-**Resources:** CPU app and a small funded API budget, independent of pending hackathon credit. [Build feasibility](../research/build/build-feasibility.md) records official-doc read depth and API constraints, including Citations/structured-output incompatibility. Model pricing is a dated planning input, not a bill. Cloud-session subscription credits cannot be assumed to fund API calls.
+### A complete first version, if selected
 
-## Corrections and research provenance
+Input: two trusted local implementations, pinned source and target environments, and a declared adapter with fixed graph, angle and shot inputs. Support one static Qiskit/Aer workflow. Do not promise arbitrary notebook revival.
 
-- `quantum-ai-discovery.md` originally asserted no evaluator was released. Corrected: [`andigu/uncompute`](https://github.com/andigu/uncompute), Apache-2.0, exists. The arena premise is withdrawn.
-- `field-needs.md` originally said DARPA IV&V deadline Oct15. Corrected to **Dec30,2026**, [official opportunity](https://www.darpa.mil/work-with-us/opportunities/darpa-pa-26-02-01), full read in prior synthesis. This still does not validate an app buyer.
-- Fuzzy provenance and flattened-exponent guessing were proposed after an exploratory span probe. **Rejected** after red-team review. See [span experiment and limits](../research/build/span-check-feasibility.md).
-- Litinski's asymptotic per-key limit is **44M**, not50M; k=11 gives about49.9M and single-key109M. 34.5% is contextual retry-adjusted Q×T arithmetic versus Google's low-gate bound, not a general improvement result. Primary source locations and read depths: [fact check](../research/build/demo-fact-check.md).
-- The cloud practitioner report could not be pushed; [practitioner-pain.md](../research/practitioner-pain.md) is an independent local re-research, not the recovered original. [ai-circuit-discovery.md](../research/ai-circuit-discovery.md) preserves the supplied bottom line, not its unavailable full evidence. No further paid recovery runs are required for this planning decision.
+Output: a downloadable report and a small read-only viewer containing:
 
-Next human decision: approve this narrow build or choose QRef. No product implementation or outreach has been silently approved by this memo.
+- Source identity, dependency versions and actual run records.
+- QCEC circuit verdicts, kept separate from small-input numerical checks.
+- Exact probabilities and decoded objective comparisons on the declared inputs.
+- Requested versus completed shots, with explicit behavior-change notes.
+- A human review decision: preserve old behavior, accept an intentional change, or leave it unresolved.
+- Unsupported paths and failures shown directly, including an unavailable old runtime.
+
+AI produces the port and proposes an explanation. Separate execution records test those claims. A recorded real model run is acceptable evidence of what happened; a public UI must not pretend it makes live model calls if it only displays that record.
+
+All Python execution stays local on inspected input. A public upload-and-execute service is outside scope. QCEC is a dependency, not our invention. Hardware, noise, dynamic circuits, optimizer convergence and whole-program equivalence remain outside the first version.
+
+### The adoption test
+
+The natural destination is an IBM migration example, an MQT integration/example, or a maintainer's review—not a new account-based destination site. We have not obtained acceptance from any of them.
+
+The most useful next question, if outreach is later authorized, is: “Can you point me to one public notebook upgrade where these checks would help?” Ask for an artifact, not enthusiasm for an AI platform.
+
+Keep this direction only if the report supplies a check the reviewer needs or demonstrably reduces review work. If a plain agent plus existing QCEC/Aer checks gives the same evidence with no extra burden, publish the example or upstream integration and stop calling it a separate product.
+
+### A twelve-hour scope budget
+
+This is a proposed allocation, not an observed delivery time or implementation authorization.
+
+| Work | Hours | Completion condition |
+|---|---:|---|
+| Freeze the supported contract and dependencies | 2 | Both trusted versions run; unsupported inputs get explicit outcomes |
+| Package the existing execution and comparison path | 3 | One command produces the full report without a model deciding pass/fail |
+| Build the report viewer and export | 2 | A reader can find the changed setting, source and limits without reading code |
+| Evaluate a fresh real port or alternate declared implementation | 2 | Individual results published; no planted example counted as natural failure |
+| Check the actual surface, publish evidence and record the demo | 3 | Working link, reproducible local command and honest two-minute recording |
+| Total | 12 | A complete bounded review workflow, not a universal verifier |
+
+Use CPU simulation and the already working local Claude subscription path. Cloud-session credit does not fund an API-backed website. A live hosted model feature would need separately confirmed API funding; it is not part of this proposed minimum.
+
+## When another option is better
+
+**Choose the BDF contribution** if the goal is a small, concretely requested improvement used through an existing package. Its difficult parts are units, integration boundaries, missing values and recorded-versus-derived precedence—not multiplying two columns. It offers less direct quantum or AI-product evidence.
+
+**Choose a CODECHECK helper** if a reviewer supplies a failed check and identifies the manual step their current tools do not cover. The project plans roughly 60 checks over two years, so there is a real workflow. That does not show they need our proposed feature. Automatic repair followed by automatic certification would also conflict with the separation between recording a check and fixing the research code.
+
+**Choose the benchmark disclosure contribution** if an organizer wants the specific regression/disclosure artifact already requested in public issues. First resolve the protected-infrastructure and licence boundaries. Do not claim that one counterexample defeats a benchmark whose acceptance policy permits approximation.
+
+**Reconsider Ledger only** if an analyst supplies an actual next comparison and wants a field or export missing from current tools. An exportable correction to the existing tracker is a more credible starting point than another catalogue. We do not have that request now.
+
+## Why this could be presentable—and what is still unknown
+
+The quantum review story is simple: **the circuit stayed the same; the experiment setting changed.** A live local rerun, visible source versions and an explicit review decision give judges something inspectable. This suits Severyn's research-software and quantum background without claiming a new discovery algorithm.
+
+We have not demonstrated user time savings, repeated demand, a second independent migration result, a finished interface or a live deployed product. We have not proved that this would beat existing tools in a fair reviewer task. Those are limits, not reasons to manufacture a stronger demo.
+
+For calls, keep three distinctions clear: circuit equivalence versus program behavior; historical reference versus scientifically correct behavior; and execution evidence versus proof for all inputs. Ask what the person last upgraded, what they checked manually and which report would enter their next review.
+
+## Evidence and reading depth
+
+All new investigations were conducted October 23, 2026. Full source registers, dates, method/results sections, reusable components and limitations are in the linked reports. No abstract-only paper drives this recommendation.
+
+| Source | Read depth used here |
+|---|---|
+| [Quantum workflow investigation](../research/round2/quantum-workflows.md) | QCEC equivalence/partial-equivalence guides full; IBM migration skill partial, Phases 1–6; migration-paper methods/results read. Source register distinguishes current docs from stale survey data. |
+| [QAOA notebook](https://github.com/qiskit-community/qiskit-textbook/blob/0ae905083ec3872d7ddc6bb4001d5468f476d93f/content/ch-applications/qaoa.ipynb) | Partial notebook: all code cells inspected; cell 18 helpers executed across both runtimes. Deliberately stale 2023 source, not current demand evidence. [Actual checks](../research/round2/workflow-checks.md). |
+| [Claim workflow investigation](../research/round2/claim-workflows.md) | PQS page/CSV full; HashSmash current README, paired-lane and Pareto docs full, live page partial; ECDSA paper partial, benchmark methods and reevaluation/results §§3, 5.4–5.5; issues 239/284 bodies full. |
+| [Scientific reproduction investigation](../research/round2/scientific-reproduction.md) | CODECHECK project/workflow full; codecheck-py relevant features partial; shortlisted papers' methods, evaluation setup and results read, with section-level depths. Released trace checked without rerunning the experiment. |
+| [Scientific operations investigation](../research/round2/scientific-operations.md) | BDF issue 136 body and comments full; PyProBE recipe docs full; public fixture partial. Arithmetic only exercised in the parent check, not the package contribution. |
+| [Original practitioner report](../research/originals/practitioner-pain-fable.md), [original circuit report](../research/originals/ai-circuit-discovery-fable.md) | Full supplied texts recovered from chat. Their source read-depth claims and reported experiments remain attributed unless independently checked above. Claimed original commits `21d086a` and `071a72e` were not independently recovered. |
+
+The experiment code and raw results are preserved on [a separate research branch](https://github.com/SeivenBell/tq-ledger/tree/research/round2-qaoa-probe/prototypes/round2-qaoa), not shipped as production code on main. The old files in `docs/build/` are marked archived Ledger proposals. Existing build tickets remain blocked by the human project choice; this memo does not silently authorize a replacement build.
