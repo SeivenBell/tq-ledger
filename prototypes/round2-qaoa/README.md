@@ -10,10 +10,10 @@ The source is the Apache-2.0 [Qiskit textbook QAOA notebook](https://github.com/
 
 One offline Claude Sonnet 5.5 attempt produced `port_functions.py` and `port-notes.md`. It had file tools but no execution or search tools. The researcher then ran both versions independently.
 
-- Unchanged source does not import under Qiskit2.6.1 because `qiskit.Aer` was removed.
-- All nine checked circuit/parameter cases are equivalent according to MQT QCEC3.11.0. Exact output probabilities and objective values agree within floating-point precision.
-- The source actually uses1,024 shots when callers request512 or17. The port uses the requested512 or17.
-- This is one sampling-setting change observed across18 executions per runtime, not18 independent bugs.
+- Unchanged source does not import under Qiskit 2.6.1 because `qiskit.Aer` was removed.
+- All nine checked circuit/parameter cases are equivalent according to MQT QCEC 3.11.0. Exact output probabilities and objective values agree within floating-point precision.
+- The source actually uses 1,024 shots when callers request 512 or 17. The port uses the requested 512 or 17.
+- This is one sampling-setting change observed across 18 executions per runtime, not 18 independent bugs.
 - The model already disclosed the intended change and its uncertainty. The report confirms its claim by execution. It does not demonstrate a hidden agent error or superiority over a normal coding agent.
 
 A shot is one simulated measurement. Changing the shot count changes sampling uncertainty even when the circuit is equivalent. The old program is a reference for preservation, not proof that its behavior is scientifically preferable.
@@ -38,10 +38,10 @@ The observation script was written after the port. The inputs came from the prio
 
 ## Setup facts
 
-The proposed shared NumPy1.26.4 pin failed: Qiskit2.6.1 requires NumPy2. The isolated target therefore uses NumPy2.4.6. The legacy side uses1.26.4. Exact resolved dependencies are in the two requirement files.
+The proposed shared NumPy 1.26.4 pin failed: Qiskit 2.6.1 requires NumPy 2. The isolated target therefore uses NumPy 2.4.6. The legacy side uses 1.26.4. Exact resolved dependencies are in the two requirement files.
 
 Importing the legacy QASM output also required Qiskit's documented `LEGACY_CUSTOM_INSTRUCTIONS` for `rzz`. Without that importer setting, the comparison failed before QCEC ran.
 
-`baseline-run.json` records the actual resolved model, prompt, usage and CLI cost estimate. Its approximately$0.082 estimate and34.76-second duration describe that one model call, not a build cost or an invoice. Agent notes are preserved as model output, not treated as independently verified statements.
+`baseline-run.json` records the actual resolved model, prompt, usage and CLI cost estimate. Its approximately $0.082 estimate and 34.76-second duration describe that one model call, not a build cost or an invoice. Agent notes are preserved as model output, not treated as independently verified statements.
 
 Run only these inspected local scripts. This probe does not sandbox arbitrary Python input. Environment directories and caches are not committed.
