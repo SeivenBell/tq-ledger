@@ -110,6 +110,8 @@ Each check is a pure function with unit tests. `make verify` runs all of them ov
 
 All key numbers above were recomputed independently with SciPy on 2026-10-23 and match `docs/research/build/claims-2026.md`.
 
+**Tested on real papers (2026-10-23, `docs/research/build/span-check-feasibility.md`)**: 89 % of the classic corpus quotes match freshly extracted text (65 exact, 2 fuzzy, 8 misses); misses are table rows, Unicode formulas, and flattened superscripts. Therefore: one canonical text per source (normalised `pdftotext` or clean HTML, with sha256) that the extractor quotes from; a tiered span check (exact, then fuzzy where every digit must match in order; the card shows the tier and the source's own text); table values verified with a table locator against `pdftotext -layout` lines; and a number parser that recognises flattened exponents (`1.26 · 1011` means 1.26 × 10^11).
+
 ## 5. Comparability engine
 
 `ledger/compare.py`: `compare(card_a, metric_a, card_b, metric_b) -> Verdict(level, gates[], sentence)`. Deterministic; no model.
