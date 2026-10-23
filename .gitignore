@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Planning docs live in folders named build; keep them
+!docs/build/
+!docs/research/build/
