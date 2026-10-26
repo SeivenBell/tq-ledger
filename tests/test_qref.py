@@ -256,3 +256,37 @@ def test_replaced_zip_fails_even_when_loose_files_are_intact(tmp_path):
             z.writestr(name, b"{}" if name == "evidence.json" else (out / name).read_bytes())
     with pytest.raises(contracts.ContractError, match="evidence.zip member differs"):
         report.verify_bundle(out)
+
+
+def seeded_target(tmp_path, old, new, name):
+    port = (ROOT / "evidence/qaoa/port_functions.py").read_text()
+    assert old in port
+    path = tmp_path / f"{name}.py"
+    path.write_text(port.replace(old, new, 1))
+    case = json.loads(CASE.read_text())
+    case["origin"] = "seeded_regression"
+    case["graphs"], case["angles"], case["shots"] = case["graphs"][:1], case["angles"][:1], [17]
+    case["target"]["module"] = os.path.relpath(path, CASE.parent)
+    return case
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+def test_gate_after_measurement_is_unsupported_not_a_pass(tmp_path):
+    case = seeded_target(tmp_path, "    qc.measure_all()", "    qc.measure_all()\n    qc.x(0)", "after_measure")
+    code, out, evidence = run_case(tmp_path, case, "unsupported")
+    assert code == 2 and evidence["evidence_summary"] == "incomplete"
+    assert evidence["run_state"] == "partial"
+    reasons = {c["reason_code"] for c in evidence["checks"] if c["status"] == "unsupported"}
+    assert "unsupported_measurement" in reasons
+    assert "Comparison incomplete" in (out / "index.html").read_text()
+    report.verify_bundle(out)
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+def test_import_failure_is_a_failed_run_with_diagnostics(tmp_path):
+    case = seeded_target(tmp_path, "import networkx as nx", "import networkx as nx\nraise RuntimeError('seeded import failure')", "bad_import")
+    code, out, evidence = run_case(tmp_path, case, "import")
+    assert code == 2 and evidence["run_state"] == "failed"
+    assert evidence["provenance"]["side_failures"]["target"] == "import_failed"
+    assert "seeded import failure" in (out / "artifacts/target/error-import.txt").read_text()
+    assert "Execution failed" in (out / "index.html").read_text()
