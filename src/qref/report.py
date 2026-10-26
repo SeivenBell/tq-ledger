@@ -246,7 +246,7 @@ def renderer_sha256() -> str:
     h = hashlib.sha256()
     for name in ("report.py",):
         h.update(Path(__file__).with_name(name).read_bytes())
-    for name in ("report.html.j2", "report.css"):
+    for name in ("report.html.j2", "report.css", "export.js"):
         h.update(resources.files("qref").joinpath("templates", name).read_bytes())
     return h.hexdigest()
 
@@ -266,8 +266,11 @@ def write_export(out: Path) -> None:
         decisions_sha = contracts.sha256_bytes(data)
     css = resources.files("qref").joinpath("templates", "report.css").read_text(encoding="utf-8")
     css_hash = base64.b64encode(hashlib.sha256(css.encode("utf-8")).digest()).decode()
+    js = resources.files("qref").joinpath("templates", "export.js").read_text(encoding="utf-8")
+    js_hash = base64.b64encode(hashlib.sha256(js.encode("utf-8")).digest()).decode()
     html = _env().get_template("report.html.j2").render(
-        css=css, css_hash=css_hash, **_view(out, evidence, evidence_sha, decisions))
+        css=css, css_hash=css_hash, js=js, js_hash=js_hash, evidence_text=evidence_bytes.decode("utf-8"),
+        **_view(out, evidence, evidence_sha, decisions))
     (out / "index.html").write_text(html, encoding="utf-8")
     files = []
     for path in sorted(out.rglob("*")):

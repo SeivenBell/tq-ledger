@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-{{ css_hash }}'; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-{{ css_hash }}'; script-src 'sha256-{{ js_hash }}'; img-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>QRef migration report — {{ case.title }}</title>
 <style>{{ css|safe }}</style>
@@ -225,9 +225,14 @@ uv run qref verify-bundle --run runs/my-run</pre>
 <tbody>{% for a in artifacts %}<tr><td><a href="{{ a.path }}"><code>{{ a.path }}</code></a></td><td class="num">{{ a.size }}</td><td><code>{{ a.sha256|short }}</code></td></tr>{% endfor %}</tbody>
 </table></div></details>
 <details><summary>Reference licence text</summary><pre>{{ ref_license }}</pre></details>
+<h3>Evidence embedded in this page</h3>
+<p class="muted">This page carries the exact evidence record (SHA-256 <code>{{ sha }}</code>), so a saved copy of this one HTML file still holds the full record. Bundle verification still needs the original export or the ZIP.</p>
+<p><button type="button" id="save-evidence" hidden>Save evidence JSON from this page</button> <span id="save-status" role="status"></span></p>
+<details><summary>Raw evidence record</summary><pre id="evidence-raw">{{ evidence_text }}</pre></details>
 </main>
 <footer><div class="wrap">
 QRef records evidence; it does not certify science. Hashes show internal consistency, not a signature. No live job runs on this page. Built with Qiskit, Qiskit Aer and MQT QCEC.
 </div></footer>
+<script>{{ js|safe }}</script>
 </body>
 </html>

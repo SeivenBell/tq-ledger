@@ -44,7 +44,7 @@ Five recorded examples are live:
 
 Python 3.11 and uv. Two pinned interpreters, Qiskit 0.46.3 with Aer 0.14.2 and Qiskit 2.6.1 with Aer 0.18.0, run a small standalone worker. That worker hooks `AerBackend.run` before the candidate module is imported, so QRef records the circuit that was really executed, not a rebuilt one.
 
-MQT QCEC 3.11 checks circuit equivalence. Jinja2 renders the report and jsonschema validates every record. The report is self-contained HTML with no JavaScript and a strict Content-Security-Policy.
+MQT QCEC 3.11 checks circuit equivalence. Jinja2 renders the report and jsonschema validates every record. The report is self-contained HTML that works without JavaScript. It carries a strict Content-Security-Policy that allows exactly one hash-pinned script, which only saves the embedded evidence record.
 
 GitHub Actions re-verifies the curated exports byte for byte, then publishes only those files to GitHub Pages; that publish job never runs candidate code or calls a model. A separate Linux job rebuilds both pinned Qiskit environments from scratch on every push, runs all tests and repeats a real seed run.
 
@@ -58,7 +58,7 @@ GitHub Actions re-verifies the curated exports byte for byte, then publishes onl
 
 - A real end-to-end flow: model proposal, two-runtime execution, independent checks, human decision, verified public report.
 - One documented example where the circuit check passes and QRef still catches the behaviour change.
-- 47 behaviour tests cover status rules, unsupported circuits (changed measurement maps, control flow, extra simulator runs), import failures, timeouts, checker budgets, missing interpreters, refused billing overrides, unusable model output, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
+- 48 behaviour tests cover status rules, unsupported circuits (changed measurement maps, control flow, extra simulator runs), import failures, timeouts, checker budgets, missing interpreters, refused billing overrides, unusable model output, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
 
 ## What we learned
 

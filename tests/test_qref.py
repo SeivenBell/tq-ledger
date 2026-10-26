@@ -382,3 +382,19 @@ def test_changed_map_and_control_flow_are_unsupported(tmp_path, new, reason):
     assert code == 2 and evidence["evidence_summary"] == "incomplete"
     assert reason in {c["reason_code"] for c in evidence["checks"] if c["status"] == "unsupported"}
     assert not any(c["kind"] == "circuit" and c["status"] == "pass" for c in evidence["checks"])
+
+
+def test_embedded_evidence_is_exact_and_script_is_hash_pinned(tmp_path):
+    import base64
+    import hashlib
+    import html as html_lib
+    import re
+    out = tmp_path / "copy"
+    report.rerender(EXAMPLE, out)
+    page = (out / "index.html").read_text()
+    raw = re.search(r'<pre id="evidence-raw">(.*?)</pre>', page, re.S).group(1)
+    assert html_lib.unescape(raw).encode() == (out / "evidence.json").read_bytes()
+    script = re.search(r"<script>(.*?)</script>", page, re.S).group(1)
+    digest = base64.b64encode(hashlib.sha256(script.encode()).digest()).decode()
+    assert f"script-src 'sha256-{digest}'" in page
+    assert page.count("<script") == 1

@@ -8,6 +8,29 @@ from pathlib import Path
 from . import contracts
 
 
+def summary(out: Path) -> str:
+    """Short terminal view of a finished run, read back from its evidence record."""
+    import json
+    e = json.loads((out / "evidence.json").read_text(encoding="utf-8"))
+    circuits = [c for c in e["checks"] if c["kind"] == "circuit"]
+    equivalent = sum(c["status"] == "pass" for c in circuits)
+    pairs = len(e["circuit_results"])
+    cov = e["coverage"]
+    lines = [
+        f"run state: {e['run_state']}   evidence: {e['evidence_summary']}   "
+        f"{cov['completed_pairs']}/{len(cov['expected_executions'])} execution pairs completed",
+        f"circuits:  {equivalent}/{len(circuits)} executions equivalent ({pairs} distinct submitted-circuit pairs checked)",
+        "checks:    " + ", ".join(f"{n} {s}" for s, n in e["status_counts"].items() if n),
+    ]
+    for f in e["findings"]:
+        n = len(f["check_ids"])
+        lines.append(f"finding:   {f['title']} ({n} check{'s' if n != 1 else ''})")
+    if not e["findings"]:
+        lines.append("finding:   none")
+    lines.append("human decision: not recorded")
+    return "\n".join(lines)
+
+
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(prog="qref", description="Reviewable evidence for an AI-assisted Qiskit migration.")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -40,6 +63,7 @@ def main(argv=None) -> int:
         if args.command == "run":
             from . import execution
             code = execution.run(args.case, args.reference_python, args.target_python, args.out, args.trust_local_code)
+            print(summary(args.out))
             print(f"wrote {args.out / 'index.html'} (exit {code}: "
                   f"{ {0: 'consistent', 1: 'differences need review', 2: 'incomplete or invalid'}[code] })")
             return code
