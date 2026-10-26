@@ -290,3 +290,29 @@ def test_import_failure_is_a_failed_run_with_diagnostics(tmp_path):
     assert evidence["provenance"]["side_failures"]["target"] == "import_failed"
     assert "seeded import failure" in (out / "artifacts/target/error-import.txt").read_text()
     assert "Execution failed" in (out / "index.html").read_text()
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+def test_worker_deadline_kills_and_reports_without_fabricating(tmp_path, monkeypatch):
+    monkeypatch.setattr(execution, "OBSERVATION_DEADLINE", 8)
+    case = seeded_target(tmp_path, "import networkx as nx", "import networkx as nx\nimport time\ntime.sleep(60)", "slow")
+    code, out, evidence = run_case(tmp_path, case, "slow")
+    assert code == 2 and evidence["run_state"] == "failed"
+    assert evidence["provenance"]["side_failures"]["target"] == "worker_timeout"
+    assert evidence["coverage"]["completed_pairs"] == 0
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+def test_missing_interpreter_is_reported_not_substituted(tmp_path):
+    case_path = CASE.parent / ".test-missing.json"
+    case = json.loads(CASE.read_text())
+    case["graphs"], case["angles"], case["shots"] = case["graphs"][:1], case["angles"][:1], [17]
+    case_path.write_text(json.dumps(case))
+    try:
+        code = execution.run(case_path, tmp_path / "no-such/bin/python", ENVS / "target/bin/python", tmp_path / "m", True)
+    finally:
+        case_path.unlink()
+    evidence = json.loads((tmp_path / "m/evidence.json").read_text())
+    assert code == 2 and evidence["run_state"] == "failed"
+    assert evidence["provenance"]["side_failures"]["reference"] == "environment_mismatch"
+    assert evidence["provenance"]["reference_environment"] is None

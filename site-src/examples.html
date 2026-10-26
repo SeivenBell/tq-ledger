@@ -3,20 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-IDsjx+x1BiSQMGMJSwtPFDc7AqXzEFcfLZripcQ5e3M='; base-uri 'none'; form-action 'none'">
 <title>QRef — recorded examples</title>
+<style>:root{--fg:#1b1f24;--muted:#57606a;--border:#d0d7de;--link:#0550ae;--warn:#9a6700}@media (prefers-color-scheme:dark){:root{--fg:#e6edf3;--muted:#9da7b3;--border:#3d444d;--link:#79c0ff;--warn:#d29922}body{background:#0d1117}}body{margin:0;color:var(--fg);font:17px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif}main{max-width:760px;margin:0 auto;padding:2.5rem 1.25rem}h1{font-size:2rem;line-height:1.2;margin:0 0 .5rem}.lede{font-size:1.1rem}.muted{color:var(--muted)}a{color:var(--link)}ol{padding:0;list-style:none;counter-reset:x}li{border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;margin:.8rem 0}li a:first-child{font-weight:650;font-size:1.05rem}li .tag{display:inline-block;font-size:.8rem;border:1px solid currentColor;border-radius:999px;padding:0 .5rem;margin-left:.4rem;color:var(--warn)}footer{color:var(--muted);font-size:.9rem;margin-top:2rem}</style>
 </head>
 <body>
 <main>
-<h1>QRef: recorded examples</h1>
-<p>Each page is a static copy of a real local run. Nothing runs on this site. Each page's evidence, manifest and downloadable ZIP are checked against their hashes before publication.</p>
+<h1>QRef</h1>
+<p class="lede"><strong>Claude ports old Qiskit code. QRef runs both versions and shows what actually changed. A person makes the call.</strong></p>
+<p class="muted">Each page is a static copy of a real local run. Nothing runs on this site. Each page's evidence, manifest and downloadable ZIP are checked against their hashes before publication.</p>
 <ol>
 <li><a href="./">Fresh Claude Sonnet port</a>: the circuits are equivalent, and the request for 512 or 17 shots still runs 1,024. The model chose to keep the old behaviour and said so. Its <a href="proposal/proposal.json">proposal record</a> includes the prompt, notes and code.</li>
 <li><a href="research-port/">Earlier research port</a>: the circuits are equivalent, and the port now honours the requested shots. This is a real behaviour change between the two versions.</li>
-<li><a href="seeded-decoder/">Seeded bit-order regression</a>: a deliberate, labelled change. The circuit checker still reports equivalence, and QRef's independent classical checks catch the change.</li>
+<li><a href="seeded-decoder/">Seeded bit-order regression</a><span class="tag">deliberate test</span>: a deliberate, labelled change. The circuit checker still reports equivalence, and QRef's independent classical checks catch the change.</li>
 <li><a href="positive-control/">Positive control</a>: the same port on both sides, including an 8-qubit graph with an isolated node. Result: no differences, exit code 0. This shows that QRef does not invent findings.</li>
 </ol>
-<p><a href="https://github.com/SeivenBell/tq-ledger">Source, specification and how to run it locally</a></p>
+<footer><a href="https://github.com/SeivenBell/tq-ledger">Source, specification and how to run it locally</a> · Built with Qiskit, Qiskit Aer, MQT QCEC and Claude.</footer>
 </main>
 </body>
 </html>
