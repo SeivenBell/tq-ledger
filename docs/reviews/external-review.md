@@ -19,12 +19,15 @@ The owner also approved enabling GitHub Pages.
 | Status rules | Ordered `invalid → failed → partial → complete`. Shot-integrity errors invalidate the run and are never findings. Interrupted or failed workers are not completed pairs. Exit codes 0/1/2. |
 | Report | No-JavaScript, self-contained HTML with a strict CSP (hashed inline CSS only). Finding first, shot table, model disclosure separate from observations, `Human decision: not recorded`, coverage, limits, a diff with shot hunks first, full sources, receipts, licence and reproduction steps. Checked in a browser at desktop width and in a 375 px frame. |
 | `qref verify-bundle` / `qref report` | Manifest hash/size checks. Rejects undeclared, missing or changed files, unsafe paths and symlinks. Checks the evidence digest and every evidence artifact. Verifies the template binding. `report` re-renders only a verified bundle. |
-| Tests | 19 behaviour tests: status precedence, integrity, pairing, QCEC mapping, case rejection, duplicate keys/NaN, a **seeded decoder regression caught while circuits stay equivalent**, hostile-title escaping, tamper/undeclared-file detection, the trust flag and stale proposal attribution. |
+| Tests | 24 behaviour tests: status precedence, integrity, pairing, QCEC mapping, case rejection, duplicate keys/NaN, a **seeded decoder regression caught while circuits stay equivalent**, hostile-title escaping, tamper/undeclared-file detection, the trust flag, stale proposal attribution, and decision overlays (applied, tampered, unknown finding, partial fields, bad timestamp, wrong evidence). |
+| Decision overlay (added in the second hour) | `qref report --decisions` validates `qref.decisions/v1`, binds it to the exact evidence digest, refuses decisions on unknown findings, renders the SPEC label mapping and leaves `evidence.json` byte-identical. `verify-bundle` checks the decisions digest. |
+| Examples | `examples/seeded-decoder` is a labelled seeded regression: all circuit checks pass and QRef reports the classical-helper, weighting and returned-value differences. `site-src/examples.html` links all three published examples. |
+| Fresh setup | The documented setup commands built new pinned environments in a second clone on macOS; tests and a seed run passed there. Linux remains unproven. |
 | Pages | `.github/workflows/pages.yml` verifies the curated bundles with base-only install, then uploads only `site/`. |
 
 ## A real observation from release work
 
-The same no-hint prompt was sent to Sonnet three times. One port **fixed** the ignored shot request (`shots=shots`), and its notes disclosed the change. Two ports **deliberately preserved** the effective 1,024 shots, and their notes said so. QRef reports these outcomes differently:
+The same no-hint prompt was sent to Sonnet four times before submission. Two ports **fixed** the ignored shot request (`shots=shots`) and disclosed it. Two **deliberately preserved** the effective 1,024 shots and said so. QRef reports these outcomes differently:
 
 - The research port in `examples/research-port`, which honours requests: **"Shot setting changed"**. Reference and target complete different numbers of shots.
 - The published fresh port in `examples/qaoa-run`, which preserves behaviour: **"Requested shot count not honoured"**. Both sides agree, so whether to fix the request is a review decision.
@@ -42,8 +45,7 @@ This is three samples, not a rate. It does show why the model's statement and th
 ## Deferred, not done
 
 - `evidence.zip` and ZIP member verification.
-- `qref.decisions/v1` overlay validation and reviewed re-export. Every export currently shows `Human decision: not recorded`.
 - The full Gate D/E matrix: eight-qubit case, isolated-node case, clean modern control, seeded rotation change, unsupported map/control/extra-run fixtures, deadline and missing-runtime end-to-end runs, every review label, file-protocol/JS-off/zoom/keyboard audit and forced colours.
 - Fresh Linux reproduction of the reference environment. CI verifies bytes only and never executes candidates.
-- Two-minute recording and submission text.
+- The two-minute recording itself (script: `docs/submission/demo-script.md`; runner: `scripts/demo.sh`).
 - An independent review by a fresh AI. `REVIEW.md` still applies.

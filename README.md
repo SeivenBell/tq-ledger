@@ -2,7 +2,7 @@
 
 **Review a quantum-code migration before relying on it.**
 
-Status: **release 0.1 — owner-approved core slice, implemented.** Live report: **https://seivenbell.github.io/tq-ledger/**. A second example is at `/research-port/`, and the model proposal behind the main report is at `/proposal/`. Deferred work (ZIP, decision re-export, full fixture matrix, recording) is listed in the [review record](docs/reviews/external-review.md).
+Status: **release 0.1 — owner-approved core slice, implemented.** Live report: **https://seivenbell.github.io/tq-ledger/**. [All examples](https://seivenbell.github.io/tq-ledger/examples.html): fresh Claude port, earlier research port and a labelled seeded regression. Guided demo: `scripts/demo.sh`. Deferred work (ZIP export, full fixture matrix, Linux reproduction) is listed in the [review record](docs/reviews/external-review.md).
 
 ## Run it
 
