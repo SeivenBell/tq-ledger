@@ -58,7 +58,7 @@ GitHub Actions re-verifies the curated exports byte for byte, then publishes onl
 
 - A real end-to-end flow: model proposal, two-runtime execution, independent checks, human decision, verified public report.
 - One documented example where the circuit check passes and QRef still catches the behaviour change.
-- 45 behaviour tests cover status rules, unsupported circuits, extra simulator runs, import failures, timeouts, checker budgets, missing interpreters, refused billing overrides, unusable model output, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
+- 47 behaviour tests cover status rules, unsupported circuits (changed measurement maps, control flow, extra simulator runs), import failures, timeouts, checker budgets, missing interpreters, refused billing overrides, unusable model output, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
 
 ## What we learned
 

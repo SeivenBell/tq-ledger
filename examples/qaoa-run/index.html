@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-L1i04CgErLf/UUiHH3+WXz4A9n4rzqDaDXh1oQ3Tc4I='; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-j0QHjS1U9ex9SbI3TlnN5VlUnur8EXOWWBBg1g7Lqzc='; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>QRef migration report — QAOA MaxCut helpers</title>
 <style>:root{--fg:#1b1f24;--muted:#57606a;--border:#d0d7de;--surface:#f6f8fa;--warn:#9a6700;--warn-bg:#fff8c5;--ok:#1a7f37;--bad:#cf222e;--bad-bg:#ffebe9;--add-bg:#e6ffec;--del-bg:#ffebe9;--link:#0550ae}
@@ -64,6 +64,7 @@ ul.plain{padding-left:1.2rem}
 footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:3rem;padding:1.5rem 0 3rem}
 :focus-visible{outline:2px solid var(--link);outline-offset:2px}
 @media (max-width:640px){th,td{padding:.4rem .45rem}.shots td{font-size:1.05rem}dl.kv{grid-template-columns:1fr}dl.kv dd{margin-bottom:.4rem}}
+@media (max-width:400px){.wrap{padding:0 .75rem}.shots th{font-size:.78rem;padding:.35rem}.shots td{font-size:.95rem;padding:.35rem}.shots .pill{font-size:.7rem;padding:0 .35rem}}
 @media print{nav.sections,.exports,.skip{display:none}details{border:0}details>*{display:block}}
 @media (forced-colors:active){.pill,.finding{border-color:CanvasText}}
 </style>
@@ -86,7 +87,8 @@ Executed 2026-10-26T01:46:17.498452Z – 2026-10-26T01:46:20.640044Z · Evidence
 
 <h1><span>Equivalent circuits.</span><span>Requested shot count not honoured.</span></h1>
 
-<p class="lede">The reference and target complete a different number of shots than requested. Both sides agree, so the port preserves this behaviour; whether the request should be honoured is a review decision.<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
+<p class="lede">The reference and target complete a different number of shots than requested. Both sides agree, so the port preserves this behaviour; whether the request should be honoured is a review decision.&#32;
+<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
 
 <div class="scroll shots" role="region" aria-label="Requested and completed shots" tabindex="0">
 <table>

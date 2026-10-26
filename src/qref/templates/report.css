@@ -56,5 +56,6 @@ ul.plain{padding-left:1.2rem}
 footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);margin-top:3rem;padding:1.5rem 0 3rem}
 :focus-visible{outline:2px solid var(--link);outline-offset:2px}
 @media (max-width:640px){th,td{padding:.4rem .45rem}.shots td{font-size:1.05rem}dl.kv{grid-template-columns:1fr}dl.kv dd{margin-bottom:.4rem}}
+@media (max-width:400px){.wrap{padding:0 .75rem}.shots th{font-size:.78rem;padding:.35rem}.shots td{font-size:.95rem;padding:.35rem}.shots .pill{font-size:.7rem;padding:0 .35rem}}
 @media print{nav.sections,.exports,.skip{display:none}details{border:0}details>*{display:block}}
 @media (forced-colors:active){.pill,.finding{border-color:CanvasText}}

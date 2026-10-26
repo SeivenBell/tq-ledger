@@ -367,3 +367,18 @@ def test_every_review_label(tmp_path, decision, finding_label, summary):
 def test_clean_control_needs_no_review():
     html = (ROOT / "examples/positive-control/index.html").read_text()
     assert "Human review: not required" in html and "No differences" in html
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+@pytest.mark.parametrize("new,reason", [
+    ("    from qiskit import ClassicalRegister\n"
+     "    qc.add_register(ClassicalRegister(qc.num_qubits, 'c'))\n"
+     "    qc.measure(list(range(qc.num_qubits)), list(reversed(range(qc.num_qubits))))", "unsupported_measurement"),
+    ("    qc.measure_all()\n    with qc.if_test((qc.clbits[0], 1)):\n        qc.x(0)", "unsupported_measurement"),
+])
+def test_changed_map_and_control_flow_are_unsupported(tmp_path, new, reason):
+    case = seeded_target(tmp_path, "    qc.measure_all()", new, "shape")
+    code, out, evidence = run_case(tmp_path, case, "shape")
+    assert code == 2 and evidence["evidence_summary"] == "incomplete"
+    assert reason in {c["reason_code"] for c in evidence["checks"] if c["status"] == "unsupported"}
+    assert not any(c["kind"] == "circuit" and c["status"] == "pass" for c in evidence["checks"])

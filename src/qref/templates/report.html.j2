@@ -35,7 +35,7 @@ Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code titl
 {% if e.run_state != 'complete' %}
 <p class="lede">Some expected work did not complete. Known differences are listed with what is missing. Nothing below should be read as a pass for the missing cases.</p>
 {% elif lead %}
-<p class="lede">{{ lead.explanation }}{% if findings|length > 1 %} {{ findings|length - 1 }} more finding{{ 's' if findings|length > 2 }} below.{% endif %}
+<p class="lede">{{ lead.explanation }}{% if findings|length > 1 %} {{ findings|length - 1 }} more finding{{ 's' if findings|length > 2 }} below.{% endif %}&#32;
 <span class="muted">{% if lead.id == 'shot_policy' %}A shot is one simulated measurement. {% endif %}The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
 {% endif %}
 
