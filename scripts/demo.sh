@@ -12,12 +12,12 @@ DIR=runs/demo-$STAMP
 step() { printf '\n\033[1m%s\033[0m\n' "$1"; read -r -p "[Enter] " _; }
 show() { printf '\033[2m$ %s\033[0m\n' "$*"; "$@"; }
 
-step "1/5  Ask Claude (existing subscription, tools disabled) for a Qiskit 2.x port. QRef never runs it here."
+step "1/5  Ask Claude to update the old code to Qiskit 2.x"
 show uv run qref propose --case cases/qaoa.json --out "$DIR/proposal"
-step "     The model's own notes: what it says it changed"
+step "     What Claude says it changed"
 sed -n '/## Intentional changes/,/## Uncertainties/p' "$DIR/proposal/notes.md" | sed '$d'
 
-step "2/5  Run old and new code in their own pinned Qiskit versions and check what was actually executed"
+step "2/5  Run the old and new code side by side and compare what really happened"
 set +e
 show uv run qref run --case "$DIR/proposal/case.json" --reference-python "$REF" --target-python "$TGT" \
   --out "$DIR/run" --trust-local-code
@@ -27,7 +27,7 @@ set -e
 step "3/5  Open the report"
 open "$DIR/run/index.html" 2>/dev/null || xdg-open "$DIR/run/index.html"
 
-step "4/5  Record a human decision, bound to this exact evidence"
+step "4/5  Record my decision"
 reviewer=$(git config user.name || echo "Reviewer")
 read -r -p "Decision (accepted_intentional / rejected / needs_review): " decision
 read -r -p "Reason: " reason
@@ -45,6 +45,6 @@ EOF
 show uv run qref report --run "$DIR/run" --decisions "$DIR/review.json" --out "$DIR/reviewed"
 open "$DIR/reviewed/index.html" 2>/dev/null || xdg-open "$DIR/reviewed/index.html"
 
-step "5/5  Anyone can check the export against its manifest; the evidence bytes did not change"
+step "5/5  Check that nothing in the report was changed"
 show uv run qref verify-bundle --run "$DIR/reviewed"
 cmp "$DIR/run/evidence.json" "$DIR/reviewed/evidence.json" && echo "evidence.json identical before and after the human decision"
