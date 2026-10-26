@@ -28,7 +28,7 @@ QRef is a command-line tool with a static report.
 
 1. `qref propose` asks Claude, through the user's existing Claude subscription with tools disabled, for a port. It saves the code, prompt and the model's stated changes. It never runs the code.
 2. `qref run` runs the old and new code, each in its own pinned Python environment. It records the circuits actually submitted to the Aer simulator and compares them with MQT QCEC. It also checks the classical helpers on every bit pattern, checks each returned value against its own measured counts, and compares requested and completed shots.
-3. The report puts the finding first. The model's claims, the observed evidence and the human decision appear in separate places. Gaps and unchecked areas are listed, not hidden.
+3. The report puts the finding first. The model's claims, the observed evidence and the human decision appear in separate places. The report lists gaps and unchecked areas instead of hiding them.
 4. `qref report --decisions` records a named human decision, bound to the exact evidence by SHA-256. It changes the review state, never the check results.
 5. `qref verify-bundle` checks every published file and every member of the downloadable ZIP against the manifest, without extracting anything.
 
@@ -36,17 +36,17 @@ Five recorded examples are live:
 
 - A fresh Claude port that keeps the old 1,024-shot behaviour.
 - An earlier port that honours the requested shots.
-- A labelled, deliberately broken bit-order version. The circuit checker still calls it equivalent; QRef's classical checks catch it.
+- A labelled, deliberately broken bit-order version. The circuit checker still calls it equivalent. QRef's classical checks catch it.
 - A labelled halved-rotation version. Here the circuits really differ, and MQT QCEC reports it.
 - A positive control: the same port on both sides, including an 8-qubit graph. No differences, so QRef does not invent findings.
 
 ## How we built it
 
-Python 3.11 and uv. Two pinned interpreters, Qiskit 0.46.3 with Aer 0.14.2 and Qiskit 2.6.1 with Aer 0.18.0, run a small standalone worker. That worker hooks `AerBackend.run` before the candidate module is imported, so QRef records the circuit that was really executed, not a rebuilt one.
+Python 3.11 and uv. Two pinned interpreters, Qiskit 0.46.3 with Aer 0.14.2 and Qiskit 2.6.1 with Aer 0.18.0, run a small standalone worker. That worker hooks `AerBackend.run` before it imports the candidate module. QRef therefore records the circuit that the simulator really ran, not a rebuilt one.
 
-MQT QCEC 3.11 checks circuit equivalence. Jinja2 renders the report and jsonschema validates every record. The report is self-contained HTML that works without JavaScript. It carries a strict Content-Security-Policy that allows exactly one hash-pinned script, which only saves the embedded evidence record.
+MQT QCEC 3.11 checks circuit equivalence. Jinja2 renders the report and jsonschema checks every record. The report is self-contained HTML that works without JavaScript. It carries a strict Content-Security-Policy that allows exactly one hash-pinned script, which only saves the embedded evidence record.
 
-GitHub Actions re-verifies the curated exports byte for byte, then publishes only those files to GitHub Pages; that publish job never runs candidate code or calls a model. A separate Linux job rebuilds both pinned Qiskit environments from scratch on every push, runs all tests and repeats a real seed run.
+GitHub Actions checks the curated exports byte for byte. Then it publishes only those files to GitHub Pages. The publish job never runs candidate code or calls a model. A separate Linux job rebuilds both pinned Qiskit environments from scratch on every push, runs all tests and repeats a real seed run.
 
 ## Challenges we ran into
 
@@ -58,7 +58,12 @@ GitHub Actions re-verifies the curated exports byte for byte, then publishes onl
 
 - A real end-to-end flow: model proposal, two-runtime execution, independent checks, human decision, verified public report.
 - One documented example where the circuit check passes and QRef still catches the behaviour change.
-- 48 behaviour tests cover status rules, unsupported circuits (changed measurement maps, control flow, extra simulator runs), import failures, timeouts, checker budgets, missing interpreters, refused billing overrides, unusable model output, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
+- 48 behaviour tests. They cover:
+  - status rules and invalid decisions
+  - unsupported circuits: changed measurement maps, control flow, extra simulator runs
+  - import failures, timeouts, checker budgets and missing interpreters
+  - refused billing overrides and unusable model output
+  - tampering, including a swapped ZIP, hostile input and stale model attribution
 
 ## What we learned
 
@@ -78,18 +83,18 @@ python, qiskit, qiskit-aer, mqt-qcec, claude, claude-code, jinja2, jsonschema, u
 
 ## Partner platforms used
 
-None. We use Anthropic's Claude through an existing Claude subscription. No sponsor or partner integration was added.
+None. We use Anthropic's Claude through an existing Claude subscription. We added no sponsor or partner integration.
 
 ## Security and ethics
 
 - Candidate code is Python and runs with your local permissions. QRef requires an explicit `--trust-local-code` flag and says so. Separate environments isolate versions, not hostile code.
-- The model call has tools disabled and runs in an empty temporary directory, with a clean environment and a check that the login is a first-party claude.ai subscription. No API keys are stored. Session IDs are removed from saved responses.
+- The model call has tools disabled. It runs in an empty temporary directory with a clean environment. QRef first checks that the login is a first-party claude.ai subscription. QRef stores no API keys and removes session IDs from saved responses.
 - The public site is static: no uploads, no execution, no accounts, no tracking.
 - Hashes show that files are internally consistent. They are not a signature or a certification, and the report says so.
-- The seeded regression is labelled on the page as a deliberate test, not a model mistake.
+- Each seeded regression page says that it is a deliberate test, not a model mistake.
 
 ## Prior work and AI disclosure
 
-- Work done during Build North week, October 2026, in this repository. Earlier in the week the repository held research on other project ideas; that research is archived under `archive/research-2026-10/`. The QAOA research probe in `evidence/qaoa/` was built during the week and is reused as test input.
-- Reference code comes from the Qiskit textbook (Apache-2.0); attribution and the licence are included in every report.
+- I did this work during Build North week, October 2026, in this repository. Earlier in the week the repository held research on other project ideas. That research now sits under `archive/research-2026-10/`. I built the QAOA research probe in `evidence/qaoa/` during the same week, and QRef uses it as test input.
+- Reference code comes from the Qiskit textbook (Apache-2.0). Every report shows the attribution and the licence.
 - AI tools: Claude (Claude Code) helped research, plan, write code and write documentation under my direction. Claude Sonnet is part of the product: it generates the proposed ports. All reported results come from real runs recorded in the repository.
