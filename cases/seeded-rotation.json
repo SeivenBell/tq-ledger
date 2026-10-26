@@ -1,0 +1,161 @@
+{
+  "schema": "qref.qaoa-case/v1",
+  "case_id": "qaoa-seeded-rotation",
+  "title": "QAOA helpers \u2014 seeded rotation regression",
+  "description": "Labelled synthetic regression: the mixer rotation angle is halved. The circuit checker should catch this one.",
+  "origin": "seeded_regression",
+  "reference": {
+    "module": "../evidence/qaoa/legacy_functions.py",
+    "pins": "../evidence/qaoa/legacy-requirements.txt",
+    "receipt": {
+      "kind": "upstream_extract",
+      "upstream_url": "https://github.com/qiskit-community/qiskit-textbook/blob/0ae905083ec3872d7ddc6bb4001d5468f476d93f/content/ch-applications/qaoa.ipynb",
+      "upstream_revision": "0ae905083ec3872d7ddc6bb4001d5468f476d93f",
+      "upstream_path": "content/ch-applications/qaoa.ipynb",
+      "extraction_scope": "Helper cell (maxcut_obj, compute_expectation, create_qaoa_circ, get_expectation) with its required imports added; not the whole notebook.",
+      "attribution": "Qiskit textbook contributors",
+      "license_spdx": "Apache-2.0",
+      "license_file": "../evidence/qaoa/LICENSE.txt",
+      "derived_from_sha256": null
+    }
+  },
+  "target": {
+    "module": "seeded/rotation_halved.py",
+    "pins": "../evidence/qaoa/modern-requirements.txt",
+    "receipt": {
+      "kind": "local_code",
+      "upstream_url": null,
+      "upstream_revision": null,
+      "upstream_path": null,
+      "extraction_scope": "Research port with one deliberate edit: rx(2*beta) became rx(beta).",
+      "attribution": "Qiskit textbook contributors (derived work); seeded edit by the QRef author",
+      "license_spdx": "Apache-2.0",
+      "license_file": "../evidence/qaoa/LICENSE.txt",
+      "derived_from_sha256": null
+    }
+  },
+  "graphs": [
+    {
+      "id": "textbook_cycle4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "asymmetric4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "cycle5",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "p1-a",
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "id": "p1-b",
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "id": "p2",
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    }
+  ],
+  "shots": [
+    512,
+    17
+  ],
+  "interpretation": {
+    "objective": "negative_maxcut",
+    "node_mapping": "node_i_is_qubit_i",
+    "count_order": "qiskit_count_msb_left",
+    "measurement": "terminal_identity"
+  },
+  "proposal": null
+}

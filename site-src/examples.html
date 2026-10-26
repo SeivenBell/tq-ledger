@@ -16,6 +16,7 @@
 <li><a href="./">Fresh Claude Sonnet port</a>: the circuits are equivalent, and the request for 512 or 17 shots still runs 1,024. The model chose to keep the old behaviour and said so. Its <a href="proposal/proposal.json">proposal record</a> includes the prompt, notes and code.</li>
 <li><a href="research-port/">Earlier research port</a>: the circuits are equivalent, and the port now honours the requested shots. This is a real behaviour change between the two versions.</li>
 <li><a href="seeded-decoder/">Seeded bit-order regression</a><span class="tag">deliberate test</span>: a deliberate, labelled change. The circuit checker still reports equivalence, and QRef's independent classical checks catch the change.</li>
+<li><a href="seeded-rotation/">Seeded rotation regression</a><span class="tag">deliberate test</span>: one mixer angle halved. This time the circuits differ, and the circuit checker (MQT QCEC) reports it. The two seeded cases show which layer catches which kind of change.</li>
 <li><a href="positive-control/">Positive control</a>: the same port on both sides, including an 8-qubit graph with an isolated node. Result: no differences, exit code 0. This shows that QRef does not invent findings.</li>
 </ol>
 <footer><a href="https://github.com/SeivenBell/tq-ledger">Source, specification and how to run it locally</a> · Built with Qiskit, Qiskit Aer, MQT QCEC and Claude.</footer>

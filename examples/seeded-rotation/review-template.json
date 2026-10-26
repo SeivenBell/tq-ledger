@@ -1,0 +1,34 @@
+{
+  "decisions": [
+    {
+      "decision": "needs_review",
+      "finding_id": "circuit",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    },
+    {
+      "decision": "needs_review",
+      "finding_id": "probability",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    },
+    {
+      "decision": "needs_review",
+      "finding_id": "exact-objective",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    },
+    {
+      "decision": "needs_review",
+      "finding_id": "shot_policy",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    }
+  ],
+  "evidence_sha256": "04d4050c9a596a4d960add5c85946f19b3f077db8c8317e203ec5407dd42be17",
+  "schema": "qref.decisions/v1"
+}

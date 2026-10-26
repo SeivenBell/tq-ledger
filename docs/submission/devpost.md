@@ -32,11 +32,12 @@ QRef is a command-line tool with a static report.
 4. `qref report --decisions` records a named human decision, bound to the exact evidence by SHA-256. It changes the review state, never the check results.
 5. `qref verify-bundle` checks every published file and every member of the downloadable ZIP against the manifest, without extracting anything.
 
-Four recorded examples are live:
+Five recorded examples are live:
 
 - A fresh Claude port that keeps the old 1,024-shot behaviour.
 - An earlier port that honours the requested shots.
 - A labelled, deliberately broken bit-order version. The circuit checker still calls it equivalent; QRef's classical checks catch it.
+- A labelled halved-rotation version. Here the circuits really differ, and MQT QCEC reports it.
 - A positive control: the same port on both sides, including an 8-qubit graph. No differences, so QRef does not invent findings.
 
 ## How we built it
@@ -45,7 +46,7 @@ Python 3.11 and uv. Two pinned interpreters, Qiskit 0.46.3 with Aer 0.14.2 and Q
 
 MQT QCEC 3.11 checks circuit equivalence. Jinja2 renders the report and jsonschema validates every record. The report is self-contained HTML with no JavaScript and a strict Content-Security-Policy.
 
-GitHub Actions re-verifies the curated exports byte for byte, then publishes only those files to GitHub Pages. CI never runs candidate code or calls a model.
+GitHub Actions re-verifies the curated exports byte for byte, then publishes only those files to GitHub Pages; that publish job never runs candidate code or calls a model. A separate Linux job rebuilds both pinned Qiskit environments from scratch on every push, runs all tests and repeats a real seed run.
 
 ## Challenges we ran into
 
@@ -57,7 +58,7 @@ GitHub Actions re-verifies the curated exports byte for byte, then publishes onl
 
 - A real end-to-end flow: model proposal, two-runtime execution, independent checks, human decision, verified public report.
 - One documented example where the circuit check passes and QRef still catches the behaviour change.
-- 29 behaviour tests cover status rules, unsupported circuits, import failures, timeouts, missing interpreters, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
+- 45 behaviour tests cover status rules, unsupported circuits, extra simulator runs, import failures, timeouts, checker budgets, missing interpreters, refused billing overrides, unusable model output, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
 
 ## What we learned
 

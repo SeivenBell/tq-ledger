@@ -1,6 +1,6 @@
 # QRef: build specification
 
-Status: **release 0.1 implements the owner-approved core slice plus the human-decision overlay** (2026-10-25/26). ZIP export/verification is implemented. The remaining acceptance fixtures and a Linux reproduction are **deferred, not done**. See [the review record](docs/reviews/external-review.md) for exactly what is implemented, what deviates and what remains.
+Status: **release 0.1 implements the owner-approved core slice plus the human-decision overlay** (2026-10-25/26). ZIP export/verification is implemented. Linux reproduction runs in CI on every push. A few acceptance fixtures and a manual accessibility audit are **deferred, not done**. See [the review record](docs/reviews/external-review.md) for exactly what is implemented, what deviates and what remains.
 
 Product purpose is in [PRODUCT.md](PRODUCT.md); vocabulary is in [CONTEXT.md](CONTEXT.md). [PLAN.md](PLAN.md) defines build order and acceptance gates. The [report brief](docs/design/report-brief.md) specifies the proposed visual surface. This specification is authoritative for interfaces and behavior; archived proposals are not.
 
@@ -84,7 +84,7 @@ The implementer must create the actual project metadata and `uv.lock`, resolve b
 | SciPy | 1.17.1 | 1.17.1 |
 | MQT QCEC | Not installed/required | 3.11.0 |
 
-Use the full [reference](evidence/qaoa/legacy-requirements.txt) and [target](evidence/qaoa/modern-requirements.txt) snapshots to bootstrap. Qiskit 2.6.1 requires NumPy 2; a shared NumPy 1.26.4 environment is invalid. Fresh Linux scientific installation is not proved by the macOS runs. The public render job does not require that installation.
+Use the full [reference](evidence/qaoa/legacy-requirements.txt) and [target](evidence/qaoa/modern-requirements.txt) snapshots to bootstrap. Qiskit 2.6.1 requires NumPy 2; a shared NumPy 1.26.4 environment is invalid. Fresh Linux installation of both runtimes is exercised by `.github/workflows/test.yml`. The public render job does not require that installation.
 
 ## 5. End-to-end workflow and exact CLI
 

@@ -1,0 +1,767 @@
+{
+  "executions": [
+    {
+      "angle_id": "p1-a",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "graph_id": "textbook_cycle4",
+      "id": "textbook_cycle4/p1-a/shots-512",
+      "input_sha256": "bd2973bdd6445b5044d51ceb29adb39c59711345bc804854c53d2f5a3ea64383",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "angle_id": "p1-a",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "graph_id": "textbook_cycle4",
+      "id": "textbook_cycle4/p1-a/shots-17",
+      "input_sha256": "fa07cd28b3b8891420b58ab0cf642e02a0b39068f47667ee27b215036ac8405d",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "angle_id": "p1-b",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "graph_id": "textbook_cycle4",
+      "id": "textbook_cycle4/p1-b/shots-512",
+      "input_sha256": "7d3afa639a7301fd3a9b0fd953d29ce0326e271fea7966fcea861974a2fe10eb",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "angle_id": "p1-b",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "graph_id": "textbook_cycle4",
+      "id": "textbook_cycle4/p1-b/shots-17",
+      "input_sha256": "94f83f59cb93d790a583f7c8012d538506f96d661700aaeb37168ea8a123355e",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "angle_id": "p2",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "graph_id": "textbook_cycle4",
+      "id": "textbook_cycle4/p2/shots-512",
+      "input_sha256": "299c7512267d8b1ba78ffe2a027638ca10c6120ea22b6cc365a99f7704106e4b",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    },
+    {
+      "angle_id": "p2",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "graph_id": "textbook_cycle4",
+      "id": "textbook_cycle4/p2/shots-17",
+      "input_sha256": "6f82aff743be8d084ef54905861ff4e3bc64e43cc1f6948cc945898b2d7f1348",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    },
+    {
+      "angle_id": "p1-a",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "graph_id": "asymmetric4",
+      "id": "asymmetric4/p1-a/shots-512",
+      "input_sha256": "c034adc209e349ea974c7a895cb3cf09077dd1bd25d0be14b82726be6e8bb072",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "angle_id": "p1-a",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "graph_id": "asymmetric4",
+      "id": "asymmetric4/p1-a/shots-17",
+      "input_sha256": "1510f88f4839aceb42d92237aea2c1d58556669eb1a2a8f5c7ed5f2b43369268",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "angle_id": "p1-b",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "graph_id": "asymmetric4",
+      "id": "asymmetric4/p1-b/shots-512",
+      "input_sha256": "c473a1c2746c91dd29bd70e18dce8db8dbb4f2281b3c032bac27168ee28a22a8",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "angle_id": "p1-b",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "graph_id": "asymmetric4",
+      "id": "asymmetric4/p1-b/shots-17",
+      "input_sha256": "44c7b709acc93eeefa1bfe1cc9dccdcd5b2bbb7da3923ed587695cd59eecc71b",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "angle_id": "p2",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "graph_id": "asymmetric4",
+      "id": "asymmetric4/p2/shots-512",
+      "input_sha256": "8c06c7c002ada04d2131a4caf2816446e875e7b39dc77e62c475b49004938147",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    },
+    {
+      "angle_id": "p2",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "graph_id": "asymmetric4",
+      "id": "asymmetric4/p2/shots-17",
+      "input_sha256": "50d20a5f68c1e06d4d947c142f1ff96f0d6b9f772c0df0257850e0022587ac67",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    },
+    {
+      "angle_id": "p1-a",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "graph_id": "cycle5",
+      "id": "cycle5/p1-a/shots-512",
+      "input_sha256": "f97f1cbaab27825e6250187b3b1d1c6805f704ccd1f0c4f0885eb3b2516c816b",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "angle_id": "p1-a",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "graph_id": "cycle5",
+      "id": "cycle5/p1-a/shots-17",
+      "input_sha256": "82bd560dc7768e2d844bb0e6d03d95df65fe12e6feb77d44ab4446f3e50c976f",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "angle_id": "p1-b",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "graph_id": "cycle5",
+      "id": "cycle5/p1-b/shots-512",
+      "input_sha256": "c3f73a72ca79ed97502a85430c27be8abc06c90841254deae282a5650b73b80b",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "angle_id": "p1-b",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "graph_id": "cycle5",
+      "id": "cycle5/p1-b/shots-17",
+      "input_sha256": "02f3163452f862163df14f4e60bf05ef1b8054ba2e5a050239e9627275656895",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "angle_id": "p2",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "graph_id": "cycle5",
+      "id": "cycle5/p2/shots-512",
+      "input_sha256": "a8085140a5ff07050f7aee8ab10981b351b825cd6a4049701473b22c6385abb7",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "requested_shots": 512,
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    },
+    {
+      "angle_id": "p2",
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "graph_id": "cycle5",
+      "id": "cycle5/p2/shots-17",
+      "input_sha256": "0518eefd156133a6f84afa770855228a0d182b04e4b5d53c1d2d3dcaf8da6c4a",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "requested_shots": 17,
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    }
+  ],
+  "graphs": [
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "id": "textbook_cycle4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "id": "asymmetric4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "id": "cycle5",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "module_path": "../inputs/target.py",
+  "module_sha256": "8eb5c9a7a6ee67a3eecbd4001980019787f4fed53acb9cdcd8151b46ee30b63e",
+  "side": "target"
+}

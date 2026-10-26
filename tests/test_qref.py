@@ -330,3 +330,40 @@ def test_checker_timeout_never_becomes_equivalent(tmp_path, monkeypatch, setting
     assert circuit and all((c["status"], c["reason_code"]) == ("inconclusive", reason) for c in circuit)
     assert code == 2 and evidence["evidence_summary"] == "incomplete"
     assert "Circuit result: inconclusive" in (out / "index.html").read_text() or "Comparison incomplete" in (out / "index.html").read_text()
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+def test_seeded_rotation_change_is_a_circuit_difference(tmp_path):
+    case = seeded_target(tmp_path, "qc.rx(2 * beta[irep], i)", "qc.rx(beta[irep], i)", "rotation")
+    code, out, evidence = run_case(tmp_path, case, "rotation")
+    assert code == 1 and evidence["findings"][0]["id"] == "circuit"
+    circuit = [c for c in evidence["checks"] if c["kind"] == "circuit"]
+    assert all((c["status"], c["observed"]) == ("difference", "not_equivalent") for c in circuit)
+    assert "Circuit differences." in (out / "index.html").read_text()
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+def test_second_backend_run_is_unsupported(tmp_path):
+    case = seeded_target(tmp_path, "        counts = backend.run(",
+                         "        backend.run(tqc, shots=1).result()\n        counts = backend.run(", "two_runs")
+    code, _, evidence = run_case(tmp_path, case, "two_runs")
+    assert code == 2
+    assert {c["reason_code"] for c in evidence["checks"] if c["status"] == "unsupported"} == {"unsupported_backend_execution"}
+
+
+@pytest.mark.parametrize("decision,finding_label,summary", [
+    ("rejected", "Change rejected", "Human review: changes rejected"),
+    ("needs_review", "Needs review", "Human review: pending"),
+    ("accepted_intentional", "Accepted as intentional", "Human review: recorded acceptance"),
+])
+def test_every_review_label(tmp_path, decision, finding_label, summary):
+    decisions = tmp_path / "review.json"
+    decisions.write_text(json.dumps(filled_template(decision=decision)))
+    report.rerender(EXAMPLE, tmp_path / "out", decisions)
+    html = (tmp_path / "out" / "index.html").read_text()
+    assert f"<strong>{finding_label}</strong>" in html and summary in html
+
+
+def test_clean_control_needs_no_review():
+    html = (ROOT / "examples/positive-control/index.html").read_text()
+    assert "Human review: not required" in html and "No differences" in html
