@@ -1,0 +1,16 @@
+dill==0.4.1
+mqt-core==3.11.0
+mqt-qcec==3.11.0
+nanobind-backend==1.0.0
+networkx==2.8.8
+numpy==2.4.6
+psutil==7.2.2
+python-dateutil==3.0.0
+qiskit==2.6.1
+qiskit-aer==0.18.0
+rustworkx==0.18.1
+scipy==1.17.1
+six==1.17.0
+stevedore==5.9.1
+typing-extensions==4.16.0
+tzdata==2026.5

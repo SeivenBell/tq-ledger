@@ -1,0 +1,214 @@
+{
+  "actual_submitted_circuit_checks": [
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "textbook_cycle4",
+          [
+            0.17,
+            0.63
+          ],
+          512
+        ],
+        [
+          "textbook_cycle4",
+          [
+            0.17,
+            0.63
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "textbook_cycle4",
+          [
+            0.81,
+            0.29
+          ],
+          512
+        ],
+        [
+          "textbook_cycle4",
+          [
+            0.81,
+            0.29
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "textbook_cycle4",
+          [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ],
+          512
+        ],
+        [
+          "textbook_cycle4",
+          [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "asymmetric4",
+          [
+            0.17,
+            0.63
+          ],
+          512
+        ],
+        [
+          "asymmetric4",
+          [
+            0.17,
+            0.63
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "asymmetric4",
+          [
+            0.81,
+            0.29
+          ],
+          512
+        ],
+        [
+          "asymmetric4",
+          [
+            0.81,
+            0.29
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "asymmetric4",
+          [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ],
+          512
+        ],
+        [
+          "asymmetric4",
+          [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "cycle5",
+          [
+            0.17,
+            0.63
+          ],
+          512
+        ],
+        [
+          "cycle5",
+          [
+            0.17,
+            0.63
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "cycle5",
+          [
+            0.81,
+            0.29
+          ],
+          512
+        ],
+        [
+          "cycle5",
+          [
+            0.81,
+            0.29
+          ],
+          17
+        ]
+      ]
+    },
+    {
+      "criterion": "EquivalenceCriterion.equivalent",
+      "execution_keys": [
+        [
+          "cycle5",
+          [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ],
+          512
+        ],
+        [
+          "cycle5",
+          [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ],
+          17
+        ]
+      ]
+    }
+  ],
+  "observations_per_runtime": 18,
+  "reference_shots": [
+    1024
+  ],
+  "target_shots": [
+    17,
+    512
+  ],
+  "limit": "Positive feasibility only; no failure states, full metadata, product protocol or sandbox tested"
+}
