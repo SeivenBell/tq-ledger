@@ -22,15 +22,20 @@
 <main id="main" class="wrap">
 <p class="meta">Recorded local execution · {{ case.title }} · Qiskit {{ (prov.reference_environment or {}).get('distributions', [])|selectattr('name','equalto','qiskit')|map(attribute='version')|first|default('not recorded') }} to {{ (prov.target_environment or {}).get('distributions', [])|selectattr('name','equalto','qiskit')|map(attribute='version')|first|default('not recorded') }}<br>
 Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code title="{{ sha }}">{{ sha }}</code></p>
+{% if origin == 'seeded_regression' %}
+<p class="banner"><strong>Seeded regression.</strong> The target was changed on purpose to test QRef. This is not a mistake made by a model.</p>
+{% elif origin == 'positive_control' %}
+<p class="banner"><strong>Positive control.</strong> Both sides are expected to behave the same.</p>
+{% endif %}
 
 <h1>{% for line in headline %}<span>{{ line }}</span>{% endfor %}</h1>
 
-{% set shot = findings|selectattr('id', 'equalto', 'shot_policy')|first|default(None) %}
+{% set lead = findings|first|default(None) %}
 {% if e.run_state != 'complete' %}
 <p class="lede">Some expected work did not complete. Known differences are listed with what is missing. Nothing below should be read as a pass for the missing cases.</p>
-{% elif shot %}
-<p class="lede">{{ shot.explanation }}
-<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
+{% elif lead %}
+<p class="lede">{{ lead.explanation }}{% if findings|length > 1 %} {{ findings|length - 1 }} more finding{{ 's' if findings|length > 2 }} below.{% endif %}
+<span class="muted">{% if lead.id == 'shot_policy' %}A shot is one simulated measurement. {% endif %}The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
 {% endif %}
 
 <div class="scroll shots" role="region" aria-label="Requested and completed shots" tabindex="0">
@@ -54,7 +59,7 @@ Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code titl
 
 <div class="status-row">
   <span>{{ circuit_label }}</span>
-  <span class="attention">Human decision: not recorded</span>
+  <span class="{{ 'attention' if 'pending' in review.summary or 'not recorded' in review.summary or 'rejected' in review.summary }}">{{ review.summary }}</span>
 </div>
 <p>Coverage: {{ coverage.graphs }} graphs, {{ coverage.angle_settings }} angle settings, {{ coverage.shot_requests|length }} requested shot counts; {{ coverage.completed_pairs }} of {{ n_exec }} execution pairs completed. Checks cover declared inputs only.<br>
 <span class="muted">Not checked: optimizer convergence, hardware, noise and dynamic circuits.</span></p>
@@ -72,7 +77,8 @@ Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code titl
 {% for f in findings %}
 <section class="finding" aria-labelledby="f-{{ f.id }}">
 <h3 id="f-{{ f.id }}">{{ f.title }}</h3>
-<p>{{ f.explanation }} Seen in {{ f.check_ids|length }} check{{ 's' if f.check_ids|length != 1 }} across {{ f.scope_ids|length }} execution{{ 's' if f.scope_ids|length != 1 }} — one grouped change, not {{ f.check_ids|length }} independent bugs.</p>
+{% set n = f.check_ids|length %}{% set m = f.scope_ids|length %}
+<p>{{ f.explanation }} Seen in {{ n }} check{{ 's' if n != 1 }}{% if m %} across {{ m }} execution{{ 's' if m != 1 }}{% endif %}{% if n > 1 %} — one grouped change, not {{ n }} independent bugs{% endif %}.</p>
 <div class="block"><h4>Execution evidence</h4>
 <details><summary>{{ f.check_ids|length }} linked observations</summary>
 <ul class="plain">{% for cid in f.check_ids %}<li><a href="#check-{{ cid }}"><code>{{ cid }}</code></a> — {{ by_id[cid].summary }}</li>{% endfor %}</ul>
@@ -83,7 +89,16 @@ Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code titl
 <p class="muted">Model-stated intent ({{ proposal.resolved_model or 'model not recorded' }}). It is not an observation and not human approval.</p>
 {% else %}<p class="muted">No bound model record.</p>{% endif %}
 </div>
-<div class="block"><h4>Human decision</h4><p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason. QRef never infers acceptance from model notes.</span></p></div>
+{% set rv = review.labels[f.id] %}
+<div class="block"><h4>Human decision</h4>
+{% if rv.record %}
+<p><strong>{{ rv.label }}</strong> by {{ rv.record.reviewer }} at {{ rv.record.recorded_at }} <span class="muted">(self-reported, bound to this evidence digest)</span></p>
+<blockquote>{{ rv.record.reason }}</blockquote>
+<p class="muted">The decision is a review state. It does not change any check result above.</p>
+{% else %}
+<p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason, then run <code>qref report --decisions</code>. QRef never infers acceptance from model notes.</span></p>
+{% endif %}
+</div>
 </section>
 {% endfor %}
 

@@ -500,6 +500,72 @@
               }
             }
           }
+        },
+        "decisions_sha256": {
+          "$ref": "#/definitions/sha256"
+        }
+      }
+    },
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "evidence_sha256",
+        "decisions"
+      ],
+      "properties": {
+        "schema": {
+          "const": "qref.decisions/v1"
+        },
+        "evidence_sha256": {
+          "$ref": "#/definitions/sha256"
+        },
+        "decisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "finding_id",
+              "decision",
+              "reviewer",
+              "reason",
+              "recorded_at"
+            ],
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "decision": {
+                "enum": [
+                  "accepted_intentional",
+                  "rejected",
+                  "needs_review"
+                ]
+              },
+              "reviewer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 200
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4000
+              },
+              "recorded_at": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
         }
       }
     }

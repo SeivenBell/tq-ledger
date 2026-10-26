@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-57q8oUaqMTgPy0dFONXu+mQK/EHponflRzvv82/Qd7Y='; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-L1i04CgErLf/UUiHH3+WXz4A9n4rzqDaDXh1oQ3Tc4I='; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>QRef migration report — QAOA MaxCut helpers</title>
 <style>:root{--fg:#1b1f24;--muted:#57606a;--border:#d0d7de;--surface:#f6f8fa;--warn:#9a6700;--warn-bg:#fff8c5;--ok:#1a7f37;--bad:#cf222e;--bad-bg:#ffebe9;--add-bg:#e6ffec;--del-bg:#ffebe9;--link:#0550ae}
@@ -28,6 +28,8 @@ h2{font-size:1.35rem;margin:2.5rem 0 .75rem;padding-top:.5rem;border-top:1px sol
 h3{font-size:1.05rem;margin:1.5rem 0 .5rem}
 .lede{font-size:1.05rem;max-width:62ch}
 caption{caption-side:bottom;text-align:left;padding-top:.4rem;color:var(--muted);font-size:.875rem}
+.banner{border:1px solid var(--warn);background:var(--warn-bg);border-radius:6px;padding:.6rem .9rem;margin:1rem 0 0}
+blockquote{margin:.4rem 0;padding:.2rem .9rem;border-left:3px solid var(--border)}
 .lede .muted,.muted{color:var(--muted)}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
 th,td{border:1px solid var(--border);padding:.5rem .7rem;text-align:left;vertical-align:top}
@@ -83,8 +85,7 @@ Executed 2026-10-26T01:46:17.498452Z – 2026-10-26T01:46:20.640044Z · Evidence
 
 <h1><span>Equivalent circuits.</span><span>Requested shot count not honoured.</span></h1>
 
-<p class="lede">The reference and target complete a different number of shots than requested. Both sides agree, so the port preserves this behaviour; whether the request should be honoured is a review decision.
-<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
+<p class="lede">The reference and target complete a different number of shots than requested. Both sides agree, so the port preserves this behaviour; whether the request should be honoured is a review decision.<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
 
 <div class="scroll shots" role="region" aria-label="Requested and completed shots" tabindex="0">
 <table>
@@ -127,7 +128,9 @@ The prompt did not mention shot behaviour; it asked the model to list any behavi
 <ul class="plain"><li>Import changed: `from qiskit import QuantumCircuit, Aer` became `from qiskit import QuantumCircuit` plus `from qiskit_aer import AerSimulator`, because `qiskit.Aer` no longer exists in Qiskit 2.x.</li><li>Backend is now `AerSimulator()` (default method) instead of `Aer.get_backend(&#39;qasm_simulator&#39;)`. The legacy QasmSimulator is a different class. Sampling semantics should be the same, but this is a different backend object.</li><li>Removed the `nshots=512` argument from `backend.run(...)`. It is not an Aer option (the option is `shots`), so it was most likely ignored before. Removing it should not change behaviour, but it is a code change.</li><li>Deliberately did NOT &#39;fix&#39; the shots handling. `backend.shots = shots` is kept as a plain attribute with no effect on execution, and the `shots` argument still does not control the sample count. Runs use the Aer default of 1024 shots, as in the source (assuming the old `nshots` kwarg was ignored).</li></ul>
 <p class="muted">Model-stated intent (claude-sonnet-5-5). It is not an observation and not human approval.</p>
 </div>
-<div class="block"><h4>Human decision</h4><p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason. QRef never infers acceptance from model notes.</span></p></div>
+<div class="block"><h4>Human decision</h4>
+<p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason, then run <code>qref report --decisions</code>. QRef never infers acceptance from model notes.</span></p>
+</div>
 </section>
 
 <h2 id="checks">Checks on declared inputs</h2>

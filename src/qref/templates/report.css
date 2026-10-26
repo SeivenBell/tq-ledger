@@ -20,6 +20,8 @@ h2{font-size:1.35rem;margin:2.5rem 0 .75rem;padding-top:.5rem;border-top:1px sol
 h3{font-size:1.05rem;margin:1.5rem 0 .5rem}
 .lede{font-size:1.05rem;max-width:62ch}
 caption{caption-side:bottom;text-align:left;padding-top:.4rem;color:var(--muted);font-size:.875rem}
+.banner{border:1px solid var(--warn);background:var(--warn-bg);border-radius:6px;padding:.6rem .9rem;margin:1rem 0 0}
+blockquote{margin:.4rem 0;padding:.2rem .9rem;border-left:3px solid var(--border)}
 .lede .muted,.muted{color:var(--muted)}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
 th,td{border:1px solid var(--border);padding:.5rem .7rem;text-align:left;vertical-align:top}

@@ -24,8 +24,9 @@ def main(argv=None) -> int:
     r.add_argument("--trust-local-code", action="store_true",
                    help="required: candidate Python can read local files, use the network and access process credentials")
 
-    rep = sub.add_parser("report", help="Verify an existing bundle and render it into a new directory.")
+    rep = sub.add_parser("report", help="Verify a bundle, optionally attach a human decision file, and render into a new directory.")
     rep.add_argument("--run", type=Path, required=True)
+    rep.add_argument("--decisions", type=Path, help="filled-in copy of review-template.json (qref.decisions/v1)")
     rep.add_argument("--out", type=Path, required=True)
 
     v = sub.add_parser("verify-bundle", help="Check a bundle directory against its manifest and evidence links.")
@@ -44,7 +45,7 @@ def main(argv=None) -> int:
             return code
         if args.command == "report":
             from . import report
-            report.rerender(args.run, args.out)
+            report.rerender(args.run, args.out, args.decisions)
             print(f"wrote {args.out / 'index.html'}")
             return 0
         if args.command == "verify-bundle":

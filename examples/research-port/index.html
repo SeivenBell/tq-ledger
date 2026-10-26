@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-57q8oUaqMTgPy0dFONXu+mQK/EHponflRzvv82/Qd7Y='; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-L1i04CgErLf/UUiHH3+WXz4A9n4rzqDaDXh1oQ3Tc4I='; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>QRef migration report — QAOA MaxCut helpers</title>
 <style>:root{--fg:#1b1f24;--muted:#57606a;--border:#d0d7de;--surface:#f6f8fa;--warn:#9a6700;--warn-bg:#fff8c5;--ok:#1a7f37;--bad:#cf222e;--bad-bg:#ffebe9;--add-bg:#e6ffec;--del-bg:#ffebe9;--link:#0550ae}
@@ -28,6 +28,8 @@ h2{font-size:1.35rem;margin:2.5rem 0 .75rem;padding-top:.5rem;border-top:1px sol
 h3{font-size:1.05rem;margin:1.5rem 0 .5rem}
 .lede{font-size:1.05rem;max-width:62ch}
 caption{caption-side:bottom;text-align:left;padding-top:.4rem;color:var(--muted);font-size:.875rem}
+.banner{border:1px solid var(--warn);background:var(--warn-bg);border-radius:6px;padding:.6rem .9rem;margin:1rem 0 0}
+blockquote{margin:.4rem 0;padding:.2rem .9rem;border-left:3px solid var(--border)}
 .lede .muted,.muted{color:var(--muted)}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
 th,td{border:1px solid var(--border);padding:.5rem .7rem;text-align:left;vertical-align:top}
@@ -83,8 +85,7 @@ Executed 2026-10-26T01:46:37.278973Z – 2026-10-26T01:46:40.937222Z · Evidence
 
 <h1><span>Equivalent circuits.</span><span>Shot setting changed.</span></h1>
 
-<p class="lede">The reference and target complete different numbers of shots for the same request. This changes sampling uncertainty even when circuits are equivalent.
-<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
+<p class="lede">The reference and target complete different numbers of shots for the same request. This changes sampling uncertainty even when circuits are equivalent.<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
 
 <div class="scroll shots" role="region" aria-label="Requested and completed shots" tabindex="0">
 <table>
@@ -124,7 +125,9 @@ Executed 2026-10-26T01:46:37.278973Z – 2026-10-26T01:46:40.937222Z · Evidence
 </details></div>
 <div class="block"><h4>Model disclosure</h4>
 <p class="muted">No bound model record.</p></div>
-<div class="block"><h4>Human decision</h4><p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason. QRef never infers acceptance from model notes.</span></p></div>
+<div class="block"><h4>Human decision</h4>
+<p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason, then run <code>qref report --decisions</code>. QRef never infers acceptance from model notes.</span></p>
+</div>
 </section>
 
 <h2 id="checks">Checks on declared inputs</h2>

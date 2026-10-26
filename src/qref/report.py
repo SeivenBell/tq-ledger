@@ -19,7 +19,60 @@ from . import contracts
 GENERATED = ("index.html", "manifest.json")
 
 
-def _view(out: Path, evidence: dict, evidence_sha: str) -> dict:
+DECISION_LABELS = {"accepted_intentional": "Accepted as intentional", "rejected": "Change rejected",
+                   "needs_review": "Needs review"}
+
+
+def load_decisions(data: bytes, evidence: dict, evidence_sha: str) -> dict:
+    """Validate a qref.decisions/v1 overlay against exact evidence bytes. Returns finding id -> recorded decision."""
+    overlay = contracts.load_json_bytes(data)
+    contracts.validate("decisions", overlay)
+    if overlay["evidence_sha256"] != evidence_sha:
+        raise contracts.ContractError("decisions are bound to different evidence (evidence_sha256 mismatch)")
+    findings = {f["id"] for f in evidence["findings"]}
+    recorded = {}
+    for d in overlay["decisions"]:
+        fid = d["finding_id"]
+        if fid in recorded or fid in {r for r in recorded}:
+            raise contracts.ContractError(f"duplicate decision for finding {fid}")
+        if fid not in findings:
+            raise contracts.ContractError(f"decision for unknown finding {fid}; only valid differences can be reviewed")
+        fields = [d["reviewer"], d["reason"], d["recorded_at"]]
+        if all(v is None for v in fields):
+            if d["decision"] != "needs_review":
+                raise contracts.ContractError(f"{fid}: a {d['decision']} decision needs reviewer, reason and recorded_at")
+            recorded[fid] = None  # unfilled template entry: not recorded
+            continue
+        if any(v is None or not str(v).strip() for v in fields):
+            raise contracts.ContractError(f"{fid}: reviewer, reason and recorded_at must all be filled in")
+        if not contracts.is_utc_timestamp(d["recorded_at"]):
+            raise contracts.ContractError(f"{fid}: recorded_at must be an RFC 3339 UTC time such as 2026-10-25T22:10:00Z")
+        recorded[fid] = d
+    return recorded
+
+
+def _review(evidence: dict, decisions: dict | None) -> dict:
+    findings = evidence["findings"]
+    complete = evidence["run_state"] == "complete" and evidence["evidence_summary"] != "incomplete"
+    labels = {}
+    for f in findings:
+        d = (decisions or {}).get(f["id"])
+        labels[f["id"]] = {"label": DECISION_LABELS[d["decision"]] if d else "Not recorded", "record": d}
+    states = [r["record"]["decision"] if r["record"] else None for r in labels.values()]
+    if decisions is None and findings:
+        summary = "Human decision: not recorded"
+    elif "rejected" in states:
+        summary = "Human review: changes rejected"
+    elif not complete or any(s in (None, "needs_review") for s in states):
+        summary = "Human review: pending"
+    elif findings:
+        summary = "Human review: recorded acceptance"
+    else:
+        summary = "Human review: not required"
+    return {"labels": labels, "summary": summary, "has_overlay": decisions is not None}
+
+
+def _view(out: Path, evidence: dict, evidence_sha: str, decisions: dict | None = None) -> dict:
     checks = evidence["checks"]
     by_id = {c["id"]: c for c in checks}
     state, summary = evidence["run_state"], evidence["evidence_summary"]
@@ -110,6 +163,8 @@ def _view(out: Path, evidence: dict, evidence_sha: str) -> dict:
         "proposal": prov.get("proposal"),
         "coverage": evidence["coverage"],
         "n_exec": len(executions),
+        "review": _review(evidence, decisions),
+        "origin": evidence["case"]["definition"]["origin"],
     }
 
 
@@ -162,9 +217,16 @@ def write_export(out: Path) -> None:
     contracts.validate("evidence", evidence)
     _check_artifacts(out, evidence)
     evidence_sha = contracts.sha256_bytes(evidence_bytes)
+    decisions = None
+    decisions_sha = None
+    if (out / "decisions.json").is_file():
+        data = (out / "decisions.json").read_bytes()
+        decisions = load_decisions(data, evidence, evidence_sha)
+        decisions_sha = contracts.sha256_bytes(data)
     css = resources.files("qref").joinpath("templates", "report.css").read_text(encoding="utf-8")
     css_hash = base64.b64encode(hashlib.sha256(css.encode("utf-8")).digest()).decode()
-    html = _env().get_template("report.html.j2").render(css=css, css_hash=css_hash, **_view(out, evidence, evidence_sha))
+    html = _env().get_template("report.html.j2").render(
+        css=css, css_hash=css_hash, **_view(out, evidence, evidence_sha, decisions))
     (out / "index.html").write_text(html, encoding="utf-8")
     files = []
     for path in sorted(out.rglob("*")):
@@ -173,6 +235,8 @@ def write_export(out: Path) -> None:
             files.append({"path": rel, "size": path.stat().st_size, "sha256": contracts.sha256_file(path)})
     manifest = {"schema": "qref.manifest/v1", "evidence_sha256": evidence_sha, "rendered_at": contracts.utc_now(),
                 "renderer_sha256": renderer_sha256(), "files": files}
+    if decisions_sha:
+        manifest["decisions_sha256"] = decisions_sha
     contracts.validate("manifest", manifest)
     (out / "manifest.json").write_bytes(contracts.record_bytes(manifest))
 
@@ -228,17 +292,33 @@ def verify_bundle(root: Path) -> dict:
     template = contracts.load_json_bytes((root / "review-template.json").read_bytes())
     if template.get("evidence_sha256") != manifest["evidence_sha256"]:
         raise contracts.ContractError("review template is bound to different evidence")
+    has_decisions = (root / "decisions.json").is_file()
+    if has_decisions != ("decisions_sha256" in manifest):
+        raise contracts.ContractError("decisions.json and the manifest's decisions digest disagree")
+    if has_decisions:
+        data = (root / "decisions.json").read_bytes()
+        if contracts.sha256_bytes(data) != manifest["decisions_sha256"]:
+            raise contracts.ContractError("decisions.json does not match the manifest")
+        load_decisions(data, evidence, manifest["evidence_sha256"])
     return manifest
 
 
-def rerender(run: Path, out: Path) -> None:
-    """`qref report`: verify an existing bundle, copy its evidence to a new directory and render again."""
+def rerender(run: Path, out: Path, decisions: Path | None = None) -> None:
+    """`qref report`: verify an existing bundle, copy it to a new directory, optionally attach a human
+    decision overlay, and render again. Evidence bytes never change."""
     verify_bundle(run)
+    if decisions is not None:
+        evidence_bytes = (run / "evidence.json").read_bytes()
+        load_decisions(decisions.read_bytes(), contracts.load_json_bytes(evidence_bytes),
+                       contracts.sha256_bytes(evidence_bytes))
     out.mkdir(parents=True, exist_ok=False)
+    skip = set(GENERATED) | ({"decisions.json"} if decisions is not None else set())
     for path in run.rglob("*"):
         rel = path.relative_to(run)
-        if path.is_file() and rel.as_posix() not in GENERATED:
+        if path.is_file() and rel.as_posix() not in skip:
             (out / rel).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(path, out / rel)
+    if decisions is not None:
+        shutil.copyfile(decisions, out / "decisions.json")
     write_export(out)
     verify_bundle(out)

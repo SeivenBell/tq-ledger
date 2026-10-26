@@ -24,13 +24,17 @@ jobs:
         run: |
           uv run qref verify-bundle --run examples/qaoa-run
           uv run qref verify-bundle --run examples/research-port
+          uv run qref verify-bundle --run examples/seeded-decoder
       - name: Assemble site from verified bytes only
         run: |
           mkdir site
           cp -R examples/qaoa-run/. site/
           cp -R examples/research-port site/research-port
+          cp -R examples/seeded-decoder site/seeded-decoder
           cp -R examples/qaoa-proposal site/proposal
+          cp site-src/examples.html site/examples.html
           uv run qref verify-bundle --run site/research-port
+          uv run qref verify-bundle --run site/seeded-decoder
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:

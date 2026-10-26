@@ -1,0 +1,34 @@
+{
+  "decisions": [
+    {
+      "decision": "needs_review",
+      "finding_id": "classical-basis",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    },
+    {
+      "decision": "needs_review",
+      "finding_id": "returned-objective",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    },
+    {
+      "decision": "needs_review",
+      "finding_id": "classical-weighting",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    },
+    {
+      "decision": "needs_review",
+      "finding_id": "shot_policy",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    }
+  ],
+  "evidence_sha256": "6161a1e0fbe92a25006237b2e423480138424a1ed6741a03948bb62a41dab924",
+  "schema": "qref.decisions/v1"
+}

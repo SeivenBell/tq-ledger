@@ -194,3 +194,51 @@ def test_trust_flag_required_and_stale_proposal_rejected(tmp_path):
     case["proposal"] = {"record": os.path.relpath(record, CASE.parent)}
     with pytest.raises(contracts.ContractError, match="stale"):
         run_case(tmp_path, case, "stale")
+
+
+EXAMPLE = ROOT / "examples" / "qaoa-run"
+
+
+def filled_template(**changes):
+    template = json.loads((EXAMPLE / "review-template.json").read_text())
+    entry = template["decisions"][0]
+    entry.update(decision="accepted_intentional", reviewer="Test Reviewer (synthetic)",
+                 reason="Synthetic test decision.", recorded_at="2026-10-25T22:00:00Z")
+    entry.update(changes)
+    return template
+
+
+def test_decision_overlay_changes_only_the_review_state(tmp_path):
+    decisions = tmp_path / "review.json"
+    decisions.write_text(json.dumps(filled_template()))
+    out = tmp_path / "reviewed"
+    report.rerender(EXAMPLE, out, decisions)
+    assert (out / "evidence.json").read_bytes() == (EXAMPLE / "evidence.json").read_bytes()
+    html = (out / "index.html").read_text()
+    assert "Accepted as intentional" in html and "Human review: recorded acceptance" in html
+    report.verify_bundle(out)
+    (out / "decisions.json").write_text(json.dumps(filled_template(decision="rejected")))
+    with pytest.raises(contracts.ContractError, match="decisions.json"):
+        report.verify_bundle(out)
+
+
+@pytest.mark.parametrize("changes,message", [
+    ({"reviewer": None}, "filled in"),
+    ({"finding_id": "circuit"}, "unknown finding"),
+    ({"recorded_at": "yesterday"}, "UTC"),
+])
+def test_invalid_decisions_are_refused(tmp_path, changes, message):
+    decisions = tmp_path / "review.json"
+    decisions.write_text(json.dumps(filled_template(**changes)))
+    with pytest.raises(contracts.ContractError, match=message):
+        report.rerender(EXAMPLE, tmp_path / "out", decisions)
+    assert not (tmp_path / "out").exists()
+
+
+def test_decision_for_other_evidence_is_refused(tmp_path):
+    template = filled_template()
+    template["evidence_sha256"] = "0" * 64
+    decisions = tmp_path / "review.json"
+    decisions.write_text(json.dumps(template))
+    with pytest.raises(contracts.ContractError, match="different evidence"):
+        report.rerender(EXAMPLE, tmp_path / "out", decisions)

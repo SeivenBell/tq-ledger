@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'">
+<title>QRef — recorded examples</title>
+</head>
+<body>
+<main>
+<h1>QRef: recorded examples</h1>
+<p>Each page is a static copy of a real local run. Nothing runs on this site. Each page's evidence and manifest are checked against their hashes before publication.</p>
+<ol>
+<li><a href="./">Fresh Claude Sonnet port</a>: the circuits are equivalent, and the request for 512 or 17 shots still runs 1,024. The model chose to keep the old behaviour and said so. Its <a href="proposal/proposal.json">proposal record</a> includes the prompt, notes and code.</li>
+<li><a href="research-port/">Earlier research port</a>: the circuits are equivalent, and the port now honours the requested shots. This is a real behaviour change between the two versions.</li>
+<li><a href="seeded-decoder/">Seeded bit-order regression</a>: a deliberate, labelled change. The circuit checker still reports equivalence, and QRef's independent classical checks catch the change.</li>
+</ol>
+<p><a href="https://github.com/SeivenBell/tq-ledger">Source, specification and how to run it locally</a></p>
+</main>
+</body>
+</html>

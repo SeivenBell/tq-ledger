@@ -315,4 +315,7 @@ def group_findings(checks):
                                "whether the request should be honoured is a review decision.")
         findings.append({"id": fid, "kind": fid, "check_ids": g["check_ids"], "scope_ids": sorted(g["scope_ids"]),
                          "title": title, "explanation": explanation, "proposal_claim_refs": []})
+    order = ["circuit", "probability", "exact-objective", "classical-basis", "returned-objective",
+             "classical-weighting", "shot_policy"]
+    findings.sort(key=lambda f: order.index(f["id"]))
     return findings
