@@ -1,0 +1,46 @@
+name: Linux reproduction
+
+# Builds both pinned Qiskit environments from scratch on Linux, runs the test suite and a real seed run.
+# Candidate code here is the repository's own inspected seed and fixtures; no model is called.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+      - name: Install QRef and both pinned runtimes
+        run: |
+          uv sync --frozen
+          uv venv --python 3.11.12 .qref/envs/reference
+          uv pip install --python .qref/envs/reference/bin/python -r evidence/qaoa/legacy-requirements.txt
+          uv venv --python 3.11.12 .qref/envs/target
+          uv pip install --python .qref/envs/target/bin/python -r evidence/qaoa/modern-requirements.txt
+      - name: Behaviour tests (including real two-runtime runs)
+        run: uv run pytest -q
+      - name: Real seed run on Linux
+        run: |
+          set +e
+          uv run qref run --case cases/qaoa.json \
+            --reference-python .qref/envs/reference/bin/python \
+            --target-python .qref/envs/target/bin/python \
+            --out runs/linux-seed --trust-local-code
+          code=$?
+          set -e
+          test "$code" -eq 1   # complete evidence with the known shot-policy difference
+          uv run qref verify-bundle --run runs/linux-seed
+          uv run python -c "import json; e=json.load(open('runs/linux-seed/evidence.json')); print(e['run_state'], e['evidence_summary'], e['status_counts'], [f['title'] for f in e['findings']]); assert e['run_state']=='complete' and [f['id'] for f in e['findings']]==['shot_policy'] and all(c['status']=='pass' for c in e['checks'] if c['kind']=='circuit')"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: linux-seed-run
+          path: runs/linux-seed
+          if-no-files-found: ignore
