@@ -58,3 +58,20 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+
+  check-live:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Live site serves exactly the verified records
+        run: |
+          base="https://seivenbell.github.io/tq-ledger"
+          sleep 20
+          for pair in ".:qaoa-run" "research-port:research-port" "seeded-decoder:seeded-decoder" "seeded-rotation:seeded-rotation" "positive-control:positive-control"; do
+            path="${pair%%:*}"; example="${pair##*:}"
+            want=$(sha256sum "examples/$example/evidence.json" | cut -d' ' -f1)
+            got=$(curl -fsSL "$base/$path/evidence.json" | sha256sum | cut -d' ' -f1)
+            curl -fsSL "$base/$path/" | grep -q "$want"
+            test "$want" = "$got" && echo "ok $path $want"
+          done
