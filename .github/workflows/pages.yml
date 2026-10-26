@@ -73,5 +73,6 @@ jobs:
             want=$(sha256sum "examples/$example/evidence.json" | cut -d' ' -f1)
             got=$(curl -fsSL "$base/$path/evidence.json" | sha256sum | cut -d' ' -f1)
             curl -fsSL "$base/$path/" | grep -q "$want"
-            test "$want" = "$got" && echo "ok $path $want"
+            test "$want" = "$got"
+            echo "ok $path $want"
           done
