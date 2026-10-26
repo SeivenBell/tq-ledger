@@ -316,3 +316,17 @@ def test_missing_interpreter_is_reported_not_substituted(tmp_path):
     assert code == 2 and evidence["run_state"] == "failed"
     assert evidence["provenance"]["side_failures"]["reference"] == "environment_mismatch"
     assert evidence["provenance"]["reference_environment"] is None
+
+
+@pytest.mark.skipif(not HAVE_ENVS, reason="pinned reference/target environments not provisioned")
+@pytest.mark.parametrize("setting,value,reason", [("QCEC_DEADLINE", 0.001, "timeout"),
+                                                  ("QCEC_BUDGET", 0, "checker_budget_exhausted")])
+def test_checker_timeout_never_becomes_equivalent(tmp_path, monkeypatch, setting, value, reason):
+    monkeypatch.setattr(execution, setting, value)
+    case = json.loads(CASE.read_text())
+    case["graphs"], case["angles"], case["shots"] = case["graphs"][:1], case["angles"][:1], [17]
+    code, out, evidence = run_case(tmp_path, case, reason)
+    circuit = [c for c in evidence["checks"] if c["kind"] == "circuit"]
+    assert circuit and all((c["status"], c["reason_code"]) == ("inconclusive", reason) for c in circuit)
+    assert code == 2 and evidence["evidence_summary"] == "incomplete"
+    assert "Circuit result: inconclusive" in (out / "index.html").read_text() or "Comparison incomplete" in (out / "index.html").read_text()
