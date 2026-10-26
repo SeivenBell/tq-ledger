@@ -1,0 +1,207 @@
+{
+  "angles": [
+    {
+      "id": "p1-a",
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "id": "p1-b",
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "id": "p2",
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    }
+  ],
+  "case_id": "qaoa-positive-control",
+  "description": "The research port runs as both reference and target in the pinned Qiskit 2.6.1 environment. Expected: no differences. Includes an 8-qubit graph with an isolated node.",
+  "graphs": [
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "id": "textbook_cycle4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "id": "asymmetric4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "id": "cycle5",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "id": "ring7_isolated8",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "interpretation": {
+    "count_order": "qiskit_count_msb_left",
+    "measurement": "terminal_identity",
+    "node_mapping": "node_i_is_qubit_i",
+    "objective": "negative_maxcut"
+  },
+  "origin": "positive_control",
+  "proposal": null,
+  "reference": {
+    "module": "artifacts/inputs/reference.py",
+    "pins": "artifacts/inputs/reference-pins.txt",
+    "receipt": {
+      "attribution": "Qiskit textbook contributors (derived work)",
+      "derived_from_sha256": null,
+      "extraction_scope": "Research port used unchanged as the control reference.",
+      "kind": "local_code",
+      "license_file": "artifacts/inputs/reference-LICENSE.txt",
+      "license_spdx": "Apache-2.0",
+      "upstream_path": null,
+      "upstream_revision": null,
+      "upstream_url": null
+    }
+  },
+  "schema": "qref.qaoa-case/v1",
+  "shots": [
+    512
+  ],
+  "target": {
+    "module": "artifacts/inputs/target.py",
+    "pins": "artifacts/inputs/target-pins.txt",
+    "receipt": {
+      "attribution": "Qiskit textbook contributors (derived work)",
+      "derived_from_sha256": null,
+      "extraction_scope": "Earlier research port of the reference helpers. Its model notes are not bound to this case, so no model attribution is claimed.",
+      "kind": "local_code",
+      "license_file": "artifacts/inputs/target-LICENSE.txt",
+      "license_spdx": "Apache-2.0",
+      "upstream_path": null,
+      "upstream_revision": null,
+      "upstream_url": null
+    }
+  },
+  "title": "QAOA helpers \u2014 positive control (same port on both sides)"
+}

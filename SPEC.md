@@ -1,6 +1,6 @@
 # QRef: build specification
 
-Status: **release 0.1 implements the owner-approved core slice plus the human-decision overlay** (2026-10-25/26). ZIP export/verification, the full acceptance-fixture matrix and a Linux reproduction are **deferred, not done**. See [the review record](docs/reviews/external-review.md) for exactly what is implemented, what deviates and what remains.
+Status: **release 0.1 implements the owner-approved core slice plus the human-decision overlay** (2026-10-25/26). ZIP export/verification is implemented. The remaining acceptance fixtures and a Linux reproduction are **deferred, not done**. See [the review record](docs/reviews/external-review.md) for exactly what is implemented, what deviates and what remains.
 
 Product purpose is in [PRODUCT.md](PRODUCT.md); vocabulary is in [CONTEXT.md](CONTEXT.md). [PLAN.md](PLAN.md) defines build order and acceptance gates. The [report brief](docs/design/report-brief.md) specifies the proposed visual surface. This specification is authoritative for interfaces and behavior; archived proposals are not.
 

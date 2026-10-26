@@ -30,13 +30,14 @@ QRef is a command-line tool with a static report.
 2. `qref run` runs the old and new code, each in its own pinned Python environment. It records the circuits actually submitted to the Aer simulator and compares them with MQT QCEC. It also checks the classical helpers on every bit pattern, checks each returned value against its own measured counts, and compares requested and completed shots.
 3. The report puts the finding first. The model's claims, the observed evidence and the human decision appear in separate places. Gaps and unchecked areas are listed, not hidden.
 4. `qref report --decisions` records a named human decision, bound to the exact evidence by SHA-256. It changes the review state, never the check results.
-5. `qref verify-bundle` checks every published file against its manifest.
+5. `qref verify-bundle` checks every published file and every member of the downloadable ZIP against the manifest, without extracting anything.
 
-Three recorded examples are live:
+Four recorded examples are live:
 
 - A fresh Claude port that keeps the old 1,024-shot behaviour.
 - An earlier port that honours the requested shots.
 - A labelled, deliberately broken bit-order version. The circuit checker still calls it equivalent; QRef's classical checks catch it.
+- A positive control: the same port on both sides, including an 8-qubit graph. No differences, so QRef does not invent findings.
 
 ## How we built it
 
@@ -56,7 +57,7 @@ GitHub Actions re-verifies the curated exports byte for byte, then publishes onl
 
 - A real end-to-end flow: model proposal, two-runtime execution, independent checks, human decision, verified public report.
 - One documented example where the circuit check passes and QRef still catches the behaviour change.
-- 24 behaviour tests cover status rules, tampering, hostile input escaping, stale model attribution and invalid decisions.
+- 25 behaviour tests cover status rules, tampering (including a swapped ZIP), hostile input escaping, stale model attribution and invalid decisions.
 
 ## What we learned
 
@@ -65,7 +66,6 @@ GitHub Actions re-verifies the curated exports byte for byte, then publishes onl
 ## What's next
 
 - More migration patterns beyond these QAOA helpers.
-- A downloadable ZIP bundle.
 - A wider set of failure fixtures.
 - Trying it with people who maintain quantum teaching or research code.
 

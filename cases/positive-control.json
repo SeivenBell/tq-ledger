@@ -1,0 +1,207 @@
+{
+  "schema": "qref.qaoa-case/v1",
+  "case_id": "qaoa-positive-control",
+  "title": "QAOA helpers \u2014 positive control (same port on both sides)",
+  "description": "The research port runs as both reference and target in the pinned Qiskit 2.6.1 environment. Expected: no differences. Includes an 8-qubit graph with an isolated node.",
+  "origin": "positive_control",
+  "reference": {
+    "module": "../evidence/qaoa/port_functions.py",
+    "pins": "../evidence/qaoa/modern-requirements.txt",
+    "receipt": {
+      "kind": "local_code",
+      "upstream_url": null,
+      "upstream_revision": null,
+      "upstream_path": null,
+      "extraction_scope": "Research port used unchanged as the control reference.",
+      "attribution": "Qiskit textbook contributors (derived work)",
+      "license_spdx": "Apache-2.0",
+      "license_file": "../evidence/qaoa/LICENSE.txt",
+      "derived_from_sha256": null
+    }
+  },
+  "target": {
+    "module": "../evidence/qaoa/port_functions.py",
+    "pins": "../evidence/qaoa/modern-requirements.txt",
+    "receipt": {
+      "kind": "local_code",
+      "upstream_url": null,
+      "upstream_revision": null,
+      "upstream_path": null,
+      "extraction_scope": "Earlier research port of the reference helpers. Its model notes are not bound to this case, so no model attribution is claimed.",
+      "attribution": "Qiskit textbook contributors (derived work)",
+      "license_spdx": "Apache-2.0",
+      "license_file": "../evidence/qaoa/LICENSE.txt",
+      "derived_from_sha256": null
+    }
+  },
+  "graphs": [
+    {
+      "id": "textbook_cycle4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "asymmetric4",
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "cycle5",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "ring7_isolated8",
+      "nodes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ]
+    }
+  ],
+  "angles": [
+    {
+      "id": "p1-a",
+      "theta": [
+        0.17,
+        0.63
+      ]
+    },
+    {
+      "id": "p1-b",
+      "theta": [
+        0.81,
+        0.29
+      ]
+    },
+    {
+      "id": "p2",
+      "theta": [
+        0.17,
+        0.63,
+        0.41,
+        0.92
+      ]
+    }
+  ],
+  "shots": [
+    512
+  ],
+  "interpretation": {
+    "objective": "negative_maxcut",
+    "node_mapping": "node_i_is_qubit_i",
+    "count_order": "qiskit_count_msb_left",
+    "measurement": "terminal_identity"
+  },
+  "proposal": null
+}

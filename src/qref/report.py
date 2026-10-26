@@ -9,6 +9,7 @@ import difflib
 import hashlib
 import json
 import shutil
+import zipfile
 from importlib import resources
 from pathlib import Path, PurePosixPath
 
@@ -16,7 +17,11 @@ import jinja2
 
 from . import contracts
 
-GENERATED = ("index.html", "manifest.json")
+GENERATED = ("index.html", "manifest.json", "evidence.zip")
+ZIP_NAME = "evidence.zip"
+ZIP_MAX_MEMBERS = 1024
+ZIP_MAX_MEMBER = 32 * 1024 * 1024
+ZIP_MAX_TOTAL = 256 * 1024 * 1024
 
 
 DECISION_LABELS = {"accepted_intentional": "Accepted as intentional", "rejected": "Change rejected",
@@ -230,7 +235,7 @@ def write_export(out: Path) -> None:
     (out / "index.html").write_text(html, encoding="utf-8")
     files = []
     for path in sorted(out.rglob("*")):
-        if path.is_file() and path.name != "manifest.json":
+        if path.is_file() and path.name != "manifest.json" and path.relative_to(out).as_posix() != ZIP_NAME:
             rel = path.relative_to(out).as_posix()
             files.append({"path": rel, "size": path.stat().st_size, "sha256": contracts.sha256_file(path)})
     manifest = {"schema": "qref.manifest/v1", "evidence_sha256": evidence_sha, "rendered_at": contracts.utc_now(),
@@ -239,6 +244,57 @@ def write_export(out: Path) -> None:
         manifest["decisions_sha256"] = decisions_sha
     contracts.validate("manifest", manifest)
     (out / "manifest.json").write_bytes(contracts.record_bytes(manifest))
+    _write_zip(out, [f["path"] for f in files] + ["manifest.json"])
+
+
+def _write_zip(out: Path, names: list[str]) -> None:
+    """Generated last; contains every manifest file plus the manifest, never itself."""
+    tmp = out / (ZIP_NAME + ".tmp")
+    with zipfile.ZipFile(tmp, "w", compression=zipfile.ZIP_DEFLATED) as z:
+        for name in sorted(names):
+            info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            z.writestr(info, (out / name).read_bytes())
+    tmp.replace(out / ZIP_NAME)
+
+
+def _verify_zip(root: Path, declared: set[str]) -> None:
+    """Check every ZIP member against the verified directory without extracting anything."""
+    path = root / ZIP_NAME
+    if not path.is_file():
+        raise contracts.ContractError("evidence.zip missing")
+    try:
+        with zipfile.ZipFile(path) as z:
+            infos = z.infolist()
+            if len(infos) > ZIP_MAX_MEMBERS:
+                raise contracts.ContractError("evidence.zip has too many members")
+            names = [i.filename for i in infos]
+            if len(names) != len(set(names)):
+                raise contracts.ContractError("evidence.zip has duplicate member names")
+            expected = declared | {"manifest.json"}
+            if set(names) != expected:
+                extra, missing = sorted(set(names) - expected), sorted(expected - set(names))
+                raise contracts.ContractError(f"evidence.zip members differ from the manifest: extra {extra[:3]}, missing {missing[:3]}")
+            total = 0
+            for info in infos:
+                _safe(root, info.filename)
+                if info.is_dir() or info.flag_bits & 0x1 or info.compress_type not in (zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED):
+                    raise contracts.ContractError(f"evidence.zip member not allowed: {info.filename}")
+                if (info.external_attr >> 16) & 0o170000 == 0o120000:
+                    raise contracts.ContractError(f"evidence.zip contains a link: {info.filename}")
+                h, size = hashlib.sha256(), 0
+                with z.open(info) as member:
+                    while chunk := member.read(65536):
+                        size += len(chunk)
+                        total += len(chunk)
+                        if size > ZIP_MAX_MEMBER or total > ZIP_MAX_TOTAL:
+                            raise contracts.ContractError("evidence.zip exceeds the resource limit")
+                        h.update(chunk)
+                if h.hexdigest() != contracts.sha256_file(root / info.filename):
+                    raise contracts.ContractError(f"evidence.zip member differs from the directory: {info.filename}")
+    except zipfile.BadZipFile as exc:
+        raise contracts.ContractError(f"evidence.zip is not a valid ZIP: {exc}") from exc
 
 
 def _check_artifacts(root: Path, evidence: dict) -> None:
@@ -273,7 +329,7 @@ def verify_bundle(root: Path) -> dict:
     for path in root.rglob("*"):
         if path.is_symlink():
             raise contracts.ContractError(f"symlink not allowed: {path.relative_to(root)}")
-        if path.is_file() and path.name != "manifest.json":
+        if path.is_file() and path.name != "manifest.json" and path.relative_to(root).as_posix() != ZIP_NAME:
             actual.add(path.relative_to(root).as_posix())
     if actual - set(declared):
         raise contracts.ContractError(f"undeclared files: {sorted(actual - set(declared))[:5]}")
@@ -300,6 +356,7 @@ def verify_bundle(root: Path) -> dict:
         if contracts.sha256_bytes(data) != manifest["decisions_sha256"]:
             raise contracts.ContractError("decisions.json does not match the manifest")
         load_decisions(data, evidence, manifest["evidence_sha256"])
+    _verify_zip(root, set(declared))
     return manifest
 
 

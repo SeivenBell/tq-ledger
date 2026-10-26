@@ -1,0 +1,5707 @@
+{
+  "artifacts": [
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-00.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-00.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-01.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-01.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-02.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-02.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-03.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-03.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-04.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-04.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-05.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-05.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-06.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-06.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-07.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-07.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-08.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-08.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-09.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-09.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-10.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-10.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/checks/pair-11.json",
+      "sha256": "26a2c50c9398427e212081a88ac937c01d3db1f3e47e982f09918aa100df319c",
+      "size": 84
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/checks/pair-11.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/inputs/case.original.json",
+      "sha256": "ba4c3c719d30a7dd87f30d3b35cbd5dda511055c43760df2c7505a70a0aaa907",
+      "size": 3640
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/inputs/reference-LICENSE.txt",
+      "sha256": "902d75776b0e95451cfffcea5eb12653b9de1f72ba91476bafdd393ac007e478",
+      "size": 11416
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/inputs/reference-pins.txt",
+      "sha256": "c33387f0724cf518098c8966863e9df03bf32ad73cdfc8693f41836ca401be16",
+      "size": 271
+    },
+    {
+      "media_type": "text/x-python",
+      "path": "artifacts/inputs/reference.py",
+      "sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+      "size": 2549
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/inputs/target-LICENSE.txt",
+      "sha256": "902d75776b0e95451cfffcea5eb12653b9de1f72ba91476bafdd393ac007e478",
+      "size": 11416
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/inputs/target-pins.txt",
+      "sha256": "c33387f0724cf518098c8966863e9df03bf32ad73cdfc8693f41836ca401be16",
+      "size": 271
+    },
+    {
+      "media_type": "text/x-python",
+      "path": "artifacts/inputs/target.py",
+      "sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+      "size": 2549
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/asymmetric4__p1-a__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/asymmetric4__p1-a__shots-512.qasm",
+      "sha256": "8639d034fc5a3efc6c081ccf95347277db42bba5bc1940620c1ca097074680f9",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/asymmetric4__p1-a__shots-512.qpy",
+      "sha256": "e17305861d498c5219ff31c92a5a47bc1f47b426e663c5f2469360b320b88151",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/asymmetric4__p1-b__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/asymmetric4__p1-b__shots-512.qasm",
+      "sha256": "fc787d670aac63e65bcd84c5e843becec9e158f81d8ace6858a36e416ebd06f6",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/asymmetric4__p1-b__shots-512.qpy",
+      "sha256": "67d32c8cff6fd370c159302acd7c91c5b83e51fdb51eb2ec86c41bbe9bbff4ad",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/asymmetric4__p2__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/asymmetric4__p2__shots-512.qasm",
+      "sha256": "fb7a2dbffad5255626be301e5799cec8ebe58904a9784aad2c64286099b93fe8",
+      "size": 366
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/asymmetric4__p2__shots-512.qpy",
+      "sha256": "58d4f2da2830523f89ca794143561d64b9236d0df7c689f1466bc1703672ad02",
+      "size": 1609
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/cycle5__p1-a__shots-512.circuit.json",
+      "sha256": "c87f9e9127222a7f680e644e31ce6fca847e19a428dedb7d4c9a3a573a621b58",
+      "size": 348
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/cycle5__p1-a__shots-512.qasm",
+      "sha256": "276f3cc18c91d888ef3686903b7189c8a18439eaa168d484c3e5412d0d0e0028",
+      "size": 266
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/cycle5__p1-a__shots-512.qpy",
+      "sha256": "657d3cc8bc749599e3a67647707b1c0a1b7e7351b14e6e69c7c0a0fde5d7f40d",
+      "size": 1323
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/cycle5__p1-b__shots-512.circuit.json",
+      "sha256": "c87f9e9127222a7f680e644e31ce6fca847e19a428dedb7d4c9a3a573a621b58",
+      "size": 348
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/cycle5__p1-b__shots-512.qasm",
+      "sha256": "8bde8e9b7e2495820f71b77c10fb2eca58505a134b2926ec6889c1a00f5050f1",
+      "size": 266
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/cycle5__p1-b__shots-512.qpy",
+      "sha256": "6de28a4f2c2ddc9cf15e73a2b2806cc8e39c8019168876648b56f5706910449b",
+      "size": 1323
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/cycle5__p2__shots-512.circuit.json",
+      "sha256": "c87f9e9127222a7f680e644e31ce6fca847e19a428dedb7d4c9a3a573a621b58",
+      "size": 348
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/cycle5__p2__shots-512.qasm",
+      "sha256": "ebb60263036fafde6135b239628eef14d7e7a250189d10e17ff658a2eb5dd49f",
+      "size": 446
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/cycle5__p2__shots-512.qpy",
+      "sha256": "ed2704a49df245570184c42ce13b9e24627196bc06c37356fd16b8bafda18d1c",
+      "size": 1963
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/observations.json",
+      "sha256": "1ff9e66d4bc69e897a90d3848c8ebcd1c2ef170a40129a997c295e4fb0192f04",
+      "size": 104480
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/ring7_isolated8__p1-a__shots-512.circuit.json",
+      "sha256": "3e7d746bd0b98c2fd35f4d8adedb72e43371f32f5c57c618fa252ee27a93388d",
+      "size": 438
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/ring7_isolated8__p1-a__shots-512.qasm",
+      "sha256": "55a857a13a4fda8f849c05511cec8edfc553404467fdef1465982e33d5b40429",
+      "size": 398
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/ring7_isolated8__p1-a__shots-512.qpy",
+      "sha256": "c52a5af57f8ac707a8de8fa1f33fb4289f9ccaf1d4596fe8dd5e6b531748103b",
+      "size": 2001
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/ring7_isolated8__p1-b__shots-512.circuit.json",
+      "sha256": "3e7d746bd0b98c2fd35f4d8adedb72e43371f32f5c57c618fa252ee27a93388d",
+      "size": 438
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/ring7_isolated8__p1-b__shots-512.qasm",
+      "sha256": "8b96d5fbe10a7bf0c76745d1379ad22a0a98f81a6f2bd64f520b32f124b771a5",
+      "size": 398
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/ring7_isolated8__p1-b__shots-512.qpy",
+      "sha256": "9219f71894fb2800731c81bac583e4484079c8f1a932e25043a611132e7ed713",
+      "size": 2001
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/ring7_isolated8__p2__shots-512.circuit.json",
+      "sha256": "3e7d746bd0b98c2fd35f4d8adedb72e43371f32f5c57c618fa252ee27a93388d",
+      "size": 438
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/ring7_isolated8__p2__shots-512.qasm",
+      "sha256": "860ad952ca4b2ea83d08e3d73b4f7acad64a8897b111cb3abe2507c4a80cd91c",
+      "size": 686
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/ring7_isolated8__p2__shots-512.qpy",
+      "sha256": "25ecab4e90a1591c92d979b007b6cd804438369d4fb971a1d2254e2cdbdca309",
+      "size": 3025
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/runtime.json",
+      "sha256": "a63478b83fe3ecfdd97959c2337e03e9c31a3c76bf1883e508a79a6b667c1246",
+      "size": 9489
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/textbook_cycle4__p1-a__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/textbook_cycle4__p1-a__shots-512.qasm",
+      "sha256": "05ffb5237902e17adf6b79feeb3504de74436ac95b53393ae8f4fa807f508d19",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/textbook_cycle4__p1-a__shots-512.qpy",
+      "sha256": "b4655aa98348c80dc06b980e3050b2c2fc8639f4057f7ee8f6e27770ccd5e435",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/textbook_cycle4__p1-b__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/textbook_cycle4__p1-b__shots-512.qasm",
+      "sha256": "4fef82407e0a074cc6bf8a42e007c5c0d9aa398397349beabaeb63647fcbf1df",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/textbook_cycle4__p1-b__shots-512.qpy",
+      "sha256": "92cf8c3c8d5fef3aa3984a2c2fd7773fe91e870c694a1b444e94f139e88b2577",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/reference/textbook_cycle4__p2__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/reference/textbook_cycle4__p2__shots-512.qasm",
+      "sha256": "61736110b245f364d34ca22086175643ff9cf36007fa5ad6103244426d9e4992",
+      "size": 366
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/reference/textbook_cycle4__p2__shots-512.qpy",
+      "sha256": "811485f8170a363ef855da18326126f7fe621cd3fe09d00c296edd5cd7065e9c",
+      "size": 1609
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/asymmetric4__p1-a__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/asymmetric4__p1-a__shots-512.qasm",
+      "sha256": "8639d034fc5a3efc6c081ccf95347277db42bba5bc1940620c1ca097074680f9",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/asymmetric4__p1-a__shots-512.qpy",
+      "sha256": "e17305861d498c5219ff31c92a5a47bc1f47b426e663c5f2469360b320b88151",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/asymmetric4__p1-b__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/asymmetric4__p1-b__shots-512.qasm",
+      "sha256": "fc787d670aac63e65bcd84c5e843becec9e158f81d8ace6858a36e416ebd06f6",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/asymmetric4__p1-b__shots-512.qpy",
+      "sha256": "67d32c8cff6fd370c159302acd7c91c5b83e51fdb51eb2ec86c41bbe9bbff4ad",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/asymmetric4__p2__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/asymmetric4__p2__shots-512.qasm",
+      "sha256": "fb7a2dbffad5255626be301e5799cec8ebe58904a9784aad2c64286099b93fe8",
+      "size": 366
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/asymmetric4__p2__shots-512.qpy",
+      "sha256": "58d4f2da2830523f89ca794143561d64b9236d0df7c689f1466bc1703672ad02",
+      "size": 1609
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/cycle5__p1-a__shots-512.circuit.json",
+      "sha256": "c87f9e9127222a7f680e644e31ce6fca847e19a428dedb7d4c9a3a573a621b58",
+      "size": 348
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/cycle5__p1-a__shots-512.qasm",
+      "sha256": "276f3cc18c91d888ef3686903b7189c8a18439eaa168d484c3e5412d0d0e0028",
+      "size": 266
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/cycle5__p1-a__shots-512.qpy",
+      "sha256": "657d3cc8bc749599e3a67647707b1c0a1b7e7351b14e6e69c7c0a0fde5d7f40d",
+      "size": 1323
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/cycle5__p1-b__shots-512.circuit.json",
+      "sha256": "c87f9e9127222a7f680e644e31ce6fca847e19a428dedb7d4c9a3a573a621b58",
+      "size": 348
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/cycle5__p1-b__shots-512.qasm",
+      "sha256": "8bde8e9b7e2495820f71b77c10fb2eca58505a134b2926ec6889c1a00f5050f1",
+      "size": 266
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/cycle5__p1-b__shots-512.qpy",
+      "sha256": "6de28a4f2c2ddc9cf15e73a2b2806cc8e39c8019168876648b56f5706910449b",
+      "size": 1323
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/cycle5__p2__shots-512.circuit.json",
+      "sha256": "c87f9e9127222a7f680e644e31ce6fca847e19a428dedb7d4c9a3a573a621b58",
+      "size": 348
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/cycle5__p2__shots-512.qasm",
+      "sha256": "ebb60263036fafde6135b239628eef14d7e7a250189d10e17ff658a2eb5dd49f",
+      "size": 446
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/cycle5__p2__shots-512.qpy",
+      "sha256": "ed2704a49df245570184c42ce13b9e24627196bc06c37356fd16b8bafda18d1c",
+      "size": 1963
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/observations.json",
+      "sha256": "08f6eb498e0c2e58d42b6b7cfae07d57c4a36b584f72434bc17ad576d37a95b3",
+      "size": 104477
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/ring7_isolated8__p1-a__shots-512.circuit.json",
+      "sha256": "3e7d746bd0b98c2fd35f4d8adedb72e43371f32f5c57c618fa252ee27a93388d",
+      "size": 438
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/ring7_isolated8__p1-a__shots-512.qasm",
+      "sha256": "55a857a13a4fda8f849c05511cec8edfc553404467fdef1465982e33d5b40429",
+      "size": 398
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/ring7_isolated8__p1-a__shots-512.qpy",
+      "sha256": "c52a5af57f8ac707a8de8fa1f33fb4289f9ccaf1d4596fe8dd5e6b531748103b",
+      "size": 2001
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/ring7_isolated8__p1-b__shots-512.circuit.json",
+      "sha256": "3e7d746bd0b98c2fd35f4d8adedb72e43371f32f5c57c618fa252ee27a93388d",
+      "size": 438
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/ring7_isolated8__p1-b__shots-512.qasm",
+      "sha256": "8b96d5fbe10a7bf0c76745d1379ad22a0a98f81a6f2bd64f520b32f124b771a5",
+      "size": 398
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/ring7_isolated8__p1-b__shots-512.qpy",
+      "sha256": "9219f71894fb2800731c81bac583e4484079c8f1a932e25043a611132e7ed713",
+      "size": 2001
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/ring7_isolated8__p2__shots-512.circuit.json",
+      "sha256": "3e7d746bd0b98c2fd35f4d8adedb72e43371f32f5c57c618fa252ee27a93388d",
+      "size": 438
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/ring7_isolated8__p2__shots-512.qasm",
+      "sha256": "860ad952ca4b2ea83d08e3d73b4f7acad64a8897b111cb3abe2507c4a80cd91c",
+      "size": 686
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/ring7_isolated8__p2__shots-512.qpy",
+      "sha256": "25ecab4e90a1591c92d979b007b6cd804438369d4fb971a1d2254e2cdbdca309",
+      "size": 3025
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/runtime.json",
+      "sha256": "8789eaaf2e14450df6cbaeb188c14677d9c6dfc9c03dcd715979fb342c8fbdda",
+      "size": 9483
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/textbook_cycle4__p1-a__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/textbook_cycle4__p1-a__shots-512.qasm",
+      "sha256": "05ffb5237902e17adf6b79feeb3504de74436ac95b53393ae8f4fa807f508d19",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/textbook_cycle4__p1-a__shots-512.qpy",
+      "sha256": "b4655aa98348c80dc06b980e3050b2c2fc8639f4057f7ee8f6e27770ccd5e435",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/textbook_cycle4__p1-b__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/textbook_cycle4__p1-b__shots-512.qasm",
+      "sha256": "4fef82407e0a074cc6bf8a42e007c5c0d9aa398397349beabaeb63647fcbf1df",
+      "size": 222
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/textbook_cycle4__p1-b__shots-512.qpy",
+      "sha256": "92cf8c3c8d5fef3aa3984a2c2fd7773fe91e870c694a1b444e94f139e88b2577",
+      "size": 1097
+    },
+    {
+      "media_type": "application/json",
+      "path": "artifacts/target/textbook_cycle4__p2__shots-512.circuit.json",
+      "sha256": "096e49b5e94e56389c06081c03d8c9133cd267a0261e0d9299ed485c73158129",
+      "size": 318
+    },
+    {
+      "media_type": "text/plain",
+      "path": "artifacts/target/textbook_cycle4__p2__shots-512.qasm",
+      "sha256": "61736110b245f364d34ca22086175643ff9cf36007fa5ad6103244426d9e4992",
+      "size": 366
+    },
+    {
+      "media_type": "application/octet-stream",
+      "path": "artifacts/target/textbook_cycle4__p2__shots-512.qpy",
+      "sha256": "811485f8170a363ef855da18326126f7fe621cd3fe09d00c296edd5cd7065e9c",
+      "size": 1609
+    }
+  ],
+  "case": {
+    "case_sha256": "ba4c3c719d30a7dd87f30d3b35cbd5dda511055c43760df2c7505a70a0aaa907",
+    "definition": {
+      "angles": [
+        {
+          "id": "p1-a",
+          "theta": [
+            0.17,
+            0.63
+          ]
+        },
+        {
+          "id": "p1-b",
+          "theta": [
+            0.81,
+            0.29
+          ]
+        },
+        {
+          "id": "p2",
+          "theta": [
+            0.17,
+            0.63,
+            0.41,
+            0.92
+          ]
+        }
+      ],
+      "case_id": "qaoa-positive-control",
+      "description": "The research port runs as both reference and target in the pinned Qiskit 2.6.1 environment. Expected: no differences. Includes an 8-qubit graph with an isolated node.",
+      "graphs": [
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              0
+            ]
+          ],
+          "id": "textbook_cycle4",
+          "nodes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "id": "asymmetric4",
+          "nodes": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              0
+            ]
+          ],
+          "id": "cycle5",
+          "nodes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "id": "ring7_isolated8",
+          "nodes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "interpretation": {
+        "count_order": "qiskit_count_msb_left",
+        "measurement": "terminal_identity",
+        "node_mapping": "node_i_is_qubit_i",
+        "objective": "negative_maxcut"
+      },
+      "origin": "positive_control",
+      "proposal": null,
+      "reference": {
+        "module": "../evidence/qaoa/port_functions.py",
+        "pins": "../evidence/qaoa/modern-requirements.txt",
+        "receipt": {
+          "attribution": "Qiskit textbook contributors (derived work)",
+          "derived_from_sha256": null,
+          "extraction_scope": "Research port used unchanged as the control reference.",
+          "kind": "local_code",
+          "license_file": "../evidence/qaoa/LICENSE.txt",
+          "license_spdx": "Apache-2.0",
+          "upstream_path": null,
+          "upstream_revision": null,
+          "upstream_url": null
+        }
+      },
+      "schema": "qref.qaoa-case/v1",
+      "shots": [
+        512
+      ],
+      "target": {
+        "module": "../evidence/qaoa/port_functions.py",
+        "pins": "../evidence/qaoa/modern-requirements.txt",
+        "receipt": {
+          "attribution": "Qiskit textbook contributors (derived work)",
+          "derived_from_sha256": null,
+          "extraction_scope": "Earlier research port of the reference helpers. Its model notes are not bound to this case, so no model attribution is claimed.",
+          "kind": "local_code",
+          "license_file": "../evidence/qaoa/LICENSE.txt",
+          "license_spdx": "Apache-2.0",
+          "upstream_path": null,
+          "upstream_revision": null,
+          "upstream_url": null
+        }
+      },
+      "title": "QAOA helpers \u2014 positive control (same port on both sides)"
+    },
+    "executions": [
+      {
+        "angle_id": "p1-a",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "graph_id": "textbook_cycle4",
+        "id": "textbook_cycle4/p1-a/shots-512",
+        "input_sha256": "bd2973bdd6445b5044d51ceb29adb39c59711345bc804854c53d2f5a3ea64383",
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63
+        ]
+      },
+      {
+        "angle_id": "p1-b",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "graph_id": "textbook_cycle4",
+        "id": "textbook_cycle4/p1-b/shots-512",
+        "input_sha256": "7d3afa639a7301fd3a9b0fd953d29ce0326e271fea7966fcea861974a2fe10eb",
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.81,
+          0.29
+        ]
+      },
+      {
+        "angle_id": "p2",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "graph_id": "textbook_cycle4",
+        "id": "textbook_cycle4/p2/shots-512",
+        "input_sha256": "299c7512267d8b1ba78ffe2a027638ca10c6120ea22b6cc365a99f7704106e4b",
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      },
+      {
+        "angle_id": "p1-a",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "graph_id": "asymmetric4",
+        "id": "asymmetric4/p1-a/shots-512",
+        "input_sha256": "c034adc209e349ea974c7a895cb3cf09077dd1bd25d0be14b82726be6e8bb072",
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63
+        ]
+      },
+      {
+        "angle_id": "p1-b",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "graph_id": "asymmetric4",
+        "id": "asymmetric4/p1-b/shots-512",
+        "input_sha256": "c473a1c2746c91dd29bd70e18dce8db8dbb4f2281b3c032bac27168ee28a22a8",
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.81,
+          0.29
+        ]
+      },
+      {
+        "angle_id": "p2",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "graph_id": "asymmetric4",
+        "id": "asymmetric4/p2/shots-512",
+        "input_sha256": "8c06c7c002ada04d2131a4caf2816446e875e7b39dc77e62c475b49004938147",
+        "nodes": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      },
+      {
+        "angle_id": "p1-a",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "graph_id": "cycle5",
+        "id": "cycle5/p1-a/shots-512",
+        "input_sha256": "f97f1cbaab27825e6250187b3b1d1c6805f704ccd1f0c4f0885eb3b2516c816b",
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63
+        ]
+      },
+      {
+        "angle_id": "p1-b",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "graph_id": "cycle5",
+        "id": "cycle5/p1-b/shots-512",
+        "input_sha256": "c3f73a72ca79ed97502a85430c27be8abc06c90841254deae282a5650b73b80b",
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.81,
+          0.29
+        ]
+      },
+      {
+        "angle_id": "p2",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "graph_id": "cycle5",
+        "id": "cycle5/p2/shots-512",
+        "input_sha256": "a8085140a5ff07050f7aee8ab10981b351b825cd6a4049701473b22c6385abb7",
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      },
+      {
+        "angle_id": "p1-a",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "graph_id": "ring7_isolated8",
+        "id": "ring7_isolated8/p1-a/shots-512",
+        "input_sha256": "243750d0144d3f2f424ebc0c5f8e7117fbda7e1750d180af9d5a9477a56b705b",
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63
+        ]
+      },
+      {
+        "angle_id": "p1-b",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "graph_id": "ring7_isolated8",
+        "id": "ring7_isolated8/p1-b/shots-512",
+        "input_sha256": "9a3762b2c616c6d2723b9b9bd3f1a359a26c1faed1562dc6f5fabbf426898cf7",
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.81,
+          0.29
+        ]
+      },
+      {
+        "angle_id": "p2",
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "graph_id": "ring7_isolated8",
+        "id": "ring7_isolated8/p2/shots-512",
+        "input_sha256": "aad317961ddcca13d5c990511329cbfcb915c752ec22fb852fc3b56a7269ce2c",
+        "nodes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "requested_shots": 512,
+        "theta": [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      }
+    ],
+    "portable_case_artifact": "case.json",
+    "portable_case_sha256": "11c80dd2fd4b98c5c96a28a3b5cc3210260cfeded2cbb4c5a679a1b0391060fb",
+    "source_artifact": "artifacts/inputs/case.original.json"
+  },
+  "checks": [
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "pairing",
+      "kind": "pairing",
+      "metric": null,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "all"
+      ],
+      "status": "pass",
+      "summary": "12 expected executions per side, paired by input digest",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/reference/textbook_cycle4",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4"
+      ],
+      "status": "pass",
+      "summary": "reference: 16/16 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/reference/asymmetric4",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4"
+      ],
+      "status": "pass",
+      "summary": "reference: 16/16 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/reference/cycle5",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5"
+      ],
+      "status": "pass",
+      "summary": "reference: 32/32 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/reference/ring7_isolated8",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8"
+      ],
+      "status": "pass",
+      "summary": "reference: 256/256 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/target/textbook_cycle4",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4"
+      ],
+      "status": "pass",
+      "summary": "target: 16/16 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/target/asymmetric4",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4"
+      ],
+      "status": "pass",
+      "summary": "target: 16/16 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/target/cycle5",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5"
+      ],
+      "status": "pass",
+      "summary": "target: 32/32 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": "negative_maxcut",
+      "id": "classical-basis/target/ring7_isolated8",
+      "kind": "classical-basis",
+      "metric": 0,
+      "observed": {
+        "mismatched_k": []
+      },
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8"
+      ],
+      "status": "pass",
+      "summary": "target: 256/256 basis assignments match the independent negative-cut rule",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/textbook_cycle4/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/textbook_cycle4/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.58984375,
+      "id": "returned-objective/reference/textbook_cycle4/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -1.58984375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.58984375,
+      "id": "classical-weighting/reference/textbook_cycle4/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -1.58984375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.6338345499071132,
+      "id": "classical-weighting/reference/textbook_cycle4/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 6.661338147750939e-16,
+      "observed": -1.6338345499071139,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 6.66e-16)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/textbook_cycle4/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/textbook_cycle4/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.58984375,
+      "id": "returned-objective/target/textbook_cycle4/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -1.58984375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.58984375,
+      "id": "classical-weighting/target/textbook_cycle4/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -1.58984375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.6338345499071132,
+      "id": "classical-weighting/target/textbook_cycle4/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 6.661338147750939e-16,
+      "observed": -1.6338345499071139,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 6.66e-16)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-f46395469dd74d5a4609b2e6addbce7228ff506cb5f8c6c0dad4ce424c5142ab",
+      "expected": "equivalent",
+      "id": "circuit/textbook_cycle4/p1-a/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "measurement/textbook_cycle4/p1-a/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/textbook_cycle4/p1-a/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.6338345499071132,
+      "id": "exact-objective/textbook_cycle4/p1-a/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -1.6338345499071132,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/textbook_cycle4/p1-a/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/textbook_cycle4/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/textbook_cycle4/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.05078125,
+      "id": "returned-objective/reference/textbook_cycle4/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.05078125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.05078125,
+      "id": "classical-weighting/reference/textbook_cycle4/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.05078125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0900746161779686,
+      "id": "classical-weighting/reference/textbook_cycle4/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.7763568394002505e-15,
+      "observed": -2.0900746161779704,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 1.78e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/textbook_cycle4/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/textbook_cycle4/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.05078125,
+      "id": "returned-objective/target/textbook_cycle4/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.05078125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.05078125,
+      "id": "classical-weighting/target/textbook_cycle4/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.05078125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0900746161779686,
+      "id": "classical-weighting/target/textbook_cycle4/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.7763568394002505e-15,
+      "observed": -2.0900746161779704,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 1.78e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-7632cd900db014bc4d7767b2a875a133432f82a8e304535c7ba546cdb1dd4dd1",
+      "expected": "equivalent",
+      "id": "circuit/textbook_cycle4/p1-b/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "measurement/textbook_cycle4/p1-b/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/textbook_cycle4/p1-b/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0900746161779686,
+      "id": "exact-objective/textbook_cycle4/p1-b/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -2.0900746161779686,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/textbook_cycle4/p1-b/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/textbook_cycle4/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/textbook_cycle4/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.22265625,
+      "id": "returned-objective/reference/textbook_cycle4/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.22265625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.22265625,
+      "id": "classical-weighting/reference/textbook_cycle4/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.22265625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.1683093997105645,
+      "id": "classical-weighting/reference/textbook_cycle4/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 8.881784197001252e-16,
+      "observed": -2.1683093997105654,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 8.88e-16)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/textbook_cycle4/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/textbook_cycle4/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.22265625,
+      "id": "returned-objective/target/textbook_cycle4/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.22265625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.22265625,
+      "id": "classical-weighting/target/textbook_cycle4/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.22265625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.1683093997105645,
+      "id": "classical-weighting/target/textbook_cycle4/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 8.881784197001252e-16,
+      "observed": -2.1683093997105654,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 8.88e-16)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-99e30ed3e722672170a2775780d1a8b6fed98ce353eff6856efce723b4a51191",
+      "expected": "equivalent",
+      "id": "circuit/textbook_cycle4/p2/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "measurement/textbook_cycle4/p2/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/textbook_cycle4/p2/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.1683093997105645,
+      "id": "exact-objective/textbook_cycle4/p2/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -2.1683093997105645,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/textbook_cycle4/p2/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/asymmetric4/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/asymmetric4/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.478515625,
+      "id": "returned-objective/reference/asymmetric4/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -1.478515625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.478515625,
+      "id": "classical-weighting/reference/asymmetric4/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -1.478515625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.5440215733886926,
+      "id": "classical-weighting/reference/asymmetric4/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 4.440892098500626e-16,
+      "observed": -1.544021573388693,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 4.44e-16)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/asymmetric4/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/asymmetric4/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.478515625,
+      "id": "returned-objective/target/asymmetric4/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -1.478515625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.478515625,
+      "id": "classical-weighting/target/asymmetric4/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -1.478515625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.5440215733886926,
+      "id": "classical-weighting/target/asymmetric4/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 4.440892098500626e-16,
+      "observed": -1.544021573388693,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 4.44e-16)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-4d4b7f0eb00d3beb55937171752300d9cad7409dc3e24f60dbb98f6951025a0d",
+      "expected": "equivalent",
+      "id": "circuit/asymmetric4/p1-a/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "measurement/asymmetric4/p1-a/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/asymmetric4/p1-a/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.5440215733886926,
+      "id": "exact-objective/asymmetric4/p1-a/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -1.5440215733886926,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/asymmetric4/p1-a/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/asymmetric4/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/asymmetric4/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.669921875,
+      "id": "returned-objective/reference/asymmetric4/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -1.669921875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.669921875,
+      "id": "classical-weighting/reference/asymmetric4/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -1.669921875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.686342788774193,
+      "id": "classical-weighting/reference/asymmetric4/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.3322676295501878e-15,
+      "observed": -1.6863427887741944,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 1.33e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/asymmetric4/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/asymmetric4/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.669921875,
+      "id": "returned-objective/target/asymmetric4/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -1.669921875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.669921875,
+      "id": "classical-weighting/target/asymmetric4/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -1.669921875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.686342788774193,
+      "id": "classical-weighting/target/asymmetric4/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.3322676295501878e-15,
+      "observed": -1.6863427887741944,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 1.33e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-8b0240924bdbfe4f5f891f84ac49b0bdfa4ce41a0c1dbc326758ee197654b89f",
+      "expected": "equivalent",
+      "id": "circuit/asymmetric4/p1-b/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "measurement/asymmetric4/p1-b/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/asymmetric4/p1-b/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -1.686342788774193,
+      "id": "exact-objective/asymmetric4/p1-b/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -1.686342788774193,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/asymmetric4/p1-b/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/asymmetric4/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/asymmetric4/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.09765625,
+      "id": "returned-objective/reference/asymmetric4/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.09765625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.09765625,
+      "id": "classical-weighting/reference/asymmetric4/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.09765625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0700089213542854,
+      "id": "classical-weighting/reference/asymmetric4/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.7763568394002505e-15,
+      "observed": -2.070008921354287,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 1.78e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/asymmetric4/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/asymmetric4/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.09765625,
+      "id": "returned-objective/target/asymmetric4/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.09765625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.09765625,
+      "id": "classical-weighting/target/asymmetric4/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.09765625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0700089213542854,
+      "id": "classical-weighting/target/asymmetric4/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.7763568394002505e-15,
+      "observed": -2.070008921354287,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 1.78e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-9ddc38f447bdb97d3982ac6ed50e2659155ee7c7afe8ff97dbde7e1a4d5007f3",
+      "expected": "equivalent",
+      "id": "circuit/asymmetric4/p2/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "measurement/asymmetric4/p2/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/asymmetric4/p2/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0700089213542854,
+      "id": "exact-objective/asymmetric4/p2/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -2.0700089213542854,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/asymmetric4/p2/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "asymmetric4/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/cycle5/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/cycle5/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.03125,
+      "id": "returned-objective/reference/cycle5/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.03125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.03125,
+      "id": "classical-weighting/reference/cycle5/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.03125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0422931873838905,
+      "id": "classical-weighting/reference/cycle5/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.7763568394002505e-15,
+      "observed": -2.0422931873838923,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 1.78e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/cycle5/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/cycle5/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.03125,
+      "id": "returned-objective/target/cycle5/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.03125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.03125,
+      "id": "classical-weighting/target/cycle5/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.03125,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0422931873838905,
+      "id": "classical-weighting/target/cycle5/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 1.7763568394002505e-15,
+      "observed": -2.0422931873838923,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 1.78e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-da7a8161a51a3bc02661913056a095d98397153b81ea927b43baddb3a45df7be",
+      "expected": "equivalent",
+      "id": "circuit/cycle5/p1-a/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "id": "measurement/cycle5/p1-a/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/cycle5/p1-a/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.0422931873838905,
+      "id": "exact-objective/cycle5/p1-a/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -2.0422931873838905,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/cycle5/p1-a/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/cycle5/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/cycle5/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.625,
+      "id": "returned-objective/reference/cycle5/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.625,
+      "id": "classical-weighting/reference/cycle5/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.612593270222461,
+      "id": "classical-weighting/reference/cycle5/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 2.220446049250313e-15,
+      "observed": -2.612593270222463,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 2.22e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/cycle5/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/cycle5/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.625,
+      "id": "returned-objective/target/cycle5/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -2.625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.625,
+      "id": "classical-weighting/target/cycle5/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -2.625,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.612593270222461,
+      "id": "classical-weighting/target/cycle5/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 2.220446049250313e-15,
+      "observed": -2.612593270222463,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 2.22e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-57eae4688294a9cdd8a69ed86232a2ddc9f60d67d8dd3ac609b90da76ffacc90",
+      "expected": "equivalent",
+      "id": "circuit/cycle5/p1-b/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "id": "measurement/cycle5/p1-b/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/cycle5/p1-b/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -2.612593270222461,
+      "id": "exact-objective/cycle5/p1-b/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -2.612593270222461,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/cycle5/p1-b/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/cycle5/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/cycle5/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0546875,
+      "id": "returned-objective/reference/cycle5/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -3.0546875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0546875,
+      "id": "classical-weighting/reference/cycle5/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -3.0546875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0281950739059207,
+      "id": "classical-weighting/reference/cycle5/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 3.1086244689504383e-15,
+      "observed": -3.028195073905924,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 3.11e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/cycle5/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/cycle5/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0546875,
+      "id": "returned-objective/target/cycle5/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -3.0546875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0546875,
+      "id": "classical-weighting/target/cycle5/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -3.0546875,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0281950739059207,
+      "id": "classical-weighting/target/cycle5/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 3.1086244689504383e-15,
+      "observed": -3.028195073905924,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 3.11e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-2997902f44ae7807009f243500c1c524da79d66efbaca232b17359c52f8b52a7",
+      "expected": "equivalent",
+      "id": "circuit/cycle5/p2/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "id": "measurement/cycle5/p2/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/cycle5/p2/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.0281950739059207,
+      "id": "exact-objective/cycle5/p2/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -3.0281950739059207,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/cycle5/p2/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "cycle5/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/ring7_isolated8/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/ring7_isolated8/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.4375,
+      "id": "returned-objective/reference/ring7_isolated8/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -3.4375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.4375,
+      "id": "classical-weighting/reference/ring7_isolated8/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -3.4375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.458308497957123,
+      "id": "classical-weighting/reference/ring7_isolated8/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 7.105427357601002e-15,
+      "observed": -3.45830849795713,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 7.11e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/ring7_isolated8/p1-a/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/ring7_isolated8/p1-a/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.4375,
+      "id": "returned-objective/target/ring7_isolated8/p1-a/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -3.4375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.4375,
+      "id": "classical-weighting/target/ring7_isolated8/p1-a/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -3.4375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.458308497957123,
+      "id": "classical-weighting/target/ring7_isolated8/p1-a/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 7.105427357601002e-15,
+      "observed": -3.45830849795713,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 7.11e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-9dc2d79a49ea36001a8fefcaf21bedbd4101a138346b18af7d3ee9d6493d758d",
+      "expected": "equivalent",
+      "id": "circuit/ring7_isolated8/p1-a/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "id": "measurement/ring7_isolated8/p1-a/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/ring7_isolated8/p1-a/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -3.458308497957123,
+      "id": "exact-objective/ring7_isolated8/p1-a/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -3.458308497957123,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/ring7_isolated8/p1-a/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/ring7_isolated8/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/ring7_isolated8/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.224609375,
+      "id": "returned-objective/reference/ring7_isolated8/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -4.224609375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.224609375,
+      "id": "classical-weighting/reference/ring7_isolated8/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -4.224609375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.169101309326192,
+      "id": "classical-weighting/reference/ring7_isolated8/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 6.217248937900877e-15,
+      "observed": -4.169101309326198,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 6.22e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/ring7_isolated8/p1-b/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/ring7_isolated8/p1-b/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.224609375,
+      "id": "returned-objective/target/ring7_isolated8/p1-b/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -4.224609375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.224609375,
+      "id": "classical-weighting/target/ring7_isolated8/p1-b/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -4.224609375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.169101309326192,
+      "id": "classical-weighting/target/ring7_isolated8/p1-b/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 6.217248937900877e-15,
+      "observed": -4.169101309326198,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 6.22e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-10fa826ccb4ccebd31762832f601cf80346802f9e23b25f82ccfc3e7c0f8f680",
+      "expected": "equivalent",
+      "id": "circuit/ring7_isolated8/p1-b/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "id": "measurement/ring7_isolated8/p1-b/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/ring7_isolated8/p1-b/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.169101309326192,
+      "id": "exact-objective/ring7_isolated8/p1-b/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -4.169101309326192,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/ring7_isolated8/p1-b/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/reference/ring7_isolated8/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/reference/ring7_isolated8/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1484375,
+      "id": "returned-objective/reference/ring7_isolated8/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -4.1484375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1484375,
+      "id": "classical-weighting/reference/ring7_isolated8/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -4.1484375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1606896964191735,
+      "id": "classical-weighting/reference/ring7_isolated8/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 9.769962616701378e-15,
+      "observed": -4.160689696419183,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "reference",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "reference: module weighting of exact probabilities: agree (|\u0394| = 9.77e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-integrity/target/ring7_isolated8/p2/shots-512",
+      "kind": "shots-integrity",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: completed shots 512 vs count sum 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-request/target/ring7_isolated8/p2/shots-512",
+      "kind": "shots-request",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: requested 512, completed 512",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1484375,
+      "id": "returned-objective/target/ring7_isolated8/p2/shots-512",
+      "kind": "returned-objective",
+      "metric": 0.0,
+      "observed": -4.1484375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: returned objective vs independent decoding of its own counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1484375,
+      "id": "classical-weighting/target/ring7_isolated8/p2/shots-512/counts",
+      "kind": "classical-weighting",
+      "metric": 0.0,
+      "observed": -4.1484375,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of captured counts: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1606896964191735,
+      "id": "classical-weighting/target/ring7_isolated8/p2/shots-512/exact",
+      "kind": "classical-weighting",
+      "metric": 9.769962616701378e-15,
+      "observed": -4.160689696419183,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "target",
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "target: module weighting of exact probabilities: agree (|\u0394| = 9.77e-15)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": "circuit-result-3c85a6ed0979c8ae5386091cfb51988b8c6cdabe159c9807fe2937f4a847ed0d",
+      "expected": "equivalent",
+      "id": "circuit/ring7_isolated8/p2/shots-512",
+      "kind": "circuit",
+      "metric": null,
+      "observed": "equivalent",
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "submitted circuits: equivalent",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "id": "measurement/ring7_isolated8/p2/shots-512",
+      "kind": "measurement",
+      "metric": null,
+      "observed": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "both sides: terminal identity measurement, one classical register of width n",
+      "tolerance": null
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": null,
+      "id": "probability/ring7_isolated8/p2/shots-512",
+      "kind": "probability",
+      "metric": 0.0,
+      "observed": null,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "ideal output distributions: max |\u0394p| = 0",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": -4.1606896964191735,
+      "id": "exact-objective/ring7_isolated8/p2/shots-512",
+      "kind": "exact-objective",
+      "metric": 0.0,
+      "observed": -4.1606896964191735,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "independent exact objective, reference vs target: agree (|\u0394| = 0)",
+      "tolerance": 1e-10
+    },
+    {
+      "artifact_refs": [],
+      "circuit_result_id": null,
+      "expected": 512,
+      "id": "shots-preservation/ring7_isolated8/p2/shots-512",
+      "kind": "shots-preservation",
+      "metric": null,
+      "observed": 512,
+      "reason_code": "equal",
+      "required": true,
+      "scope_ids": [
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "status": "pass",
+      "summary": "completed shots: reference 512, target 512",
+      "tolerance": null
+    }
+  ],
+  "circuit_results": [
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "textbook_cycle4/p1-a/shots-512"
+      ],
+      "id": "circuit-result-f46395469dd74d5a4609b2e6addbce7228ff506cb5f8c6c0dad4ce424c5142ab",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "05ffb5237902e17adf6b79feeb3504de74436ac95b53393ae8f4fa807f508d19",
+      "status": "pass",
+      "target_qasm_sha256": "05ffb5237902e17adf6b79feeb3504de74436ac95b53393ae8f4fa807f508d19"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "textbook_cycle4/p1-b/shots-512"
+      ],
+      "id": "circuit-result-7632cd900db014bc4d7767b2a875a133432f82a8e304535c7ba546cdb1dd4dd1",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "4fef82407e0a074cc6bf8a42e007c5c0d9aa398397349beabaeb63647fcbf1df",
+      "status": "pass",
+      "target_qasm_sha256": "4fef82407e0a074cc6bf8a42e007c5c0d9aa398397349beabaeb63647fcbf1df"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "id": "circuit-result-99e30ed3e722672170a2775780d1a8b6fed98ce353eff6856efce723b4a51191",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "61736110b245f364d34ca22086175643ff9cf36007fa5ad6103244426d9e4992",
+      "status": "pass",
+      "target_qasm_sha256": "61736110b245f364d34ca22086175643ff9cf36007fa5ad6103244426d9e4992"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "asymmetric4/p1-a/shots-512"
+      ],
+      "id": "circuit-result-4d4b7f0eb00d3beb55937171752300d9cad7409dc3e24f60dbb98f6951025a0d",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "8639d034fc5a3efc6c081ccf95347277db42bba5bc1940620c1ca097074680f9",
+      "status": "pass",
+      "target_qasm_sha256": "8639d034fc5a3efc6c081ccf95347277db42bba5bc1940620c1ca097074680f9"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "asymmetric4/p1-b/shots-512"
+      ],
+      "id": "circuit-result-8b0240924bdbfe4f5f891f84ac49b0bdfa4ce41a0c1dbc326758ee197654b89f",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "fc787d670aac63e65bcd84c5e843becec9e158f81d8ace6858a36e416ebd06f6",
+      "status": "pass",
+      "target_qasm_sha256": "fc787d670aac63e65bcd84c5e843becec9e158f81d8ace6858a36e416ebd06f6"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "asymmetric4/p2/shots-512"
+      ],
+      "id": "circuit-result-9ddc38f447bdb97d3982ac6ed50e2659155ee7c7afe8ff97dbde7e1a4d5007f3",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "fb7a2dbffad5255626be301e5799cec8ebe58904a9784aad2c64286099b93fe8",
+      "status": "pass",
+      "target_qasm_sha256": "fb7a2dbffad5255626be301e5799cec8ebe58904a9784aad2c64286099b93fe8"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "cycle5/p1-a/shots-512"
+      ],
+      "id": "circuit-result-da7a8161a51a3bc02661913056a095d98397153b81ea927b43baddb3a45df7be",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "276f3cc18c91d888ef3686903b7189c8a18439eaa168d484c3e5412d0d0e0028",
+      "status": "pass",
+      "target_qasm_sha256": "276f3cc18c91d888ef3686903b7189c8a18439eaa168d484c3e5412d0d0e0028"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "cycle5/p1-b/shots-512"
+      ],
+      "id": "circuit-result-57eae4688294a9cdd8a69ed86232a2ddc9f60d67d8dd3ac609b90da76ffacc90",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "8bde8e9b7e2495820f71b77c10fb2eca58505a134b2926ec6889c1a00f5050f1",
+      "status": "pass",
+      "target_qasm_sha256": "8bde8e9b7e2495820f71b77c10fb2eca58505a134b2926ec6889c1a00f5050f1"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "cycle5/p2/shots-512"
+      ],
+      "id": "circuit-result-2997902f44ae7807009f243500c1c524da79d66efbaca232b17359c52f8b52a7",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "ebb60263036fafde6135b239628eef14d7e7a250189d10e17ff658a2eb5dd49f",
+      "status": "pass",
+      "target_qasm_sha256": "ebb60263036fafde6135b239628eef14d7e7a250189d10e17ff658a2eb5dd49f"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "ring7_isolated8/p1-a/shots-512"
+      ],
+      "id": "circuit-result-9dc2d79a49ea36001a8fefcaf21bedbd4101a138346b18af7d3ee9d6493d758d",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "55a857a13a4fda8f849c05511cec8edfc553404467fdef1465982e33d5b40429",
+      "status": "pass",
+      "target_qasm_sha256": "55a857a13a4fda8f849c05511cec8edfc553404467fdef1465982e33d5b40429"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "ring7_isolated8/p1-b/shots-512"
+      ],
+      "id": "circuit-result-10fa826ccb4ccebd31762832f601cf80346802f9e23b25f82ccfc3e7c0f8f680",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "8b96d5fbe10a7bf0c76745d1379ad22a0a98f81a6f2bd64f520b32f124b771a5",
+      "status": "pass",
+      "target_qasm_sha256": "8b96d5fbe10a7bf0c76745d1379ad22a0a98f81a6f2bd64f520b32f124b771a5"
+    },
+    {
+      "checker_config_sha256": "0d27336eaff61752cc2bd2435fb14d61789562404427f1f3f3c9245e7d30cec8",
+      "criterion": "equivalent",
+      "execution_ids": [
+        "ring7_isolated8/p2/shots-512"
+      ],
+      "id": "circuit-result-3c85a6ed0979c8ae5386091cfb51988b8c6cdabe159c9807fe2937f4a847ed0d",
+      "reason_code": "equal",
+      "reference_qasm_sha256": "860ad952ca4b2ea83d08e3d73b4f7acad64a8897b111cb3abe2507c4a80cd91c",
+      "status": "pass",
+      "target_qasm_sha256": "860ad952ca4b2ea83d08e3d73b4f7acad64a8897b111cb3abe2507c4a80cd91c"
+    }
+  ],
+  "coverage": {
+    "angle_settings": 3,
+    "completed_pairs": 12,
+    "expected_executions": [
+      "textbook_cycle4/p1-a/shots-512",
+      "textbook_cycle4/p1-b/shots-512",
+      "textbook_cycle4/p2/shots-512",
+      "asymmetric4/p1-a/shots-512",
+      "asymmetric4/p1-b/shots-512",
+      "asymmetric4/p2/shots-512",
+      "cycle5/p1-a/shots-512",
+      "cycle5/p1-b/shots-512",
+      "cycle5/p2/shots-512",
+      "ring7_isolated8/p1-a/shots-512",
+      "ring7_isolated8/p1-b/shots-512",
+      "ring7_isolated8/p2/shots-512"
+    ],
+    "graphs": 4,
+    "missing": {
+      "reference": [],
+      "target": []
+    },
+    "not_checked": [
+      "optimizer convergence",
+      "hardware execution",
+      "noise models",
+      "dynamic circuits",
+      "inputs outside the declared graphs and angles",
+      "whole-program equivalence"
+    ],
+    "observed": {
+      "reference": [
+        "asymmetric4/p1-a/shots-512",
+        "asymmetric4/p1-b/shots-512",
+        "asymmetric4/p2/shots-512",
+        "cycle5/p1-a/shots-512",
+        "cycle5/p1-b/shots-512",
+        "cycle5/p2/shots-512",
+        "ring7_isolated8/p1-a/shots-512",
+        "ring7_isolated8/p1-b/shots-512",
+        "ring7_isolated8/p2/shots-512",
+        "textbook_cycle4/p1-a/shots-512",
+        "textbook_cycle4/p1-b/shots-512",
+        "textbook_cycle4/p2/shots-512"
+      ],
+      "target": [
+        "asymmetric4/p1-a/shots-512",
+        "asymmetric4/p1-b/shots-512",
+        "asymmetric4/p2/shots-512",
+        "cycle5/p1-a/shots-512",
+        "cycle5/p1-b/shots-512",
+        "cycle5/p2/shots-512",
+        "ring7_isolated8/p1-a/shots-512",
+        "ring7_isolated8/p1-b/shots-512",
+        "ring7_isolated8/p2/shots-512",
+        "textbook_cycle4/p1-a/shots-512",
+        "textbook_cycle4/p1-b/shots-512",
+        "textbook_cycle4/p2/shots-512"
+      ]
+    },
+    "shot_requests": [
+      512
+    ]
+  },
+  "evidence_summary": "consistent",
+  "findings": [],
+  "limitations": [
+    "Checks cover only the declared graphs, angles and shot requests.",
+    "Numerical agreement uses floating-point arithmetic with absolute tolerance 1e-10.",
+    "No optimizer convergence, hardware, noise, dynamic-circuit or whole-program claim.",
+    "The reference is a preservation baseline, not scientific truth.",
+    "Candidate code ran locally as trusted, inspected code; virtual environments isolate versions, not hostile code.",
+    "Hashes show internal consistency; they are not a signature or an independent attestation."
+  ],
+  "provenance": {
+    "checker_config": {
+      "checker_version": "3.11.0",
+      "effective_defaults": null,
+      "entrypoint": "mqt.qcec.verify",
+      "global_phase_policy": "global phase ignored; relative phase is a difference",
+      "importer_policy": "qiskit.qasm2.loads with LEGACY_CUSTOM_INSTRUCTIONS",
+      "kwargs": {},
+      "qiskit_version": "2.6.1",
+      "unknown_reasons": [
+        "effective_defaults: the pinned default call does not export its configuration"
+      ]
+    },
+    "checker_worker_sha256": "fb0596f14b681d0e15c4dc8cfca742b0d7900349b8e441169cfbd065e69ec605",
+    "comparison_sha256": "22d9f25fd9d4fa479c40a4c9c15eb47679c52f6aa8c3d5eff46e92d591052e60",
+    "finished_at": "2026-10-26T02:10:06.972260Z",
+    "observer_sha256": "f58c147ce935ed4348f9a9175795969e595c4e41f539667d527523d13b8b243b",
+    "proposal": null,
+    "reference_environment": {
+      "architecture": "arm64",
+      "distributions": [
+        {
+          "name": "dill",
+          "version": "0.4.1"
+        },
+        {
+          "name": "mqt-core",
+          "version": "3.11.0"
+        },
+        {
+          "name": "mqt-qcec",
+          "version": "3.11.0"
+        },
+        {
+          "name": "nanobind-backend",
+          "version": "1.0.0"
+        },
+        {
+          "name": "networkx",
+          "version": "2.8.8"
+        },
+        {
+          "name": "numpy",
+          "version": "2.4.6"
+        },
+        {
+          "name": "psutil",
+          "version": "7.2.2"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "3.0.0"
+        },
+        {
+          "name": "qiskit",
+          "version": "2.6.1"
+        },
+        {
+          "name": "qiskit-aer",
+          "version": "0.18.0"
+        },
+        {
+          "name": "rustworkx",
+          "version": "0.18.1"
+        },
+        {
+          "name": "scipy",
+          "version": "1.17.1"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0"
+        },
+        {
+          "name": "stevedore",
+          "version": "5.9.1"
+        },
+        {
+          "name": "typing-extensions",
+          "version": "4.16.0"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026.5"
+        }
+      ],
+      "os": "Darwin",
+      "python_version": "3.11.12"
+    },
+    "reference_pins_sha256": "c33387f0724cf518098c8966863e9df03bf32ad73cdfc8693f41836ca401be16",
+    "reference_sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+    "side_failures": {
+      "reference": null,
+      "target": null
+    },
+    "source_receipts": {
+      "reference": {
+        "attribution": "Qiskit textbook contributors (derived work)",
+        "derived_from_sha256": null,
+        "extraction_scope": "Research port used unchanged as the control reference.",
+        "kind": "local_code",
+        "license_artifact": "artifacts/inputs/reference-LICENSE.txt",
+        "license_file": "../evidence/qaoa/LICENSE.txt",
+        "license_sha256": "902d75776b0e95451cfffcea5eb12653b9de1f72ba91476bafdd393ac007e478",
+        "license_spdx": "Apache-2.0",
+        "module_sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+        "upstream_path": null,
+        "upstream_revision": null,
+        "upstream_url": null
+      },
+      "target": {
+        "attribution": "Qiskit textbook contributors (derived work)",
+        "derived_from_sha256": null,
+        "extraction_scope": "Earlier research port of the reference helpers. Its model notes are not bound to this case, so no model attribution is claimed.",
+        "kind": "local_code",
+        "license_artifact": "artifacts/inputs/target-LICENSE.txt",
+        "license_file": "../evidence/qaoa/LICENSE.txt",
+        "license_sha256": "902d75776b0e95451cfffcea5eb12653b9de1f72ba91476bafdd393ac007e478",
+        "license_spdx": "Apache-2.0",
+        "module_sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+        "upstream_path": null,
+        "upstream_revision": null,
+        "upstream_url": null
+      }
+    },
+    "started_at": "2026-10-26T02:10:02.380180Z",
+    "target_environment": {
+      "architecture": "arm64",
+      "distributions": [
+        {
+          "name": "dill",
+          "version": "0.4.1"
+        },
+        {
+          "name": "mqt-core",
+          "version": "3.11.0"
+        },
+        {
+          "name": "mqt-qcec",
+          "version": "3.11.0"
+        },
+        {
+          "name": "nanobind-backend",
+          "version": "1.0.0"
+        },
+        {
+          "name": "networkx",
+          "version": "2.8.8"
+        },
+        {
+          "name": "numpy",
+          "version": "2.4.6"
+        },
+        {
+          "name": "psutil",
+          "version": "7.2.2"
+        },
+        {
+          "name": "python-dateutil",
+          "version": "3.0.0"
+        },
+        {
+          "name": "qiskit",
+          "version": "2.6.1"
+        },
+        {
+          "name": "qiskit-aer",
+          "version": "0.18.0"
+        },
+        {
+          "name": "rustworkx",
+          "version": "0.18.1"
+        },
+        {
+          "name": "scipy",
+          "version": "1.17.1"
+        },
+        {
+          "name": "six",
+          "version": "1.17.0"
+        },
+        {
+          "name": "stevedore",
+          "version": "5.9.1"
+        },
+        {
+          "name": "typing-extensions",
+          "version": "4.16.0"
+        },
+        {
+          "name": "tzdata",
+          "version": "2026.5"
+        }
+      ],
+      "os": "Darwin",
+      "python_version": "3.11.12"
+    },
+    "target_pins_sha256": "c33387f0724cf518098c8966863e9df03bf32ad73cdfc8693f41836ca401be16",
+    "target_sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+    "tool_version": "0.1.0",
+    "trusted_local_code": true,
+    "unknown_reasons": []
+  },
+  "run_state": "complete",
+  "schema": "qref.evidence/v1",
+  "status_counts": {
+    "difference": 0,
+    "error": 0,
+    "inconclusive": 0,
+    "pass": 189,
+    "unsupported": 0
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "classical_registers": [
+    [
+      "meas",
+      8
+    ]
+  ],
+  "global_phase": 0.0,
+  "layout": null,
+  "measurement_map": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      7
+    ]
+  ],
+  "num_clbits": 8,
+  "num_parameters": 0,
+  "num_qubits": 8
+}

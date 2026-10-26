@@ -242,3 +242,17 @@ def test_decision_for_other_evidence_is_refused(tmp_path):
     decisions.write_text(json.dumps(template))
     with pytest.raises(contracts.ContractError, match="different evidence"):
         report.rerender(EXAMPLE, tmp_path / "out", decisions)
+
+
+def test_replaced_zip_fails_even_when_loose_files_are_intact(tmp_path):
+    import zipfile
+    out = tmp_path / "copy"
+    report.rerender(EXAMPLE, out)
+    report.verify_bundle(out)
+    names = zipfile.ZipFile(out / "evidence.zip").namelist()
+    assert "evidence.json" in names and "manifest.json" in names and "evidence.zip" not in names
+    with zipfile.ZipFile(out / "evidence.zip", "w") as z:
+        for name in names:
+            z.writestr(name, b"{}" if name == "evidence.json" else (out / name).read_bytes())
+    with pytest.raises(contracts.ContractError, match="evidence.zip member differs"):
+        report.verify_bundle(out)
