@@ -28,7 +28,7 @@ The owner also approved enabling GitHub Pages.
 | More examples | `examples/seeded-rotation` (labelled): a halved mixer angle that QCEC reports as non-equivalent, alongside the decoder case that only the classical checks catch. |
 | ZIP bundle (third hour) | Every export now includes `evidence.zip` (all manifest files plus the manifest, never itself). `verify-bundle` streams each member without extracting it, checks names, duplicates, links, encryption, compression method and size limits, and compares bytes with the verified directory. A replaced ZIP fails even when loose files are intact (test). |
 | Positive control (third hour) | `examples/positive-control` runs the same port on both sides, including an 8-qubit graph with an isolated node: 189 checks pass, no findings, exit 0. |
-| Pages | `.github/workflows/pages.yml` verifies the curated bundles with base-only install, then uploads only `site/`. |
+| Pages | `.github/workflows/pages.yml` verifies the curated bundles with a base-only install and uploads only `site/`. After deploying, a `check-live` job downloads every live `evidence.json`, compares its SHA-256 with the committed record and checks that the digest appears on the live page. This passed on the first run. |
 
 ## A real observation from release work
 
