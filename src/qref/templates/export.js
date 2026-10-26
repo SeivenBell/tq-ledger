@@ -16,3 +16,18 @@
     status.textContent = "Saved from the copy embedded in this page.";
   });
 })();
+
+(function () {
+  // Links from findings point into collapsed <details>; open the enclosing sections so the target is visible.
+  function reveal() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    if (!target) { return; }
+    for (var node = target.parentElement; node; node = node.parentElement) {
+      if (node.tagName === "DETAILS") { node.open = true; }
+    }
+    target.scrollIntoView();
+  }
+  window.addEventListener("hashchange", reveal);
+  reveal();
+})();

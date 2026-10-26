@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-j0QHjS1U9ex9SbI3TlnN5VlUnur8EXOWWBBg1g7Lqzc='; script-src 'sha256-NnjowQH0pCBBmTi408bTaQKZd6UIYm8ucJklsF5oGeY='; img-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-j0QHjS1U9ex9SbI3TlnN5VlUnur8EXOWWBBg1g7Lqzc='; script-src 'sha256-OhNjz3a3faYSAGdJ4r9De7UBAypckVfkF/YstySHuT4='; img-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>QRef migration report — QAOA helpers — positive control (same port on both sides)</title>
 <style>:root{--fg:#1b1f24;--muted:#57606a;--border:#d0d7de;--surface:#f6f8fa;--warn:#9a6700;--warn-bg:#fff8c5;--ok:#1a7f37;--bad:#cf222e;--bad-bg:#ffebe9;--add-bg:#e6ffec;--del-bg:#ffebe9;--link:#0550ae}
@@ -6709,6 +6709,21 @@ QRef records evidence; it does not certify science. Hashes show internal consist
     setTimeout(function () { URL.revokeObjectURL(link.href); }, 1000);
     status.textContent = "Saved from the copy embedded in this page.";
   });
+})();
+
+(function () {
+  // Links from findings point into collapsed <details>; open the enclosing sections so the target is visible.
+  function reveal() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var target = id && document.getElementById(id);
+    if (!target) { return; }
+    for (var node = target.parentElement; node; node = node.parentElement) {
+      if (node.tagName === "DETAILS") { node.open = true; }
+    }
+    target.scrollIntoView();
+  }
+  window.addEventListener("hashchange", reveal);
+  reveal();
 })();
 </script>
 </body>

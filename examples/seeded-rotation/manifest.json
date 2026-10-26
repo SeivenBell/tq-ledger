@@ -718,8 +718,8 @@
     },
     {
       "path": "index.html",
-      "sha256": "57a2ac9251b90395a4b3ba3153c3adaffcaa13ca6ef07b42f697d68f4089e5c2",
-      "size": 486634
+      "sha256": "be913337ada71627a2b2da8829ff1379afa0f52c0fe0fda39cc2cb1f108d87d8",
+      "size": 487164
     },
     {
       "path": "review-template.json",
@@ -727,7 +727,7 @@
       "size": 762
     }
   ],
-  "rendered_at": "2026-10-26T02:28:00.174412Z",
-  "renderer_sha256": "7c17e964d9255c1d922242e5905f7bcfbc4e909efbf3e039c6310f1c87c2a73d",
+  "rendered_at": "2026-10-26T02:33:18.570267Z",
+  "renderer_sha256": "012ff088ad3c7c2cad7cc528a28cad84db30e63d8a494b9e215f01516b37c8ae",
   "schema": "qref.manifest/v1"
 }
