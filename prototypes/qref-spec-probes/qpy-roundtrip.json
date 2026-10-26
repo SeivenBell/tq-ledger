@@ -1,0 +1,14 @@
+{
+  "legacy": {
+    "global_phase_retained": true,
+    "qiskit_version": "0.46.3",
+    "same_runtime_roundtrip_equal": true,
+    "snapshot_bytes": 349
+  },
+  "modern": {
+    "global_phase_retained": true,
+    "qiskit_version": "2.6.1",
+    "same_runtime_roundtrip_equal": true,
+    "snapshot_bytes": 342
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "command": ["claude", "auth", "status"],
+  "environment_allowlist": ["HOME", "LANG", "LC_ALL", "LC_CTYPE", "LOGNAME", "PATH", "TERM", "TMPDIR", "USER"],
+  "exit_code": 0,
+  "loggedIn": true,
+  "authMethod": "claude.ai",
+  "apiProvider": "firstParty",
+  "model_requests": 0,
+  "limit": "This is authentication-category evidence, not a billing attestation or managed-policy audit. The earlier model call did not test this exact clean environment."
+}

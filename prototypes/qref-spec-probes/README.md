@@ -46,6 +46,21 @@ The results checked into this branch are the recorded run. Re-execution may prod
 
 The capture probe imports the inspected module before installing the hook. It therefore does not prove production interception of import-time execution. It uses assertions and has no full status/error protocol, no schema/manifest implementation, no publication/export UI, no timeout handling and no general unsupported-input support. Those belong to the reviewed implementation specification, not this probe.
 
-Only four- and five-qubit seed inputs were exercised. The complete proposed eight-qubit scope, negative fixtures, missing data, partial workers, QCEC result branches, safe HTML exports and fresh Linux provisioning were not tested here.
+Only four- and five-qubit seed inputs were exercised in the capture probe. The complete proposed eight-qubit scope, negative workflow fixtures, missing data, partial workers, safe HTML exports and fresh Linux provisioning were not tested. The focused follow-ups below cover only the named phase, QPY and authentication cases—not the remaining QCEC branches or the production protocol.
 
 The reference is the Apache-2.0 Qiskit textbook helper cell from [snapshot 0ae9050](https://github.com/qiskit-community/qiskit-textbook/blob/0ae905083ec3872d7ddc6bb4001d5468f476d93f/content/ch-applications/qaoa.ipynb), with imports added. Attribution remains with the Qiskit textbook contributors; the licence is included. The target is the real model-generated port recorded here. Qiskit/Aer and MQT QCEC supply the quantum execution/checking capabilities.
+
+## Follow-up: challenge the phase mapping
+
+`phase_probe.py` and `phase-results.json` preserve a direct run in the same pinned modern environment. Identical circuits returned `equivalent`; a gate-level global minus sign returned `equivalent_up_to_global_phase`; a relative Z change returned `not_equivalent`. Setting only Qiskit's global-phase metadata returned `equivalent`, so this import path does not demonstrate preservation of that metadata.
+
+The v3.11.0 [Python binding docstrings](https://github.com/munich-quantum-toolkit/qcec/blob/v3.11.0/bindings/register_equivalence_criterion.cpp) reverse the two phase descriptions. The [alternating-checker implementation](https://github.com/munich-quantum-toolkit/qcec/blob/v3.11.0/src/checker/dd/DDAlternatingChecker.cpp) explicitly emits `EquivalentUpToGlobalPhase` for a non-one global weight on the identity. An internal reviewer recommended swapping the mapping based on the docstrings; source and runtime counter-evidence reject that recommendation. This does not exercise `equivalent_up_to_phase`, probable outcomes or deadlines.
+
+Run with `modern/bin/python phase_probe.py`. The successful original invocation executed the identical source through `python -c`; an initial invocation without an explicit accessible cwd failed at import because of workstation permissions.
+
+## Follow-up: native snapshots and clean authentication
+
+`qpy_probe.py` created a two-qubit measured circuit with nonzero global phase, dumped/loaded it **within each runtime**, and confirmed circuit/global-phase equality. `qpy-roundtrip.json` records Qiskit 0.46.3 and 2.6.1 outcomes. This supports opaque native snapshot retention; it does not prove cross-version loading or capture-before-submission integration. Run with each environment's interpreter.
+
+`auth-preflight.json` contains only the categories returned by `claude auth status` from an accessible temporary cwd with the proposed environment allowlist. It returned logged-in `claude.ai`, `firstParty`, exit 0; no model request was made by this follow-up. Account details, secrets and environment values were not published. The earlier successful proposal did not test this exact clean environment; production integration must still exercise the combined route. Authentication categories are not a billing attestation or a managed-policy audit.
+

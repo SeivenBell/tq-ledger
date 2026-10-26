@@ -1,0 +1,6 @@
+{
+  "identity": "EquivalenceCriterion.equivalent",
+  "global_phase_metadata": "EquivalenceCriterion.equivalent",
+  "relative_phase_z": "EquivalenceCriterion.not_equivalent",
+  "gate_global_minus_one": "EquivalenceCriterion.equivalent_up_to_global_phase"
+}
