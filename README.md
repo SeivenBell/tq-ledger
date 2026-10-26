@@ -1,19 +1,34 @@
-# Build North research
+# QRef
 
-Project selection is still open. The previous Q-Day Ledger recommendation has been withdrawn. The [current decision memo](docs/decision/ranked-memo.md) compares four concrete alternatives and explains the provisional preference for a small quantum-code upgrade reviewer. No main application is built or deployed.
+**Review a quantum-code migration before relying on it.**
 
-Start here:
+Status: review-ready specification and executable research evidence. The product CLI, report interface and public deployment are not implemented yet. The user authorized planning and repository cleanup; implementation follows independent review and separate approval.
 
-- [Which project should we build?](docs/decision/ranked-memo.md) — recommendation, alternatives, usefulness, build limits and reasons to stop.
-- [What we actually ran](docs/research/round2/workflow-checks.md) — a real Sonnet/Qiskit migration, plus limited scientific-trace and battery-data checks.
-- [Current status and next steps](docs/BRIEFING-2026-10-24.md) — accounts, dated event information and the remaining human decision.
+## Start here
 
-The four new investigations cover [quantum upgrades](docs/research/round2/quantum-workflows.md), [claim-review workflows](docs/research/round2/claim-workflows.md), [scientific reproduction](docs/research/round2/scientific-reproduction.md) and [research data/operations](docs/research/round2/scientific-operations.md). Each records source dates and reading depth.
+- **[Complete specification](SPEC.md):** what to build, supported workflow, exact proposed commands/contracts, scientific limits, security, UI and free deployment.
+- **[Independent review prompt](REVIEW.md):** copy this to the next AI. Review first; do not begin coding in the same invocation.
+- **[Implementation plan](PLAN.md):** contract gate, ownership, parallel work, acceptance and release sequence.
+- [Product context](PRODUCT.md) and [domain language](CONTEXT.md).
+- [Proposed report design](docs/design/report-brief.md), [readable layout schematic](docs/design/report-layout.png) and [SVG source](docs/design/report-layout.svg).
+- [Planning proof and limits](docs/reviews/planning-verification.md).
 
-Both original Fable reports are now preserved: [practitioner problems](docs/research/originals/practitioner-pain-fable.md) and [circuit discovery](docs/research/originals/ai-circuit-discovery-fable.md). Their full texts were supplied in chat; their original commits and reported experiments are not independently verified.
+## The complete workflow we propose
 
-The real notebook experiment is reproducible from [its separate research branch](https://github.com/SeivenBell/tq-ledger/tree/research/round2-qaoa-probe/prototypes/round2-qaoa). The older [QRef probe](prototypes/qref-probe/README.md) uses deliberately planted failures; neither probe is a production verifier.
+A local model proposes a port. A developer inspects it before execution. Two pinned environments run the reference and target; independent checks inspect the actual submitted circuits, classical interpretation and sampling settings. A portable report shows observations, model intent, human decisions and unchecked scope separately.
 
-Files in `docs/build/` and the Ledger vocabulary in `CONTEXT.md` are archived proposals, not an active build queue. [Severyn chooses the project](https://github.com/SeivenBell/tq-ledger/issues/14) before implementation. Outreach is paused; no practitioner inquiry has been sent.
+The public copy is a static report on free GitHub Pages—not a hosted Python executor or live-model website. No new paid services are assumed.
 
-Repository code is Apache-2.0. Cited sources and copied original reports retain their applicable rights and terms; a research quote is not a certified scientific claim.
+## What can run now
+
+[The retained QAOA seed](evidence/qaoa/README.md) contains the original licensed helper code, real model port and observations. It is research code, not the future QRef command suite. The newer [planning probe](https://github.com/SeivenBell/tq-ledger/tree/67db6c595927faa91a85f64a7d1845f1c89b09dc/prototypes/qref-spec-probes) proves the subscription-only proposal route, actual Aer submission capture and independent same-count decoding on the seed. It is deliberately kept off main as throwaway code.
+
+These probes do not establish general reliability, a hidden-agent-error rate, a customer or scientific certification. The actual product must satisfy the specification's failure/coverage/export/browser criteria.
+
+## Historical material
+
+All abandoned Ledger plans, competing-project research, both complete original Fable reports, the old planted-error prototype and cloud launcher are preserved under **[archive/research-2026-10](archive/research-2026-10/README.md)**. Do not build from that directory. No active compatibility stubs remain at old paths.
+
+One research inquiry was sent with no reply. Additional outreach is not authorized. Do not interpret that email as migration-user validation.
+
+Repository code is Apache-2.0. Copied source and dependencies retain their applicable licences; preserve the included Qiskit attribution and disclose MQT QCEC as the checking engine. No live URL or finished submission is claimed by this README.

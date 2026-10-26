@@ -1,0 +1,211 @@
+{
+  "circuit_checks": [
+    {
+      "key": [
+        "textbook_cycle4",
+        [
+          0.17,
+          0.63
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 5.551115123125783e-17,
+      "exact_objective_difference": 0.0
+    },
+    {
+      "key": [
+        "textbook_cycle4",
+        [
+          0.81,
+          0.29
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 4.163336342344337e-17,
+      "exact_objective_difference": 0.0
+    },
+    {
+      "key": [
+        "textbook_cycle4",
+        [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 1.5265566588595902e-16,
+      "exact_objective_difference": 0.0
+    },
+    {
+      "key": [
+        "asymmetric4",
+        [
+          0.17,
+          0.63
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 5.551115123125783e-17,
+      "exact_objective_difference": 2.220446049250313e-16
+    },
+    {
+      "key": [
+        "asymmetric4",
+        [
+          0.81,
+          0.29
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 2.7755575615628914e-17,
+      "exact_objective_difference": 0.0
+    },
+    {
+      "key": [
+        "asymmetric4",
+        [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 5.551115123125783e-17,
+      "exact_objective_difference": 0.0
+    },
+    {
+      "key": [
+        "cycle5",
+        [
+          0.17,
+          0.63
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 2.7755575615628914e-17,
+      "exact_objective_difference": 4.440892098500626e-16
+    },
+    {
+      "key": [
+        "cycle5",
+        [
+          0.81,
+          0.29
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 2.0816681711721685e-17,
+      "exact_objective_difference": 8.881784197001252e-16
+    },
+    {
+      "key": [
+        "cycle5",
+        [
+          0.17,
+          0.63,
+          0.41,
+          0.92
+        ]
+      ],
+      "qcec_result": "EquivalenceCriterion.equivalent",
+      "max_probability_difference": 5.551115123125783e-17,
+      "exact_objective_difference": 8.881784197001252e-16
+    }
+  ],
+  "observed_shot_changes": [
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    },
+    {
+      "requested": 512,
+      "original_executed": 1024,
+      "port_executed": 512
+    },
+    {
+      "requested": 17,
+      "original_executed": 1024,
+      "port_executed": 17
+    }
+  ],
+  "scope": "Nine fixed circuit/parameter cases; 18 sampled executions per runtime; no optimizer, hardware or whole-program proof"
+}

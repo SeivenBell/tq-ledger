@@ -219,6 +219,16 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Planning docs live in folders named build; keep them
-!docs/build/
-!docs/research/build/
+# Historical planning folders intentionally retained
+!archive/research-2026-10/docs/build/
+!archive/research-2026-10/docs/research/build/
+
+# QRef local environments and generated working output
+/.qref/
+/runs/
+/exports/
+/evidence/qaoa/legacy/
+/evidence/qaoa/modern/
+
+# Design-tool exploration state; reviewed briefs live under docs/design
+/.impeccable/
