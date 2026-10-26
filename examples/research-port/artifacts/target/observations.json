@@ -1,0 +1,2227 @@
+{
+  "classical_tables": [
+    {
+      "graph_id": "textbook_cycle4",
+      "n": 4,
+      "rows": [
+        {
+          "compute_expectation": 0.0,
+          "k": 0,
+          "maxcut_obj": 0.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 1,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 2,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 3,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 4,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 5,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 6,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 7,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 8,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 9,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 10,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 11,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 12,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 13,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 14,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": 0.0,
+          "k": 15,
+          "maxcut_obj": 0.0
+        }
+      ]
+    },
+    {
+      "graph_id": "asymmetric4",
+      "n": 4,
+      "rows": [
+        {
+          "compute_expectation": 0.0,
+          "k": 0,
+          "maxcut_obj": 0.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 1,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 2,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 3,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -3.0,
+          "k": 4,
+          "maxcut_obj": -3.0
+        },
+        {
+          "compute_expectation": -3.0,
+          "k": 5,
+          "maxcut_obj": -3.0
+        },
+        {
+          "compute_expectation": -3.0,
+          "k": 6,
+          "maxcut_obj": -3.0
+        },
+        {
+          "compute_expectation": -1.0,
+          "k": 7,
+          "maxcut_obj": -1.0
+        },
+        {
+          "compute_expectation": -1.0,
+          "k": 8,
+          "maxcut_obj": -1.0
+        },
+        {
+          "compute_expectation": -3.0,
+          "k": 9,
+          "maxcut_obj": -3.0
+        },
+        {
+          "compute_expectation": -3.0,
+          "k": 10,
+          "maxcut_obj": -3.0
+        },
+        {
+          "compute_expectation": -3.0,
+          "k": 11,
+          "maxcut_obj": -3.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 12,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 13,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 14,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": 0.0,
+          "k": 15,
+          "maxcut_obj": 0.0
+        }
+      ]
+    },
+    {
+      "graph_id": "cycle5",
+      "n": 5,
+      "rows": [
+        {
+          "compute_expectation": 0.0,
+          "k": 0,
+          "maxcut_obj": 0.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 1,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 2,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 3,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 4,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 5,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 6,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 7,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 8,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 9,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 10,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 11,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 12,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 13,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 14,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 15,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 16,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 17,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 18,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 19,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 20,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 21,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 22,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 23,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 24,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 25,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -4.0,
+          "k": 26,
+          "maxcut_obj": -4.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 27,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 28,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 29,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": -2.0,
+          "k": 30,
+          "maxcut_obj": -2.0
+        },
+        {
+          "compute_expectation": 0.0,
+          "k": 31,
+          "maxcut_obj": 0.0
+        }
+      ]
+    }
+  ],
+  "environment": {
+    "architecture": "arm64",
+    "distributions": [
+      {
+        "name": "dill",
+        "version": "0.4.1"
+      },
+      {
+        "name": "mqt-core",
+        "version": "3.11.0"
+      },
+      {
+        "name": "mqt-qcec",
+        "version": "3.11.0"
+      },
+      {
+        "name": "nanobind-backend",
+        "version": "1.0.0"
+      },
+      {
+        "name": "networkx",
+        "version": "2.8.8"
+      },
+      {
+        "name": "numpy",
+        "version": "2.4.6"
+      },
+      {
+        "name": "psutil",
+        "version": "7.2.2"
+      },
+      {
+        "name": "python-dateutil",
+        "version": "3.0.0"
+      },
+      {
+        "name": "qiskit",
+        "version": "2.6.1"
+      },
+      {
+        "name": "qiskit-aer",
+        "version": "0.18.0"
+      },
+      {
+        "name": "rustworkx",
+        "version": "0.18.1"
+      },
+      {
+        "name": "scipy",
+        "version": "1.17.1"
+      },
+      {
+        "name": "six",
+        "version": "1.17.0"
+      },
+      {
+        "name": "stevedore",
+        "version": "5.9.1"
+      },
+      {
+        "name": "typing-extensions",
+        "version": "4.16.0"
+      },
+      {
+        "name": "tzdata",
+        "version": "2026.5"
+      }
+    ],
+    "os": "Darwin",
+    "python_version": "3.11.12"
+  },
+  "executions": [
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "textbook_cycle4__p1-a__shots-512.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "textbook_cycle4__p1-a__shots-512.qasm",
+        "qpy": "textbook_cycle4__p1-a__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.177966Z",
+      "id": "textbook_cycle4/p1-a/shots-512",
+      "input_sha256": "bd2973bdd6445b5044d51ceb29adb39c59711345bc804854c53d2f5a3ea64383",
+      "numeric": {
+        "module_on_counts": -1.58984375,
+        "module_on_probabilities": -1.6338345499071139,
+        "probabilities": [
+          0.1351229263819537,
+          0.038004851431660845,
+          0.038004851431660845,
+          0.08463805201633523,
+          0.038004851431660866,
+          0.04358156385873218,
+          0.08463805201633523,
+          0.03800485143166086,
+          0.03800485143166086,
+          0.08463805201633523,
+          0.04358156385873218,
+          0.038004851431660866,
+          0.08463805201633523,
+          0.038004851431660845,
+          0.038004851431660845,
+          0.1351229263819537
+        ],
+        "returned": -1.58984375
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "0000": 59,
+          "0001": 17,
+          "0010": 13,
+          "0011": 44,
+          "0100": 26,
+          "0101": 21,
+          "0110": 38,
+          "0111": 19,
+          "1000": 23,
+          "1001": 37,
+          "1010": 23,
+          "1011": 27,
+          "1100": 41,
+          "1101": 19,
+          "1110": 15,
+          "1111": 90
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.143984Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "textbook_cycle4__p1-a__shots-17.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "textbook_cycle4__p1-a__shots-17.qasm",
+        "qpy": "textbook_cycle4__p1-a__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.210346Z",
+      "id": "textbook_cycle4/p1-a/shots-17",
+      "input_sha256": "fa07cd28b3b8891420b58ab0cf642e02a0b39068f47667ee27b215036ac8405d",
+      "numeric": {
+        "module_on_counts": -1.411764705882353,
+        "module_on_probabilities": -1.6338345499071139,
+        "probabilities": [
+          0.1351229263819537,
+          0.038004851431660845,
+          0.038004851431660845,
+          0.08463805201633523,
+          0.038004851431660866,
+          0.04358156385873218,
+          0.08463805201633523,
+          0.03800485143166086,
+          0.03800485143166086,
+          0.08463805201633523,
+          0.04358156385873218,
+          0.038004851431660866,
+          0.08463805201633523,
+          0.038004851431660845,
+          0.038004851431660845,
+          0.1351229263819537
+        ],
+        "returned": -1.411764705882353
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "0000": 2,
+          "0001": 1,
+          "0011": 1,
+          "0100": 1,
+          "0101": 2,
+          "0110": 1,
+          "1001": 3,
+          "1100": 1,
+          "1111": 5
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.178475Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "textbook_cycle4__p1-b__shots-512.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "textbook_cycle4__p1-b__shots-512.qasm",
+        "qpy": "textbook_cycle4__p1-b__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.242746Z",
+      "id": "textbook_cycle4/p1-b/shots-512",
+      "input_sha256": "7d3afa639a7301fd3a9b0fd953d29ce0326e271fea7966fcea861974a2fe10eb",
+      "numeric": {
+        "module_on_counts": -2.05078125,
+        "module_on_probabilities": -2.0900746161779704,
+        "probabilities": [
+          0.10395455080269549,
+          0.06219203858359514,
+          0.06219203858359517,
+          0.010402045007867799,
+          0.06219203858359514,
+          0.12647320484718802,
+          0.01040204500786779,
+          0.06219203858359514,
+          0.06219203858359514,
+          0.01040204500786779,
+          0.12647320484718802,
+          0.06219203858359514,
+          0.010402045007867799,
+          0.06219203858359517,
+          0.06219203858359514,
+          0.10395455080269549
+        ],
+        "returned": -2.05078125
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "0000": 47,
+          "0001": 25,
+          "0010": 28,
+          "0011": 2,
+          "0100": 34,
+          "0101": 65,
+          "0110": 7,
+          "0111": 29,
+          "1000": 35,
+          "1001": 7,
+          "1010": 60,
+          "1011": 38,
+          "1100": 1,
+          "1101": 32,
+          "1110": 37,
+          "1111": 65
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.210877Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "textbook_cycle4__p1-b__shots-17.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "textbook_cycle4__p1-b__shots-17.qasm",
+        "qpy": "textbook_cycle4__p1-b__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.275532Z",
+      "id": "textbook_cycle4/p1-b/shots-17",
+      "input_sha256": "94f83f59cb93d790a583f7c8012d538506f96d661700aaeb37168ea8a123355e",
+      "numeric": {
+        "module_on_counts": -2.0,
+        "module_on_probabilities": -2.0900746161779704,
+        "probabilities": [
+          0.10395455080269549,
+          0.06219203858359514,
+          0.06219203858359517,
+          0.010402045007867799,
+          0.06219203858359514,
+          0.12647320484718802,
+          0.01040204500786779,
+          0.06219203858359514,
+          0.06219203858359514,
+          0.01040204500786779,
+          0.12647320484718802,
+          0.06219203858359514,
+          0.010402045007867799,
+          0.06219203858359517,
+          0.06219203858359514,
+          0.10395455080269549
+        ],
+        "returned": -2.0
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "0000": 1,
+          "0001": 2,
+          "0100": 1,
+          "0101": 3,
+          "0111": 1,
+          "1010": 3,
+          "1011": 1,
+          "1111": 5
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.243289Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "textbook_cycle4__p2__shots-512.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "textbook_cycle4__p2__shots-512.qasm",
+        "qpy": "textbook_cycle4__p2__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.308361Z",
+      "id": "textbook_cycle4/p2/shots-512",
+      "input_sha256": "299c7512267d8b1ba78ffe2a027638ca10c6120ea22b6cc365a99f7704106e4b",
+      "numeric": {
+        "module_on_counts": -2.22265625,
+        "module_on_probabilities": -2.1683093997105654,
+        "probabilities": [
+          0.07712867142038524,
+          0.029957586053166996,
+          0.029957586053166976,
+          0.09191748150945994,
+          0.029957586053166976,
+          0.11920602134802667,
+          0.09191748150945997,
+          0.029957586053166965,
+          0.029957586053166965,
+          0.09191748150945997,
+          0.11920602134802667,
+          0.029957586053166976,
+          0.09191748150945994,
+          0.029957586053166976,
+          0.029957586053166996,
+          0.07712867142038524
+        ],
+        "returned": -2.22265625
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "0000": 35,
+          "0001": 12,
+          "0010": 12,
+          "0011": 41,
+          "0100": 13,
+          "0101": 67,
+          "0110": 42,
+          "0111": 15,
+          "1000": 18,
+          "1001": 40,
+          "1010": 70,
+          "1011": 13,
+          "1100": 43,
+          "1101": 21,
+          "1110": 25,
+          "1111": 45
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.276118Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "textbook_cycle4__p2__shots-17.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "textbook_cycle4__p2__shots-17.qasm",
+        "qpy": "textbook_cycle4__p2__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.339998Z",
+      "id": "textbook_cycle4/p2/shots-17",
+      "input_sha256": "6f82aff743be8d084ef54905861ff4e3bc64e43cc1f6948cc945898b2d7f1348",
+      "numeric": {
+        "module_on_counts": -2.235294117647059,
+        "module_on_probabilities": -2.1683093997105654,
+        "probabilities": [
+          0.07712867142038524,
+          0.029957586053166996,
+          0.029957586053166976,
+          0.09191748150945994,
+          0.029957586053166976,
+          0.11920602134802667,
+          0.09191748150945997,
+          0.029957586053166965,
+          0.029957586053166965,
+          0.09191748150945997,
+          0.11920602134802667,
+          0.029957586053166976,
+          0.09191748150945994,
+          0.029957586053166976,
+          0.029957586053166996,
+          0.07712867142038524
+        ],
+        "returned": -2.235294117647059
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "0000": 1,
+          "0010": 1,
+          "0011": 1,
+          "0101": 4,
+          "0110": 1,
+          "1001": 3,
+          "1011": 1,
+          "1110": 4,
+          "1111": 1
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.308982Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "asymmetric4__p1-a__shots-512.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "asymmetric4__p1-a__shots-512.qasm",
+        "qpy": "asymmetric4__p1-a__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.372026Z",
+      "id": "asymmetric4/p1-a/shots-512",
+      "input_sha256": "c034adc209e349ea974c7a895cb3cf09077dd1bd25d0be14b82726be6e8bb072",
+      "numeric": {
+        "module_on_counts": -1.478515625,
+        "module_on_probabilities": -1.544021573388693,
+        "probabilities": [
+          0.11701481993699715,
+          0.07155085143995121,
+          0.07155085143995121,
+          0.07171567193043196,
+          0.051179624592461406,
+          0.017962245659021606,
+          0.017962245659021606,
+          0.08106368934216372,
+          0.08106368934216372,
+          0.017962245659021606,
+          0.017962245659021606,
+          0.051179624592461406,
+          0.07171567193043196,
+          0.07155085143995121,
+          0.07155085143995121,
+          0.11701481993699715
+        ],
+        "returned": -1.478515625
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "0000": 53,
+          "0001": 27,
+          "0010": 33,
+          "0011": 46,
+          "0100": 23,
+          "0101": 4,
+          "0110": 12,
+          "0111": 39,
+          "1000": 44,
+          "1001": 3,
+          "1010": 10,
+          "1011": 28,
+          "1100": 43,
+          "1101": 33,
+          "1110": 35,
+          "1111": 79
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.340626Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "asymmetric4__p1-a__shots-17.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "asymmetric4__p1-a__shots-17.qasm",
+        "qpy": "asymmetric4__p1-a__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.404381Z",
+      "id": "asymmetric4/p1-a/shots-17",
+      "input_sha256": "1510f88f4839aceb42d92237aea2c1d58556669eb1a2a8f5c7ed5f2b43369268",
+      "numeric": {
+        "module_on_counts": -1.5294117647058822,
+        "module_on_probabilities": -1.544021573388693,
+        "probabilities": [
+          0.11701481993699715,
+          0.07155085143995121,
+          0.07155085143995121,
+          0.07171567193043196,
+          0.051179624592461406,
+          0.017962245659021606,
+          0.017962245659021606,
+          0.08106368934216372,
+          0.08106368934216372,
+          0.017962245659021606,
+          0.017962245659021606,
+          0.051179624592461406,
+          0.07171567193043196,
+          0.07155085143995121,
+          0.07155085143995121,
+          0.11701481993699715
+        ],
+        "returned": -1.5294117647058822
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "0000": 1,
+          "0001": 2,
+          "0011": 2,
+          "0100": 2,
+          "0111": 1,
+          "1010": 3,
+          "1101": 1,
+          "1111": 5
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.372750Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "asymmetric4__p1-b__shots-512.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "asymmetric4__p1-b__shots-512.qasm",
+        "qpy": "asymmetric4__p1-b__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.437183Z",
+      "id": "asymmetric4/p1-b/shots-512",
+      "input_sha256": "c473a1c2746c91dd29bd70e18dce8db8dbb4f2281b3c032bac27168ee28a22a8",
+      "numeric": {
+        "module_on_counts": -1.669921875,
+        "module_on_probabilities": -1.6863427887741944,
+        "probabilities": [
+          0.13268173959675933,
+          0.04408109486316266,
+          0.04408109486316266,
+          0.017716744777212745,
+          0.0867908929293112,
+          0.0490981034054239,
+          0.0490981034054239,
+          0.07645222615954321,
+          0.07645222615954321,
+          0.0490981034054239,
+          0.0490981034054239,
+          0.0867908929293112,
+          0.017716744777212745,
+          0.04408109486316266,
+          0.04408109486316266,
+          0.13268173959675933
+        ],
+        "returned": -1.669921875
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "0000": 58,
+          "0001": 20,
+          "0010": 18,
+          "0011": 6,
+          "0100": 53,
+          "0101": 24,
+          "0110": 21,
+          "0111": 37,
+          "1000": 42,
+          "1001": 19,
+          "1010": 28,
+          "1011": 51,
+          "1100": 3,
+          "1101": 24,
+          "1110": 23,
+          "1111": 85
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.405078Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "asymmetric4__p1-b__shots-17.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "asymmetric4__p1-b__shots-17.qasm",
+        "qpy": "asymmetric4__p1-b__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.469313Z",
+      "id": "asymmetric4/p1-b/shots-17",
+      "input_sha256": "44c7b709acc93eeefa1bfe1cc9dccdcd5b2bbb7da3923ed587695cd59eecc71b",
+      "numeric": {
+        "module_on_counts": -1.588235294117647,
+        "module_on_probabilities": -1.6863427887741944,
+        "probabilities": [
+          0.13268173959675933,
+          0.04408109486316266,
+          0.04408109486316266,
+          0.017716744777212745,
+          0.0867908929293112,
+          0.0490981034054239,
+          0.0490981034054239,
+          0.07645222615954321,
+          0.07645222615954321,
+          0.0490981034054239,
+          0.0490981034054239,
+          0.0867908929293112,
+          0.017716744777212745,
+          0.04408109486316266,
+          0.04408109486316266,
+          0.13268173959675933
+        ],
+        "returned": -1.588235294117647
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "0000": 2,
+          "0001": 1,
+          "0100": 2,
+          "0101": 1,
+          "0110": 1,
+          "0111": 1,
+          "1001": 3,
+          "1011": 1,
+          "1111": 5
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.437906Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "asymmetric4__p2__shots-512.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "asymmetric4__p2__shots-512.qasm",
+        "qpy": "asymmetric4__p2__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.502545Z",
+      "id": "asymmetric4/p2/shots-512",
+      "input_sha256": "8c06c7c002ada04d2131a4caf2816446e875e7b39dc77e62c475b49004938147",
+      "numeric": {
+        "module_on_counts": -2.09765625,
+        "module_on_probabilities": -2.070008921354287,
+        "probabilities": [
+          0.0213994141037601,
+          0.08099658074104067,
+          0.08099658074104067,
+          0.1115730276221365,
+          0.021961323264526364,
+          0.059728759786908156,
+          0.0597287597869082,
+          0.06361555395367897,
+          0.06361555395367897,
+          0.0597287597869082,
+          0.059728759786908156,
+          0.021961323264526364,
+          0.1115730276221365,
+          0.08099658074104067,
+          0.08099658074104067,
+          0.0213994141037601
+        ],
+        "returned": -2.09765625
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "0000": 8,
+          "0001": 38,
+          "0010": 33,
+          "0011": 54,
+          "0100": 17,
+          "0101": 30,
+          "0110": 28,
+          "0111": 29,
+          "1000": 35,
+          "1001": 26,
+          "1010": 31,
+          "1011": 18,
+          "1100": 55,
+          "1101": 46,
+          "1110": 54,
+          "1111": 10
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.470081Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            4
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "metadata": "asymmetric4__p2__shots-17.circuit.json",
+        "num_clbits": 4,
+        "num_parameters": 0,
+        "num_qubits": 4,
+        "qasm": "asymmetric4__p2__shots-17.qasm",
+        "qpy": "asymmetric4__p2__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.535490Z",
+      "id": "asymmetric4/p2/shots-17",
+      "input_sha256": "50d20a5f68c1e06d4d947c142f1ff96f0d6b9f772c0df0257850e0022587ac67",
+      "numeric": {
+        "module_on_counts": -2.2941176470588234,
+        "module_on_probabilities": -2.070008921354287,
+        "probabilities": [
+          0.0213994141037601,
+          0.08099658074104067,
+          0.08099658074104067,
+          0.1115730276221365,
+          0.021961323264526364,
+          0.059728759786908156,
+          0.0597287597869082,
+          0.06361555395367897,
+          0.06361555395367897,
+          0.0597287597869082,
+          0.059728759786908156,
+          0.021961323264526364,
+          0.1115730276221365,
+          0.08099658074104067,
+          0.08099658074104067,
+          0.0213994141037601
+        ],
+        "returned": -2.2941176470588234
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "0001": 1,
+          "0010": 2,
+          "0011": 1,
+          "0100": 1,
+          "0101": 2,
+          "0111": 1,
+          "1001": 3,
+          "1100": 1,
+          "1101": 1,
+          "1110": 4
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.503356Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            5
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "metadata": "cycle5__p1-a__shots-512.circuit.json",
+        "num_clbits": 5,
+        "num_parameters": 0,
+        "num_qubits": 5,
+        "qasm": "cycle5__p1-a__shots-512.qasm",
+        "qpy": "cycle5__p1-a__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.568298Z",
+      "id": "cycle5/p1-a/shots-512",
+      "input_sha256": "f97f1cbaab27825e6250187b3b1d1c6805f704ccd1f0c4f0885eb3b2516c816b",
+      "numeric": {
+        "module_on_counts": -2.03125,
+        "module_on_probabilities": -2.0422931873838923,
+        "probabilities": [
+          0.08214193351800432,
+          0.024778728796004693,
+          0.024778728796004693,
+          0.04024983842759892,
+          0.024778728796004693,
+          0.018543046072795468,
+          0.040249838427598904,
+          0.04024983842759892,
+          0.024778728796004675,
+          0.018543046072795468,
+          0.018543046072795468,
+          0.01854304607279548,
+          0.040249838427598925,
+          0.01854304607279548,
+          0.040249838427598904,
+          0.024778728796004693,
+          0.024778728796004693,
+          0.040249838427598904,
+          0.01854304607279548,
+          0.040249838427598925,
+          0.01854304607279548,
+          0.018543046072795468,
+          0.018543046072795468,
+          0.024778728796004675,
+          0.04024983842759892,
+          0.040249838427598904,
+          0.018543046072795468,
+          0.024778728796004693,
+          0.04024983842759892,
+          0.024778728796004693,
+          0.024778728796004693,
+          0.08214193351800432
+        ],
+        "returned": -2.03125
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "00000": 38,
+          "00001": 9,
+          "00010": 11,
+          "00011": 17,
+          "00100": 8,
+          "00101": 7,
+          "00110": 19,
+          "00111": 24,
+          "01000": 19,
+          "01001": 11,
+          "01010": 8,
+          "01011": 9,
+          "01100": 17,
+          "01101": 9,
+          "01110": 17,
+          "01111": 14,
+          "10000": 15,
+          "10001": 21,
+          "10010": 9,
+          "10011": 16,
+          "10100": 11,
+          "10101": 10,
+          "10110": 10,
+          "10111": 18,
+          "11000": 18,
+          "11001": 19,
+          "11010": 12,
+          "11011": 11,
+          "11100": 20,
+          "11101": 15,
+          "11110": 20,
+          "11111": 50
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.536326Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            5
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "metadata": "cycle5__p1-a__shots-17.circuit.json",
+        "num_clbits": 5,
+        "num_parameters": 0,
+        "num_qubits": 5,
+        "qasm": "cycle5__p1-a__shots-17.qasm",
+        "qpy": "cycle5__p1-a__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.601742Z",
+      "id": "cycle5/p1-a/shots-17",
+      "input_sha256": "82bd560dc7768e2d844bb0e6d03d95df65fe12e6feb77d44ab4446f3e50c976f",
+      "numeric": {
+        "module_on_counts": -1.8823529411764706,
+        "module_on_probabilities": -2.0422931873838923,
+        "probabilities": [
+          0.08214193351800432,
+          0.024778728796004693,
+          0.024778728796004693,
+          0.04024983842759892,
+          0.024778728796004693,
+          0.018543046072795468,
+          0.040249838427598904,
+          0.04024983842759892,
+          0.024778728796004675,
+          0.018543046072795468,
+          0.018543046072795468,
+          0.01854304607279548,
+          0.040249838427598925,
+          0.01854304607279548,
+          0.040249838427598904,
+          0.024778728796004693,
+          0.024778728796004693,
+          0.040249838427598904,
+          0.01854304607279548,
+          0.040249838427598925,
+          0.01854304607279548,
+          0.018543046072795468,
+          0.018543046072795468,
+          0.024778728796004675,
+          0.04024983842759892,
+          0.040249838427598904,
+          0.018543046072795468,
+          0.024778728796004693,
+          0.04024983842759892,
+          0.024778728796004693,
+          0.024778728796004693,
+          0.08214193351800432
+        ],
+        "returned": -1.8823529411764706
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "00000": 1,
+          "00010": 1,
+          "00011": 1,
+          "00111": 1,
+          "01000": 1,
+          "01011": 2,
+          "01110": 1,
+          "10011": 3,
+          "11001": 1,
+          "11110": 3,
+          "11111": 2
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.569207Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            5
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "metadata": "cycle5__p1-b__shots-512.circuit.json",
+        "num_clbits": 5,
+        "num_parameters": 0,
+        "num_qubits": 5,
+        "qasm": "cycle5__p1-b__shots-512.qasm",
+        "qpy": "cycle5__p1-b__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.635888Z",
+      "id": "cycle5/p1-b/shots-512",
+      "input_sha256": "c3f73a72ca79ed97502a85430c27be8abc06c90841254deae282a5650b73b80b",
+      "numeric": {
+        "module_on_counts": -2.625,
+        "module_on_probabilities": -2.612593270222463,
+        "probabilities": [
+          0.055209224631422076,
+          0.037447759914292056,
+          0.037447759914292056,
+          0.009838886722015907,
+          0.03744775991429206,
+          0.04167150843740751,
+          0.00983888672201592,
+          0.009838886722015926,
+          0.03744775991429206,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.00983888672201592,
+          0.04167150843740751,
+          0.009838886722015924,
+          0.037447759914292035,
+          0.037447759914292035,
+          0.009838886722015924,
+          0.04167150843740751,
+          0.00983888672201592,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.03744775991429206,
+          0.009838886722015926,
+          0.00983888672201592,
+          0.04167150843740751,
+          0.03744775991429206,
+          0.009838886722015907,
+          0.037447759914292056,
+          0.037447759914292056,
+          0.055209224631422076
+        ],
+        "returned": -2.625
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "00000": 28,
+          "00001": 13,
+          "00010": 16,
+          "00011": 4,
+          "00100": 17,
+          "00101": 16,
+          "00110": 6,
+          "00111": 2,
+          "01000": 18,
+          "01001": 30,
+          "01010": 21,
+          "01011": 15,
+          "01100": 6,
+          "01101": 24,
+          "01110": 3,
+          "01111": 18,
+          "10000": 22,
+          "10001": 7,
+          "10010": 17,
+          "10011": 1,
+          "10100": 23,
+          "10101": 22,
+          "10110": 28,
+          "10111": 20,
+          "11000": 1,
+          "11001": 2,
+          "11010": 24,
+          "11011": 17,
+          "11100": 7,
+          "11101": 26,
+          "11110": 26,
+          "11111": 32
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.602719Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            5
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "metadata": "cycle5__p1-b__shots-17.circuit.json",
+        "num_clbits": 5,
+        "num_parameters": 0,
+        "num_qubits": 5,
+        "qasm": "cycle5__p1-b__shots-17.qasm",
+        "qpy": "cycle5__p1-b__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.668366Z",
+      "id": "cycle5/p1-b/shots-17",
+      "input_sha256": "02f3163452f862163df14f4e60bf05ef1b8054ba2e5a050239e9627275656895",
+      "numeric": {
+        "module_on_counts": -2.588235294117647,
+        "module_on_probabilities": -2.612593270222463,
+        "probabilities": [
+          0.055209224631422076,
+          0.037447759914292056,
+          0.037447759914292056,
+          0.009838886722015907,
+          0.03744775991429206,
+          0.04167150843740751,
+          0.00983888672201592,
+          0.009838886722015926,
+          0.03744775991429206,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.00983888672201592,
+          0.04167150843740751,
+          0.009838886722015924,
+          0.037447759914292035,
+          0.037447759914292035,
+          0.009838886722015924,
+          0.04167150843740751,
+          0.00983888672201592,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.04167150843740751,
+          0.03744775991429206,
+          0.009838886722015926,
+          0.00983888672201592,
+          0.04167150843740751,
+          0.03744775991429206,
+          0.009838886722015907,
+          0.037447759914292056,
+          0.037447759914292056,
+          0.055209224631422076
+        ],
+        "returned": -2.588235294117647
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "00000": 1,
+          "00010": 1,
+          "00011": 1,
+          "01000": 1,
+          "01001": 1,
+          "01011": 2,
+          "01110": 1,
+          "10100": 3,
+          "10111": 1,
+          "11101": 2,
+          "11110": 3
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.636921Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            5
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "metadata": "cycle5__p2__shots-512.circuit.json",
+        "num_clbits": 5,
+        "num_parameters": 0,
+        "num_qubits": 5,
+        "qasm": "cycle5__p2__shots-512.qasm",
+        "qpy": "cycle5__p2__shots-512.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.701866Z",
+      "id": "cycle5/p2/shots-512",
+      "input_sha256": "a8085140a5ff07050f7aee8ab10981b351b825cd6a4049701473b22c6385abb7",
+      "numeric": {
+        "module_on_counts": -3.0546875,
+        "module_on_probabilities": -3.028195073905924,
+        "probabilities": [
+          0.029119961367939276,
+          0.016450882494322094,
+          0.016450882494322094,
+          0.020491379263205944,
+          0.0164508824943221,
+          0.057233745968883996,
+          0.02049137926320593,
+          0.020491379263205944,
+          0.016450882494322094,
+          0.057233745968883996,
+          0.05723374596888397,
+          0.05723374596888397,
+          0.020491379263205937,
+          0.057233745968884024,
+          0.020491379263205954,
+          0.01645088249432208,
+          0.01645088249432208,
+          0.020491379263205954,
+          0.057233745968884024,
+          0.020491379263205937,
+          0.05723374596888397,
+          0.05723374596888397,
+          0.057233745968883996,
+          0.016450882494322094,
+          0.020491379263205944,
+          0.02049137926320593,
+          0.057233745968883996,
+          0.0164508824943221,
+          0.020491379263205944,
+          0.016450882494322094,
+          0.016450882494322094,
+          0.029119961367939276
+        ],
+        "returned": -3.0546875
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 512,
+        "count_sum": 512,
+        "counts": {
+          "00000": 13,
+          "00001": 8,
+          "00010": 10,
+          "00011": 7,
+          "00100": 6,
+          "00101": 23,
+          "00110": 11,
+          "00111": 5,
+          "01000": 7,
+          "01001": 26,
+          "01010": 41,
+          "01011": 25,
+          "01100": 7,
+          "01101": 30,
+          "01110": 8,
+          "01111": 10,
+          "10000": 11,
+          "10001": 11,
+          "10010": 24,
+          "10011": 11,
+          "10100": 30,
+          "10101": 36,
+          "10110": 26,
+          "10111": 10,
+          "11000": 8,
+          "11001": 11,
+          "11010": 35,
+          "11011": 12,
+          "11100": 12,
+          "11101": 13,
+          "11110": 12,
+          "11111": 13
+        },
+        "requested_shots": 512,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 512
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.669368Z",
+      "state": "completed"
+    },
+    {
+      "circuit": {
+        "classical_registers": [
+          [
+            "meas",
+            5
+          ]
+        ],
+        "global_phase": 0.0,
+        "layout": null,
+        "measurement_map": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "metadata": "cycle5__p2__shots-17.circuit.json",
+        "num_clbits": 5,
+        "num_parameters": 0,
+        "num_qubits": 5,
+        "qasm": "cycle5__p2__shots-17.qasm",
+        "qpy": "cycle5__p2__shots-17.qpy"
+      },
+      "error_ref": null,
+      "finished_at": "2026-10-26T01:46:38.736020Z",
+      "id": "cycle5/p2/shots-17",
+      "input_sha256": "0518eefd156133a6f84afa770855228a0d182b04e4b5d53c1d2d3dcaf8da6c4a",
+      "numeric": {
+        "module_on_counts": -3.0588235294117645,
+        "module_on_probabilities": -3.028195073905924,
+        "probabilities": [
+          0.029119961367939276,
+          0.016450882494322094,
+          0.016450882494322094,
+          0.020491379263205944,
+          0.0164508824943221,
+          0.057233745968883996,
+          0.02049137926320593,
+          0.020491379263205944,
+          0.016450882494322094,
+          0.057233745968883996,
+          0.05723374596888397,
+          0.05723374596888397,
+          0.020491379263205937,
+          0.057233745968884024,
+          0.020491379263205954,
+          0.01645088249432208,
+          0.01645088249432208,
+          0.020491379263205954,
+          0.057233745968884024,
+          0.020491379263205937,
+          0.05723374596888397,
+          0.05723374596888397,
+          0.057233745968883996,
+          0.016450882494322094,
+          0.020491379263205944,
+          0.02049137926320593,
+          0.057233745968883996,
+          0.0164508824943221,
+          0.020491379263205944,
+          0.016450882494322094,
+          0.016450882494322094,
+          0.029119961367939276
+        ],
+        "returned": -3.0588235294117645
+      },
+      "reason_code": null,
+      "sampling": {
+        "backend_class": "qiskit_aer.backends.aer_simulator.AerSimulator",
+        "completed_shots": 17,
+        "count_sum": 17,
+        "counts": {
+          "00001": 1,
+          "00101": 2,
+          "01001": 1,
+          "01010": 1,
+          "01011": 2,
+          "01101": 1,
+          "10011": 3,
+          "10110": 1,
+          "11010": 1,
+          "11011": 2,
+          "11100": 2
+        },
+        "requested_shots": 17,
+        "run_kwargs": {
+          "seed_simulator": 10,
+          "shots": 17
+        }
+      },
+      "started_at": "2026-10-26T01:46:38.702968Z",
+      "state": "completed"
+    }
+  ],
+  "finished_at": "2026-10-26T01:46:38.737145Z",
+  "import": {
+    "error_ref": null,
+    "reason_code": null,
+    "state": "completed"
+  },
+  "module_sha256": "184c91872356efb0bf507baed24c0e9fa6d96ab1dad0ea18d7d6c1d07c0457a3",
+  "schema": "qref.qaoa-observations/v1",
+  "side": "target",
+  "started_at": "2026-10-26T01:46:37.979388Z"
+}

@@ -1,0 +1,13 @@
+{
+  "decisions": [
+    {
+      "decision": "needs_review",
+      "finding_id": "shot_policy",
+      "reason": null,
+      "recorded_at": null,
+      "reviewer": null
+    }
+  ],
+  "evidence_sha256": "8fbccd0fbe5d6b74ab2af5ba11d678b9aa2fb656ad601c753489cec997915fb5",
+  "schema": "qref.decisions/v1"
+}

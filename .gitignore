@@ -229,6 +229,8 @@ __marimo__/
 /exports/
 /evidence/qaoa/legacy/
 /evidence/qaoa/modern/
+# Curated exports must publish every manifest-declared file, including artifacts/target/
+!/examples/*/artifacts/target/
 
 # Design-tool exploration state; reviewed briefs live under docs/design
 /.impeccable/

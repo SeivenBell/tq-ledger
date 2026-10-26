@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-{{ css_hash }}'; img-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>QRef migration report — {{ case.title }}</title>
+<style>{{ css|safe }}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to report</a>
+<header class="top"><div class="wrap">
+  <div class="brand">QRef<span>/ Migration report</span></div>
+  <div class="exports" aria-label="Exports">
+    <a href="evidence.json" download>Evidence JSON</a>
+    <a href="manifest.json">Manifest</a>
+    <a href="review-template.json" download>Review template</a>
+  </div>
+</div></header>
+
+<main id="main" class="wrap">
+<p class="meta">Recorded local execution · {{ case.title }} · Qiskit {{ (prov.reference_environment or {}).get('distributions', [])|selectattr('name','equalto','qiskit')|map(attribute='version')|first|default('not recorded') }} to {{ (prov.target_environment or {}).get('distributions', [])|selectattr('name','equalto','qiskit')|map(attribute='version')|first|default('not recorded') }}<br>
+Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code title="{{ sha }}">{{ sha }}</code></p>
+
+<h1>{% for line in headline %}<span>{{ line }}</span>{% endfor %}</h1>
+
+{% set shot = findings|selectattr('id', 'equalto', 'shot_policy')|first|default(None) %}
+{% if e.run_state != 'complete' %}
+<p class="lede">Some expected work did not complete. Known differences are listed with what is missing. Nothing below should be read as a pass for the missing cases.</p>
+{% elif shot %}
+<p class="lede">{{ shot.explanation }}
+<span class="muted">A shot is one simulated measurement. The reference is a preservation baseline, not proof that its behaviour is correct.</span></p>
+{% endif %}
+
+<div class="scroll shots" role="region" aria-label="Requested and completed shots" tabindex="0">
+<table>
+<caption>{{ n_exec }} executions per runtime · {{ unique_circuits }} distinct submitted-circuit pairs checked</caption>
+<thead><tr><th scope="col">Requested shots</th><th scope="col">Reference completed</th><th scope="col">Target completed</th></tr></thead>
+<tbody>
+{% for r in shot_rows %}
+<tr><td class="num">{{ '{:,}'.format(r.requested) }}</td>
+<td class="num{{ ' changed' if r.reference_changed }}">{{ r.reference }}{% if r.reference_changed %} <span class="pill s-difference">differs</span>{% endif %}</td>
+<td class="num{{ ' changed' if r.target_changed }}">{{ r.target }}{% if r.target_changed %} <span class="pill s-difference">differs</span>{% endif %}</td></tr>
+{% endfor %}
+</tbody></table></div>
+
+{% if proposal %}
+<p class="muted">Model disclosure, before execution: {{ proposal.intentional_changes|length }} stated intentional change{{ 's' if proposal.intentional_changes|length != 1 }} ({{ proposal.resolved_model }}).
+{% if proposal.prompt_states_known_shot_issue %}The prompt described the known shot behaviour and asked for any correction to be disclosed; this is instruction-following, not independent discovery.{% else %}The prompt did not mention shot behaviour; it asked the model to list any behaviour change.{% endif %} Model statements are intent, not observations.</p>
+{% else %}
+<p class="muted">No bound model-proposal record for this target. Any research notes are not attributed to a model in this report.</p>
+{% endif %}
+
+<div class="status-row">
+  <span>{{ circuit_label }}</span>
+  <span class="attention">Human decision: not recorded</span>
+</div>
+<p>Coverage: {{ coverage.graphs }} graphs, {{ coverage.angle_settings }} angle settings, {{ coverage.shot_requests|length }} requested shot counts; {{ coverage.completed_pairs }} of {{ n_exec }} execution pairs completed. Checks cover declared inputs only.<br>
+<span class="muted">Not checked: optimizer convergence, hardware, noise and dynamic circuits.</span></p>
+<p class="muted">Run state <strong>{{ e.run_state }}</strong> · evidence summary <strong>{{ e.evidence_summary }}</strong> ·
+{% for s, n in e.status_counts.items() %}{{ n }} {{ s }}{{ ' · ' if not loop.last }}{% endfor %} checks</p>
+
+<nav class="sections" aria-label="Report sections"><ul>
+<li><a href="#findings">Findings</a></li><li><a href="#checks">Checks</a></li><li><a href="#limits">Coverage and limits</a></li><li><a href="#source">Source changes</a></li><li><a href="#reproduce">Evidence and reproduction</a></li>
+</ul></nav>
+
+<h2 id="findings">Findings</h2>
+{% if not findings %}
+<p>No reviewable differences{% if e.evidence_summary == 'incomplete' %} among the checks that completed. The comparison is incomplete; see the checks below{% endif %}.</p>
+{% endif %}
+{% for f in findings %}
+<section class="finding" aria-labelledby="f-{{ f.id }}">
+<h3 id="f-{{ f.id }}">{{ f.title }}</h3>
+<p>{{ f.explanation }} Seen in {{ f.check_ids|length }} check{{ 's' if f.check_ids|length != 1 }} across {{ f.scope_ids|length }} execution{{ 's' if f.scope_ids|length != 1 }} — one grouped change, not {{ f.check_ids|length }} independent bugs.</p>
+<div class="block"><h4>Execution evidence</h4>
+<details><summary>{{ f.check_ids|length }} linked observations</summary>
+<ul class="plain">{% for cid in f.check_ids %}<li><a href="#check-{{ cid }}"><code>{{ cid }}</code></a> — {{ by_id[cid].summary }}</li>{% endfor %}</ul>
+</details></div>
+<div class="block"><h4>Model disclosure</h4>
+{% if proposal %}
+<ul class="plain">{% for c in proposal.intentional_changes %}<li>{{ c }}</li>{% endfor %}</ul>
+<p class="muted">Model-stated intent ({{ proposal.resolved_model or 'model not recorded' }}). It is not an observation and not human approval.</p>
+{% else %}<p class="muted">No bound model record.</p>{% endif %}
+</div>
+<div class="block"><h4>Human decision</h4><p><strong>Not recorded.</strong> <span class="muted">Copy <code>review-template.json</code>, fill in a reviewer, decision and reason. QRef never infers acceptance from model notes.</span></p></div>
+</section>
+{% endfor %}
+
+<h2 id="checks">Checks on declared inputs</h2>
+<div class="scroll" role="region" aria-label="Checks per graph and angle setting" tabindex="0">
+<table>
+<thead><tr><th scope="col">Graph</th><th scope="col">Angles θ</th><th scope="col">Circuit result</th><th scope="col">Max probability difference</th><th scope="col">Exact objective difference</th><th scope="col">Evidence</th></tr></thead>
+<tbody>
+{% for c in cases %}
+<tr>
+<td><code>{{ c.graph_id }}</code><br><span class="muted">{{ c.n }} qubits</span></td>
+<td><code>{{ c.theta|js }}</code></td>
+<td>{% if c.circuit %}<span class="pill s-{{ c.circuit.status }}">{{ c.circuit.status }}</span> <span class="muted">{{ c.circuit.observed or c.circuit.reason_code }}</span>{% else %}—{% endif %}</td>
+<td class="num"><span class="pill s-{{ c.prob_status }}">{{ c.prob_status }}</span> {{ c.prob|num }}</td>
+<td class="num"><span class="pill s-{{ c.exo_status }}">{{ c.exo_status }}</span> {{ c.exo|num }}</td>
+<td>{% for x in c.executions %}<a href="#exec-{{ x }}">{{ x.split('/')[-1] }}</a>{{ ', ' if not loop.last }}{% endfor %}</td>
+</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="muted">Circuit results compare the circuits actually submitted to Aer, after removing only terminal measurements, with MQT QCEC (<code>{{ prov.checker_config.entrypoint }}</code> {{ prov.checker_config.checker_version or 'version not recorded' }}; {{ prov.checker_config.global_phase_policy }}). Tolerance for numerical checks: 1e-10 absolute.</p>
+
+<h3>All checks by kind</h3>
+{% for k in kind_rows %}
+<details><summary>{{ k.kind }} — {% for s, n in k.counts.items() if n %}{{ n }} {{ s }}{{ ', ' if not loop.last }}{% endfor %}</summary>
+<div class="scroll" role="region" aria-label="{{ k.kind }} checks" tabindex="0"><table>
+<thead><tr><th scope="col">Check</th><th scope="col">Status</th><th scope="col">Summary</th></tr></thead>
+<tbody>{% for c in k.checks %}<tr id="check-{{ c.id }}"><td><code>{{ c.id }}</code></td><td><span class="pill s-{{ c.status }}">{{ c.status }}</span> <span class="muted">{{ c.reason_code }}</span></td><td>{{ c.summary }}</td></tr>{% endfor %}</tbody>
+</table></div></details>
+{% endfor %}
+
+<h3>Executions</h3>
+<details><summary>{{ n_exec }} paired executions with inputs and digests</summary>
+<div class="scroll" role="region" aria-label="Executions" tabindex="0"><table>
+<thead><tr><th scope="col">Execution</th><th scope="col">Edges</th><th scope="col">Input digest</th></tr></thead>
+<tbody>{% for x in e.case.executions %}<tr id="exec-{{ x.id }}"><td><code>{{ x.id }}</code></td><td><code>{{ x.edges|js }}</code></td><td><code>{{ x.input_sha256 }}</code></td></tr>{% endfor %}</tbody>
+</table></div></details>
+
+<h2 id="limits">Coverage and limits</h2>
+<h3>Checked</h3>
+<p>Actually submitted circuits (equivalence), measurement map and dimensions, exact output probabilities, independent exact objective, module helpers on every basis assignment, module weighting of captured counts and exact probabilities, returned values against their own histograms, and requested versus completed shots.</p>
+{% if coverage.missing.reference or coverage.missing.target %}
+<h3>Missing</h3>
+<p>Reference: {{ coverage.missing.reference|length }} missing; target: {{ coverage.missing.target|length }} missing.</p>
+<ul class="plain">{% for side, failure in prov.side_failures.items() if failure %}<li>{{ side }}: <code>{{ failure }}</code></li>{% endfor %}</ul>
+{% endif %}
+<h3>Not checked</h3>
+<ul class="plain">{% for item in coverage.not_checked %}<li>{{ item }}</li>{% endfor %}</ul>
+<h3>Limits</h3>
+<ul class="plain">{% for item in e.limitations %}<li>{{ item }}</li>{% endfor %}</ul>
+
+<h2 id="source">Source changes</h2>
+<p class="muted">Unified diff from <code>reference.py</code> to <code>target.py</code>. Hunks that mention shots come first. <code>+</code> lines were added, <code>-</code> lines removed.</p>
+{% for h in hunks %}
+<div class="diff" role="region" aria-label="Diff hunk {{ loop.index }}" tabindex="0">
+<div class="hdr">{{ h.header }}</div>
+{% for l in h.lines %}<div class="{{ l.kind }}"><span class="lbl">{{ 'Added' if l.kind == 'add' else 'Removed' if l.kind == 'del' else '' }}</span>{{ l.text }}</div>{% endfor %}
+</div>
+{% else %}<p>No source differences.</p>{% endfor %}
+<details><summary>Full reference source</summary><pre>{{ ref_src }}</pre></details>
+<details><summary>Full target source</summary><pre>{{ tgt_src }}</pre></details>
+{% if proposal %}
+<details><summary>Model summary and stated uncertainties</summary>
+<p>{{ proposal.summary }}</p>
+<ul class="plain">{% for u in proposal.uncertainties %}<li>{{ u }}</li>{% endfor %}</ul></details>
+{% endif %}
+
+<h2 id="reproduce">Evidence and reproduction</h2>
+{% for side, r in receipts.items() %}
+<h3>{{ side|capitalize }} source</h3>
+<dl class="kv">
+<dt>Kind</dt><dd>{{ r.kind }}</dd>
+{% if r.upstream_url %}<dt>Upstream</dt><dd><a href="{{ r.upstream_url }}" rel="noreferrer">{{ r.upstream_url }}</a></dd>{% endif %}
+{% if r.upstream_revision %}<dt>Revision</dt><dd><code>{{ r.upstream_revision }}</code> · <code>{{ r.upstream_path }}</code></dd>{% endif %}
+<dt>Extraction scope</dt><dd>{{ r.extraction_scope }}</dd>
+<dt>Attribution</dt><dd>{{ r.attribution }}</dd>
+<dt>Licence</dt><dd>{{ r.license_spdx }} · <a href="{{ r.license_artifact }}">licence text</a></dd>
+<dt>Module SHA-256</dt><dd><code>{{ r.module_sha256 }}</code></dd>
+</dl>
+{% endfor %}
+<h3>Runtimes</h3>
+<dl class="kv">
+{% for side in ['reference', 'target'] %}{% set env = prov[side ~ '_environment'] %}
+<dt>{{ side|capitalize }}</dt><dd>{% if env %}Python {{ env.python_version }} · {{ env.os }} {{ env.architecture }} · {% for d in env.distributions if d.name in ['qiskit', 'qiskit-aer', 'mqt-qcec', 'networkx', 'numpy'] %}{{ d.name }} {{ d.version }}{{ ', ' if not loop.last }}{% endfor %}{% else %}not recorded{% endif %}</dd>
+{% endfor %}
+<dt>QRef</dt><dd>{{ prov.tool_version }} · observer <code>{{ prov.observer_sha256|short }}</code> · comparison <code>{{ prov.comparison_sha256|short }}</code></dd>
+{% if proposal %}<dt>Proposal</dt><dd>{{ proposal.resolved_model }} via Claude Code {{ proposal.cli_version }}, {{ proposal.started_at }} · <a href="{{ proposal.artifact }}">record</a></dd>{% endif %}
+</dl>
+<h3>Reproduce</h3>
+<pre>uv sync --frozen
+uv venv --python 3.11.12 .qref/envs/reference
+uv pip install --python .qref/envs/reference/bin/python -r evidence/qaoa/legacy-requirements.txt
+uv venv --python 3.11.12 .qref/envs/target
+uv pip install --python .qref/envs/target/bin/python -r evidence/qaoa/modern-requirements.txt
+uv run qref run --case case.json \
+  --reference-python .qref/envs/reference/bin/python \
+  --target-python .qref/envs/target/bin/python \
+  --out runs/my-run --trust-local-code
+uv run qref verify-bundle --run runs/my-run</pre>
+<p class="muted">Re-running produces a new evidence record. Sampled counts can differ; checks compare each returned value with its own histogram, never random streams across versions.</p>
+<details><summary>{{ artifacts|length }} recorded artifacts</summary>
+<div class="scroll" role="region" aria-label="Artifacts" tabindex="0"><table>
+<thead><tr><th scope="col">Path</th><th scope="col">Bytes</th><th scope="col">SHA-256</th></tr></thead>
+<tbody>{% for a in artifacts %}<tr><td><a href="{{ a.path }}"><code>{{ a.path }}</code></a></td><td class="num">{{ a.size }}</td><td><code>{{ a.sha256|short }}</code></td></tr>{% endfor %}</tbody>
+</table></div></details>
+<details><summary>Reference licence text</summary><pre>{{ ref_license }}</pre></details>
+</main>
+<footer><div class="wrap">
+QRef records evidence; it does not certify science. Hashes show internal consistency, not a signature. No live job runs on this page. Built with Qiskit, Qiskit Aer and MQT QCEC.
+</div></footer>
+</body>
+</html>

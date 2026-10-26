@@ -1,6 +1,6 @@
 # QRef: build specification
 
-Status: **review package, not an implemented product**. The user selected the bounded quantum-code migration reviewer, delegated stack selection and allowed no new paid services. This document defines the proposed complete release. Another AI should review it with [REVIEW.md](REVIEW.md) before implementation begins.
+Status: **release 0.1 implements the owner-approved core slice** (2026-10-26). The user approved a two-hour scope: `propose`, `run`, `report`, `verify-bundle`, a finding-first static report and a Pages deployment. ZIP export/verification, the decision-overlay re-export, the full acceptance-fixture matrix and the recording are **deferred, not done**. See [the review record](docs/reviews/external-review.md) for exactly what is implemented, what deviates and what remains.
 
 Product purpose is in [PRODUCT.md](PRODUCT.md); vocabulary is in [CONTEXT.md](CONTEXT.md). [PLAN.md](PLAN.md) defines build order and acceptance gates. The [report brief](docs/design/report-brief.md) specifies the proposed visual surface. This specification is authoritative for interfaces and behavior; archived proposals are not.
 
@@ -88,19 +88,21 @@ Use the full [reference](evidence/qaoa/legacy-requirements.txt) and [target](evi
 
 ## 5. End-to-end workflow and exact CLI
 
-The commands below are **proposed interfaces**. They do not exist until implementation passes its gates.
+The commands below are implemented in `src/qref/` except where the review record lists a deferral.
 
 ### Setup
 
 The implementation README must give exact fresh-clone commands. Target shape:
 
 ```bash
-uv sync --frozen --extra quantum
+uv sync --frozen
 uv venv --python 3.11.12 .qref/envs/reference
 uv pip install --python .qref/envs/reference/bin/python -r evidence/qaoa/legacy-requirements.txt
+uv venv --python 3.11.12 .qref/envs/target
+uv pip install --python .qref/envs/target/bin/python -r evidence/qaoa/modern-requirements.txt
 ```
 
-The target interpreter is `.venv/bin/python`. The reference interpreter is `.qref/envs/reference/bin/python`. A run does not install, update or repair its environments. It checks actual versions first. No fallback to whichever Python happens to be on PATH.
+Implemented deviation: both candidate runtimes are separate interpreter environments; the QRef package itself installs only Jinja and jsonschema, and never imports Qiskit. The target interpreter also runs the QCEC checker worker. A run does not install, update or repair environments. It checks every pin before candidate import. No fallback to whichever Python is on PATH.
 
 ### Generate a proposed port
 
