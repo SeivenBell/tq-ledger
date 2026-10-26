@@ -278,11 +278,204 @@ Executed 2026-10-26T02:10:02.380180Z – 2026-10-26T02:10:06.972260Z · Evidence
 </table></div></details>
 
 <h3>Executions</h3>
-<details><summary>12 paired executions with inputs and digests</summary>
+<p class="muted">Every expected execution, both sides: completed shots, the returned objective next to QRef's independent decoding of the same histogram, the most frequent outcomes, and the captured circuit files.</p>
+<details><summary>12 paired executions</summary>
 <div class="scroll" role="region" aria-label="Executions" tabindex="0"><table>
-<thead><tr><th scope="col">Execution</th><th scope="col">Edges</th><th scope="col">Input digest</th></tr></thead>
-<tbody><tr id="exec-textbook_cycle4/p1-a/shots-512"><td><code>textbook_cycle4/p1-a/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 0]]</code></td><td><code>bd2973bdd6445b5044d51ceb29adb39c59711345bc804854c53d2f5a3ea64383</code></td></tr><tr id="exec-textbook_cycle4/p1-b/shots-512"><td><code>textbook_cycle4/p1-b/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 0]]</code></td><td><code>7d3afa639a7301fd3a9b0fd953d29ce0326e271fea7966fcea861974a2fe10eb</code></td></tr><tr id="exec-textbook_cycle4/p2/shots-512"><td><code>textbook_cycle4/p2/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 0]]</code></td><td><code>299c7512267d8b1ba78ffe2a027638ca10c6120ea22b6cc365a99f7704106e4b</code></td></tr><tr id="exec-asymmetric4/p1-a/shots-512"><td><code>asymmetric4/p1-a/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [0, 2]]</code></td><td><code>c034adc209e349ea974c7a895cb3cf09077dd1bd25d0be14b82726be6e8bb072</code></td></tr><tr id="exec-asymmetric4/p1-b/shots-512"><td><code>asymmetric4/p1-b/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [0, 2]]</code></td><td><code>c473a1c2746c91dd29bd70e18dce8db8dbb4f2281b3c032bac27168ee28a22a8</code></td></tr><tr id="exec-asymmetric4/p2/shots-512"><td><code>asymmetric4/p2/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [0, 2]]</code></td><td><code>8c06c7c002ada04d2131a4caf2816446e875e7b39dc77e62c475b49004938147</code></td></tr><tr id="exec-cycle5/p1-a/shots-512"><td><code>cycle5/p1-a/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]]</code></td><td><code>f97f1cbaab27825e6250187b3b1d1c6805f704ccd1f0c4f0885eb3b2516c816b</code></td></tr><tr id="exec-cycle5/p1-b/shots-512"><td><code>cycle5/p1-b/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]]</code></td><td><code>c3f73a72ca79ed97502a85430c27be8abc06c90841254deae282a5650b73b80b</code></td></tr><tr id="exec-cycle5/p2/shots-512"><td><code>cycle5/p2/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 4], [4, 0]]</code></td><td><code>a8085140a5ff07050f7aee8ab10981b351b825cd6a4049701473b22c6385abb7</code></td></tr><tr id="exec-ring7_isolated8/p1-a/shots-512"><td><code>ring7_isolated8/p1-a/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0], [0, 3]]</code></td><td><code>243750d0144d3f2f424ebc0c5f8e7117fbda7e1750d180af9d5a9477a56b705b</code></td></tr><tr id="exec-ring7_isolated8/p1-b/shots-512"><td><code>ring7_isolated8/p1-b/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0], [0, 3]]</code></td><td><code>9a3762b2c616c6d2723b9b9bd3f1a359a26c1faed1562dc6f5fabbf426898cf7</code></td></tr><tr id="exec-ring7_isolated8/p2/shots-512"><td><code>ring7_isolated8/p2/shots-512</code></td><td><code>[[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 0], [0, 3]]</code></td><td><code>aad317961ddcca13d5c990511329cbfcb915c752ec22fb852fc3b56a7269ce2c</code></td></tr></tbody>
-</table></div></details>
+<thead><tr><th scope="col">Execution</th><th scope="col">Side</th><th scope="col">State</th><th scope="col">Shots requested / completed</th><th scope="col">Returned vs independent</th><th scope="col">Top counts</th><th scope="col">Circuit files</th></tr></thead>
+<tbody>
+<tr id="exec-textbook_cycle4/p1-a/shots-512">
+<td rowspan="2"><code>textbook_cycle4/p1-a/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63]</code><br>input <code title="bd2973bdd6445b5044d51ceb29adb39c59711345bc804854c53d2f5a3ea64383">bd2973bdd644</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-1.59 / -1.59</td>
+<td><code>1111:90 0000:59 0011:44 1100:41</code></td>
+<td><a href="artifacts/reference/textbook_cycle4__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/reference/textbook_cycle4__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/reference/textbook_cycle4__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-1.59 / -1.59</td>
+<td><code>1111:90 0000:59 0011:44 1100:41</code></td>
+<td><a href="artifacts/target/textbook_cycle4__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/target/textbook_cycle4__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/target/textbook_cycle4__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-textbook_cycle4/p1-b/shots-512">
+<td rowspan="2"><code>textbook_cycle4/p1-b/shots-512</code><br><span class="muted">θ <code>[0.81, 0.29]</code><br>input <code title="7d3afa639a7301fd3a9b0fd953d29ce0326e271fea7966fcea861974a2fe10eb">7d3afa639a73</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.05 / -2.05</td>
+<td><code>0101:65 1111:65 1010:60 0000:47</code></td>
+<td><a href="artifacts/reference/textbook_cycle4__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/reference/textbook_cycle4__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/reference/textbook_cycle4__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.05 / -2.05</td>
+<td><code>0101:65 1111:65 1010:60 0000:47</code></td>
+<td><a href="artifacts/target/textbook_cycle4__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/target/textbook_cycle4__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/target/textbook_cycle4__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-textbook_cycle4/p2/shots-512">
+<td rowspan="2"><code>textbook_cycle4/p2/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63, 0.41, 0.92]</code><br>input <code title="299c7512267d8b1ba78ffe2a027638ca10c6120ea22b6cc365a99f7704106e4b">299c7512267d</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.22 / -2.22</td>
+<td><code>1010:70 0101:67 1111:45 1100:43</code></td>
+<td><a href="artifacts/reference/textbook_cycle4__p2__shots-512.qasm">QASM</a> · <a href="artifacts/reference/textbook_cycle4__p2__shots-512.qpy">QPY</a> · <a href="artifacts/reference/textbook_cycle4__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.22 / -2.22</td>
+<td><code>1010:70 0101:67 1111:45 1100:43</code></td>
+<td><a href="artifacts/target/textbook_cycle4__p2__shots-512.qasm">QASM</a> · <a href="artifacts/target/textbook_cycle4__p2__shots-512.qpy">QPY</a> · <a href="artifacts/target/textbook_cycle4__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-asymmetric4/p1-a/shots-512">
+<td rowspan="2"><code>asymmetric4/p1-a/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63]</code><br>input <code title="c034adc209e349ea974c7a895cb3cf09077dd1bd25d0be14b82726be6e8bb072">c034adc209e3</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-1.48 / -1.48</td>
+<td><code>1111:79 0000:53 0011:46 1000:44</code></td>
+<td><a href="artifacts/reference/asymmetric4__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/reference/asymmetric4__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/reference/asymmetric4__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-1.48 / -1.48</td>
+<td><code>1111:79 0000:53 0011:46 1000:44</code></td>
+<td><a href="artifacts/target/asymmetric4__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/target/asymmetric4__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/target/asymmetric4__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-asymmetric4/p1-b/shots-512">
+<td rowspan="2"><code>asymmetric4/p1-b/shots-512</code><br><span class="muted">θ <code>[0.81, 0.29]</code><br>input <code title="c473a1c2746c91dd29bd70e18dce8db8dbb4f2281b3c032bac27168ee28a22a8">c473a1c2746c</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-1.67 / -1.67</td>
+<td><code>1111:85 0000:58 0100:53 1011:51</code></td>
+<td><a href="artifacts/reference/asymmetric4__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/reference/asymmetric4__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/reference/asymmetric4__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-1.67 / -1.67</td>
+<td><code>1111:85 0000:58 0100:53 1011:51</code></td>
+<td><a href="artifacts/target/asymmetric4__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/target/asymmetric4__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/target/asymmetric4__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-asymmetric4/p2/shots-512">
+<td rowspan="2"><code>asymmetric4/p2/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63, 0.41, 0.92]</code><br>input <code title="8c06c7c002ada04d2131a4caf2816446e875e7b39dc77e62c475b49004938147">8c06c7c002ad</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.1 / -2.1</td>
+<td><code>1100:55 0011:54 1110:54 1101:46</code></td>
+<td><a href="artifacts/reference/asymmetric4__p2__shots-512.qasm">QASM</a> · <a href="artifacts/reference/asymmetric4__p2__shots-512.qpy">QPY</a> · <a href="artifacts/reference/asymmetric4__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.1 / -2.1</td>
+<td><code>1100:55 0011:54 1110:54 1101:46</code></td>
+<td><a href="artifacts/target/asymmetric4__p2__shots-512.qasm">QASM</a> · <a href="artifacts/target/asymmetric4__p2__shots-512.qpy">QPY</a> · <a href="artifacts/target/asymmetric4__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-cycle5/p1-a/shots-512">
+<td rowspan="2"><code>cycle5/p1-a/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63]</code><br>input <code title="f97f1cbaab27825e6250187b3b1d1c6805f704ccd1f0c4f0885eb3b2516c816b">f97f1cbaab27</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.03 / -2.03</td>
+<td><code>11111:50 00000:38 00111:24 10001:21</code></td>
+<td><a href="artifacts/reference/cycle5__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/reference/cycle5__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/reference/cycle5__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.03 / -2.03</td>
+<td><code>11111:50 00000:38 00111:24 10001:21</code></td>
+<td><a href="artifacts/target/cycle5__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/target/cycle5__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/target/cycle5__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-cycle5/p1-b/shots-512">
+<td rowspan="2"><code>cycle5/p1-b/shots-512</code><br><span class="muted">θ <code>[0.81, 0.29]</code><br>input <code title="c3f73a72ca79ed97502a85430c27be8abc06c90841254deae282a5650b73b80b">c3f73a72ca79</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.62 / -2.62</td>
+<td><code>11111:32 01001:30 00000:28 10110:28</code></td>
+<td><a href="artifacts/reference/cycle5__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/reference/cycle5__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/reference/cycle5__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-2.62 / -2.62</td>
+<td><code>11111:32 01001:30 00000:28 10110:28</code></td>
+<td><a href="artifacts/target/cycle5__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/target/cycle5__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/target/cycle5__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-cycle5/p2/shots-512">
+<td rowspan="2"><code>cycle5/p2/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63, 0.41, 0.92]</code><br>input <code title="a8085140a5ff07050f7aee8ab10981b351b825cd6a4049701473b22c6385abb7">a8085140a5ff</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-3.05 / -3.05</td>
+<td><code>01010:41 10101:36 11010:35 01101:30</code></td>
+<td><a href="artifacts/reference/cycle5__p2__shots-512.qasm">QASM</a> · <a href="artifacts/reference/cycle5__p2__shots-512.qpy">QPY</a> · <a href="artifacts/reference/cycle5__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-3.05 / -3.05</td>
+<td><code>01010:41 10101:36 11010:35 01101:30</code></td>
+<td><a href="artifacts/target/cycle5__p2__shots-512.qasm">QASM</a> · <a href="artifacts/target/cycle5__p2__shots-512.qpy">QPY</a> · <a href="artifacts/target/cycle5__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-ring7_isolated8/p1-a/shots-512">
+<td rowspan="2"><code>ring7_isolated8/p1-a/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63]</code><br>input <code title="243750d0144d3f2f424ebc0c5f8e7117fbda7e1750d180af9d5a9477a56b705b">243750d0144d</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-3.44 / -3.44</td>
+<td><code>11100011:9 11111001:9 10011100:8 10110010:8</code></td>
+<td><a href="artifacts/reference/ring7_isolated8__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/reference/ring7_isolated8__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/reference/ring7_isolated8__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-3.44 / -3.44</td>
+<td><code>11100011:9 11111001:9 10011100:8 10110010:8</code></td>
+<td><a href="artifacts/target/ring7_isolated8__p1-a__shots-512.qasm">QASM</a> · <a href="artifacts/target/ring7_isolated8__p1-a__shots-512.qpy">QPY</a> · <a href="artifacts/target/ring7_isolated8__p1-a__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-ring7_isolated8/p1-b/shots-512">
+<td rowspan="2"><code>ring7_isolated8/p1-b/shots-512</code><br><span class="muted">θ <code>[0.81, 0.29]</code><br>input <code title="9a3762b2c616c6d2723b9b9bd3f1a359a26c1faed1562dc6f5fabbf426898cf7">9a3762b2c616</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-4.22 / -4.22</td>
+<td><code>11000000:9 11011110:9 00001000:8 00110101:8</code></td>
+<td><a href="artifacts/reference/ring7_isolated8__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/reference/ring7_isolated8__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/reference/ring7_isolated8__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-4.22 / -4.22</td>
+<td><code>11000000:9 11011110:9 00001000:8 00110101:8</code></td>
+<td><a href="artifacts/target/ring7_isolated8__p1-b__shots-512.qasm">QASM</a> · <a href="artifacts/target/ring7_isolated8__p1-b__shots-512.qpy">QPY</a> · <a href="artifacts/target/ring7_isolated8__p1-b__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr id="exec-ring7_isolated8/p2/shots-512">
+<td rowspan="2"><code>ring7_isolated8/p2/shots-512</code><br><span class="muted">θ <code>[0.17, 0.63, 0.41, 0.92]</code><br>input <code title="aad317961ddcca13d5c990511329cbfcb915c752ec22fb852fc3b56a7269ce2c">aad317961ddc</code></span></td><td>reference</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-4.15 / -4.15</td>
+<td><code>11100100:11 10110010:10 11001001:10 01010110:8</code></td>
+<td><a href="artifacts/reference/ring7_isolated8__p2__shots-512.qasm">QASM</a> · <a href="artifacts/reference/ring7_isolated8__p2__shots-512.qpy">QPY</a> · <a href="artifacts/reference/ring7_isolated8__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+<tr>
+<td>target</td>
+<td><span class="pill s-pass">completed</span></td>
+<td class="num">512 / 512</td>
+<td class="num">-4.15 / -4.15</td>
+<td><code>11100100:11 10110010:10 11001001:10 01010110:8</code></td>
+<td><a href="artifacts/target/ring7_isolated8__p2__shots-512.qasm">QASM</a> · <a href="artifacts/target/ring7_isolated8__p2__shots-512.qpy">QPY</a> · <a href="artifacts/target/ring7_isolated8__p2__shots-512.circuit.json">metadata</a></td>
+</tr>
+</tbody></table></div></details>
 
 <h2 id="limits">Coverage and limits</h2>
 <h3>Checked</h3>

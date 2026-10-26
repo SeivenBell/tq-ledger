@@ -86,7 +86,15 @@ Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code titl
 </details></div>
 <div class="block"><h4>Model disclosure</h4>
 {% if proposal %}
+{% set shot_claims = proposal.intentional_changes|select('mentions_shots')|list if f.id == 'shot_policy' else [] %}
+{% if shot_claims %}
+<p>Statements mentioning shots:</p>
+<ul class="plain">{% for c in shot_claims %}<li>{{ c }}</li>{% endfor %}</ul>
+<details><summary>All {{ proposal.intentional_changes|length }} stated changes</summary>
+<ul class="plain">{% for c in proposal.intentional_changes %}<li>{{ c }}</li>{% endfor %}</ul></details>
+{% else %}
 <ul class="plain">{% for c in proposal.intentional_changes %}<li>{{ c }}</li>{% endfor %}</ul>
+{% endif %}
 <p class="muted">Model-stated intent ({{ proposal.resolved_model or 'model not recorded' }}). It is not an observation and not human approval.</p>
 {% else %}<p class="muted">No bound model record.</p>{% endif %}
 </div>
@@ -131,11 +139,23 @@ Executed {{ prov.started_at }} – {{ prov.finished_at }} · Evidence <code titl
 {% endfor %}
 
 <h3>Executions</h3>
-<details><summary>{{ n_exec }} paired executions with inputs and digests</summary>
+<p class="muted">Every expected execution, both sides: completed shots, the returned objective next to QRef's independent decoding of the same histogram, the most frequent outcomes, and the captured circuit files.</p>
+<details><summary>{{ n_exec }} paired executions</summary>
 <div class="scroll" role="region" aria-label="Executions" tabindex="0"><table>
-<thead><tr><th scope="col">Execution</th><th scope="col">Edges</th><th scope="col">Input digest</th></tr></thead>
-<tbody>{% for x in e.case.executions %}<tr id="exec-{{ x.id }}"><td><code>{{ x.id }}</code></td><td><code>{{ x.edges|js }}</code></td><td><code>{{ x.input_sha256 }}</code></td></tr>{% endfor %}</tbody>
-</table></div></details>
+<thead><tr><th scope="col">Execution</th><th scope="col">Side</th><th scope="col">State</th><th scope="col">Shots requested / completed</th><th scope="col">Returned vs independent</th><th scope="col">Top counts</th><th scope="col">Circuit files</th></tr></thead>
+<tbody>
+{% for row in exec_rows %}{% for side, s in row.sides.items() %}
+<tr{% if loop.first %} id="exec-{{ row.e.id }}"{% endif %}>
+{% if loop.first %}<td rowspan="2"><code>{{ row.e.id }}</code><br><span class="muted">θ <code>{{ row.e.theta|js }}</code><br>input <code title="{{ row.e.input_sha256 }}">{{ row.e.input_sha256|short }}</code></span></td>{% endif %}
+<td>{{ side }}</td>
+<td><span class="pill s-{{ 'pass' if s.state == 'completed' else 'unsupported' if s.state == 'unsupported' else 'error' }}">{{ s.state }}</span>{% if s.reason %} <span class="muted">{{ s.reason }}</span>{% endif %}</td>
+<td class="num">{{ '{:,}'.format(row.e.requested_shots) }} / {{ '{:,}'.format(s.completed) if s.completed is not none else '—' }}</td>
+<td class="num">{{ s.returned|num }} / {{ s.independent|num }}</td>
+<td><code>{% for k, v in s.top_counts %}{{ k }}:{{ v }}{{ ' ' if not loop.last }}{% endfor %}</code></td>
+<td>{% for label, path in s.links %}<a href="{{ path }}">{{ label }}</a>{{ ' · ' if not loop.last }}{% endfor %}</td>
+</tr>
+{% endfor %}{% endfor %}
+</tbody></table></div></details>
 
 <h2 id="limits">Coverage and limits</h2>
 <h3>Checked</h3>

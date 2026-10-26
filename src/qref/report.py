@@ -156,6 +156,7 @@ def _view(out: Path, evidence: dict, evidence_sha: str, decisions: dict | None =
     hunks = _hunks(ref_src, tgt_src)
     prov = evidence["provenance"]
     unique_circuits = len(evidence["circuit_results"])
+    exec_rows = _execution_rows(out, evidence, by_id)
     return {
         "e": evidence, "sha": evidence_sha, "prov": prov, "case": evidence["case"]["definition"],
         "headline": headline, "circuit_label": circuit_label, "shot_rows": shot_rows, "cases": cases,
@@ -170,7 +171,41 @@ def _view(out: Path, evidence: dict, evidence_sha: str, decisions: dict | None =
         "n_exec": len(executions),
         "review": _review(evidence, decisions),
         "origin": evidence["case"]["definition"]["origin"],
+        "exec_rows": exec_rows,
     }
+
+
+def _execution_rows(out: Path, evidence: dict, by_id: dict) -> list[dict]:
+    """Per execution and side: state, shots, returned value vs independent decoding, top counts, artifact links.
+    Reads only the bundled, already hash-verified observation documents."""
+    listed = {a["path"] for a in evidence["artifacts"]}
+    obs = {}
+    for side in ("reference", "target"):
+        rel = f"artifacts/{side}/observations.json"
+        if rel in listed:
+            doc = contracts.load_json_bytes((out / rel).read_bytes())
+            obs[side] = {r["id"]: r for r in doc["executions"]}
+    rows = []
+    for e in evidence["case"]["executions"]:
+        sides = {}
+        for side in ("reference", "target"):
+            rec = obs.get(side, {}).get(e["id"])
+            ret = by_id.get(f"returned-objective/{side}/{e['id']}")
+            s = {"state": rec["state"] if rec else "not recorded", "reason": rec.get("reason_code") if rec else None,
+                 "completed": None, "returned": None, "independent": None, "top_counts": [], "links": []}
+            if rec and rec.get("sampling"):
+                s["completed"] = rec["sampling"]["completed_shots"]
+                s["top_counts"] = sorted(rec["sampling"]["counts"].items(), key=lambda kv: -kv[1])[:4]
+            if ret and ret["status"] in ("pass", "difference"):
+                s["independent"], s["returned"] = ret["expected"], ret["observed"]
+            if rec and rec.get("circuit"):
+                for label, key in (("QASM", "qasm"), ("QPY", "qpy"), ("metadata", "metadata")):
+                    path = f"artifacts/{side}/{rec['circuit'].get(key)}"
+                    if rec["circuit"].get(key) and path in listed:
+                        s["links"].append((label, path))
+            sides[side] = s
+        rows.append({"e": e, "sides": sides})
+    return rows
 
 
 def _worst(rows):
@@ -203,6 +238,7 @@ def _env():
     env.filters["short"] = lambda s: (s or "")[:12]
     env.filters["num"] = lambda v: "—" if v is None else f"{v:.3g}"
     env.filters["js"] = lambda v: json.dumps(v, sort_keys=True)
+    env.tests["mentions_shots"] = lambda text: "shot" in text.lower()
     return env
 
 
