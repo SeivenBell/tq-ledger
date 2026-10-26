@@ -2,7 +2,29 @@
 
 **Review a quantum-code migration before relying on it.**
 
-Status: review-ready specification and executable research evidence. The product CLI, report interface and public deployment are not implemented yet. The user authorized planning and repository cleanup; implementation follows independent review and separate approval.
+Status: **release 0.1 — owner-approved core slice, implemented.** Live report: **https://seivenbell.github.io/tq-ledger/**. A second example is at `/research-port/`, and the model proposal behind the main report is at `/proposal/`. Deferred work (ZIP, decision re-export, full fixture matrix, recording) is listed in the [review record](docs/reviews/external-review.md).
+
+## Run it
+
+```bash
+uv sync --frozen
+uv venv --python 3.11.12 .qref/envs/reference
+uv pip install --python .qref/envs/reference/bin/python -r evidence/qaoa/legacy-requirements.txt
+uv venv --python 3.11.12 .qref/envs/target
+uv pip install --python .qref/envs/target/bin/python -r evidence/qaoa/modern-requirements.txt
+
+uv run qref propose --case cases/qaoa.json --out runs/proposal    # existing Claude subscription; never executes code
+# inspect runs/proposal/target.py before the next step
+uv run qref run --case runs/proposal/case.json \
+  --reference-python .qref/envs/reference/bin/python \
+  --target-python .qref/envs/target/bin/python \
+  --out runs/run --trust-local-code                                # exit 0 consistent, 1 differences, 2 incomplete/invalid
+open runs/run/index.html
+uv run qref verify-bundle --run runs/run
+uv run pytest
+```
+
+`--trust-local-code` is required because candidate Python runs with your local permissions. Environments isolate versions, not hostile code.
 
 ## Start here
 
@@ -19,11 +41,11 @@ A local model proposes a port. A developer inspects it before execution. Two pin
 
 The public copy is a static report on free GitHub Pages—not a hosted Python executor or live-model website. No new paid services are assumed.
 
-## What can run now
+## What runs now
 
-[The retained QAOA seed](evidence/qaoa/README.md) contains the original licensed helper code, real model port and observations. It is research code, not the future QRef command suite. The newer [planning probe](https://github.com/SeivenBell/tq-ledger/tree/67db6c595927faa91a85f64a7d1845f1c89b09dc/prototypes/qref-spec-probes) proves the subscription-only proposal route, actual Aer submission capture and independent same-count decoding on the seed. It is deliberately kept off main as throwaway code.
+`qref propose`, `qref run`, `qref report` and `qref verify-bundle` are in `src/qref/`. `cases/qaoa.json` runs the [retained seed](evidence/qaoa/README.md) research port. `examples/` holds the curated, verified exports that are published to Pages.
 
-These probes do not establish general reliability, a hidden-agent-error rate, a customer or scientific certification. The actual product must satisfy the specification's failure/coverage/export/browser criteria.
+These results do not establish general reliability, a rate of hidden agent errors, a customer, or scientific certification. Checks cover only the declared inputs.
 
 ## Historical material
 
@@ -31,4 +53,4 @@ All abandoned Ledger plans, competing-project research, both complete original F
 
 One research inquiry was sent with no reply. Additional outreach is not authorized. Do not interpret that email as migration-user validation.
 
-Repository code is Apache-2.0. Copied source and dependencies retain their applicable licences; preserve the included Qiskit attribution and disclose MQT QCEC as the checking engine. No live URL or finished submission is claimed by this README.
+Repository code is Apache-2.0. Copied source and dependencies keep their own licences. Preserve the included Qiskit attribution, and disclose MQT QCEC as the checking engine.

@@ -18,7 +18,7 @@ A supported inspected migration goes from a real AI proposal through explicit lo
 
 A static attractive page without the local run is incomplete. A CLI without the report/public presentation is incomplete. A report with fabricated execution, missing coverage or mislabeled replay is unacceptable.
 
-The following proposed commands must exist and pass their behavior criteria at release: `qref propose`, `qref run`, `qref report`, `qref verify-bundle`. They do not exist today. No `make test` or `make verify` implementation is implied by old archive files.
+Release 0.1 (owner-approved two-hour slice) implements `qref propose`, `qref run`, `qref report` and `qref verify-bundle`; the remaining gate items are listed as deferred in `docs/reviews/external-review.md`. No `make test` or `make verify` implementation is implied by old archive files.
 
 ### Half-day constraint
 

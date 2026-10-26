@@ -8,7 +8,7 @@ For independent review, follow `REVIEW.md`, then read `SPEC.md`, `PRODUCT.md`, `
 
 For separately authorized implementation, follow the approved `SPEC.md` and `PLAN.md`. The report brief at `docs/design/report-brief.md` defines the proposed/approved surface; do not restart product discovery or silently widen its scope.
 
-For actual proof and missing capabilities, read `docs/reviews/planning-verification.md`. Retained seed evidence is under `evidence/qaoa/`. Proposed CLI commands, schemas, UI and deployment do not exist merely because they are specified.
+For actual proof and missing capabilities, read `docs/reviews/external-review.md` (release 0.1: implemented, deviations, deferred) and `docs/reviews/planning-verification.md`. Code is in `src/qref/`; tests in `tests/`; curated public exports in `examples/` (regenerate, never hand-edit; `qref verify-bundle` must pass). Retained seed evidence is under `evidence/qaoa/`. Deferred items in the review record do not exist merely because SPEC describes them.
 
 ## Invariants
 
